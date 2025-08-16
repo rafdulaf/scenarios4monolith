@@ -8,8 +8,8 @@
     <feature name="monolith.scenarios.contenttypes">
          <extensions>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="author"
-                       config="content-types/author.xml">
+                       id="person"
+                       config="content-types/person.xml">
             </extension>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="forum"
@@ -22,7 +22,7 @@
             </extension>
             
             <extension point="org.ametys.core.right.RightsExtensionPoint"
-                       id="person">
+                       id="abstract">
                 <right id="Right_ContentType_Person_Create">
                     <label i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT</label>
                     <description i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC</description>
@@ -39,8 +39,37 @@
     <feature name="monolith.scenarios.contenttypes.conan" depends="monolith.scenarios.contenttypes">
         <extensions>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="conan-reference-scenario"
-                       config="content-types/conan/conan-reference-scenario.xml">
+                       id="conan-boards"
+                       config="content-types/conan/conan-boards.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-abstract-reference-scenario"
+                       config="content-types/conan/conan-abstract-reference-scenario.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-abstract-adventure-scenario"
+                       config="content-types/conan/conan-abstract-adventure-scenario.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-reference-adventure-scenario"
+                       config="content-types/conan/conan-reference-adventure-scenario.xml">
+            </extension>
+
+            <extension point="org.ametys.core.right.RightsExtensionPoint"
+                       id="conan">
+                <right id="Right_ContentType_Conan_Board_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Reference_Adventure_Scenario_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
             </extension>
         </extensions>
     </feature>

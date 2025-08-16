@@ -15,7 +15,7 @@
    limitations under the License.
    -->
 <catalogue xml:lang="fr">
-    <message key="APPLICATION_PRODUCT_LABEL">Ametys Demo 4.9.0M8</message>
+    <message key="APPLICATION_PRODUCT_LABEL">Scénartios pour Monolith</message>
 
     <!--  Ribbon -->
     <message key="RIBBON_TABS_TAB_HOME_LABEL">Accueil</message>    

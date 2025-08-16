@@ -15,7 +15,7 @@
    limitations under the License.
    -->
 <catalogue xml:lang="en">
-    <message key="APPLICATION_PRODUCT_LABEL">Demo Ametys 4.9.0M8</message>
+    <message key="APPLICATION_PRODUCT_LABEL">Scenarios for Monolith</message>
 
     <!--  RIBBON -->
     <message key="RIBBON_TABS_TAB_HOME_LABEL">Home</message>    
@@ -43,17 +43,4 @@
 	<message key="GADGETS_GROUP_OFFICE_TOOLS">Office tools</message>
 	<message key="GADGETS_GROUP_NEWS">News</message>
 	
-	<!-- login.xsl -->
-	<message key="LOGIN_SCREEN_INTRO_AMETYS_TITLE">Try Ametys</message>
-	<message key="LOGIN_SCREEN_INTRO_AMETYS_DESCRIPTION"></message>
-	<message key="LOGIN_SCREEN_INTRO_AMETYS_AVAILABLE_IDENTIFIERS">The following identifiers are available:</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_TITLE">Join the Ametys community</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_DESCRIPTION">The following resources will allow you to find the documentation and support you need:</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_WEBSITE">www.ametys.org website</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_DOC">Ametys documentation</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_FORUM">Community forum</message>
-	<message key="LOGIN_SCREEN_INTRO_RESOURCES_ISSUES">Features and issues tracking</message>
-	<message key="LOGIN_SCREEN_INTRO_NETWORKS_TITLE">Follow us on social media</message>
-	<message key="LOGIN_SCREEN_INTRO_NETWORKS_FACEBOOK">Follow us on Facebook</message>
-	<message key="LOGIN_SCREEN_INTRO_NETWORKS_TWITTER">Follow us on Twitter</message>
 </catalogue>

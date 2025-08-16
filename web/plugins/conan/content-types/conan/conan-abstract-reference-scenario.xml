@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type abstract="true" extends="abstract-reference-scenario">
+        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_DESC</description>
+        <icons>
+            <glyph>ametysicon-document209</glyph>
+        </icons>
+        
+        <attribute name="board" type="content" contentType="conan-boards">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD_DESC</description>
+            <validation>
+               <mandatory />
+            </validation>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
+        
+        <!-- 
+            TODO
+            
+            elements non listés par ailleurs (tables de ref)
+            
+            spells
+            equipment
+            token
+            miniature
+            heroes
+            tiles
+         -->
+    </content-type>
+</extension>

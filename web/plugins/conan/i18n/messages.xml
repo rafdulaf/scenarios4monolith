@@ -10,6 +10,9 @@
     
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE">Titre</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC">Titre du scénario</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE">Image</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE_DESC">Image principale du scénario présentant la mise en place</message>
 
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION">Version</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_DESC">Version du scénario</message>
@@ -24,7 +27,7 @@
     
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS">Personnes</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_DESC">Personnes intervennues dans le scénarios</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHOR">Auteurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS">Auteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS_DESC">Auteurs à l'origine du scénario</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS">Relecteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS_DESC">Relecteurs du scénario intervenus à l'origine du scénario</message>
@@ -35,20 +38,20 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS">Traducteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC">Traducteurs originaux du scénario quand il existe une traduction officielle ou intervenus lors de la saisie dans cet outil</message>
     
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</mesaage>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD">Ajouter un emplacement</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_REMOVE">Supprimer cet emplacement</message>
 
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE">Type</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_DESC">Type d'emplacement</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_BOOK">Livre (nom)</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_PDF">Fichier PDF (url)</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_URL">Page Web (url)</mesaage>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE">Type</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_DESC">Type d'emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_BOOK">Livre (nom)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_PDF">Fichier PDF (url)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_URL">Page Web (url)</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE">Emplacement</message>
-    <message key=CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE_DESC>Valeur de l'emplacement selon le type choisir (Nom du livre, URL du fichier...)</message>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE">N° de page</mesaage>
-    <mesaage key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE_DESC">Numéro de page dans le livre ou le PDF (en cas de multiples scénarios)</mesaage>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE_DESC">Valeur de l'emplacement selon le type choisir (Nom du livre, URL du fichier...)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE">N° de page</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE_DESC">Numéro de page dans le livre ou le PDF (en cas de multiples scénarios)</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_LANGUAGE">Langue</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_LANGUAGE_DESC">Langue de la référence</message>
     
@@ -100,7 +103,7 @@
 
     <message key="CONTENT_TYPES_FORUM">Forum lié</message>
     <message key="CONTENT_TYPES_FORUM_DESC">Forum vers lequel seront fait des liens</message>
-    <message key="CONTENT_TYPES_FORUM_NEW">Nouvelle personne</message>
+    <message key="CONTENT_TYPES_FORUM_NEW">Nouveau forum</message>
     <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT">Créer un forum lié</message>
     <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC">Droit de créer un nouveau lien vers un forum dans la table de référence</message>
     
@@ -111,10 +114,54 @@
     <message key="CONTENT_TYPES_FORUM_URL">Lien vers la racine du forum</message>
 
     <!-- ********************************************************* -->
-    <!-- * CONAN REFERENCE SCENARIO                              * -->
+    <!-- * CONAN ABSTRACT REFERENCE SCENARIO                     * -->
     <!-- ********************************************************* -->
 
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO">[Conan/Abstrait] Référence de scénario</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_DESC">Permet de référencer un scénario de Conan</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD">Plateau</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD_DESC">Plateau de jeu utilisé par le scénario</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN ABSTRACT ADVENTURE SCENARIO                     * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO">[Conan/Abstrait] Scénario d'aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DESC">Scénario pour Conan en mode aventure</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY">Difficulté</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY_DESC">Difficulté du scénario</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN REFERENCE ADVENTURE SCENARIO                     * -->
+    <!-- ********************************************************* -->
+    
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO">[Conan] Aventure (référence)</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC">Référence à un scénario de Conan en mode Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT">[Conan] Créer une référence de scénario aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer une référence pour un scénario de Conan en mode aventure</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN BOARDS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_BOARDS">[Conan] Plateaux</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_DESC">Plateaux de jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_NEW">Nouveau plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT">[Conan] Créer un plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC">Droit de créer un nouveau plateau de jeu Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_BOARDS_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_NAME_DESC">Nom du plateau</message>
+    
+    <message key="CONTENT_TYPES_CONAN_BOARDS_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    
+    <message key="CONTENT_TYPES_CONAN_BOARDS_IMAGE">Image</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_IMAGE_DESC">Image du plateau</message>
+    
+    <message key="CONTENT_TYPES_CONAN_BOARDS_COMPOSITION">Composition</message>
+    <message key="CONTENT_TYPES_CONAN_BOARDS_COMPOSITION_DESC">Liste des plateaux nécessaire si le plateau est en fait un assemblage d'autres plateaux simples (non composés eux-mêmes)</message>
 
 </catalogue>

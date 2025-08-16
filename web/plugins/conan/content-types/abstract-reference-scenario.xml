@@ -7,6 +7,8 @@
             <glyph>ametysicon-document209</glyph>
         </icons>
         
+        <!-- TODO set title with label+version -->
+        
         <attribute name="title" type="multilingual-string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
@@ -21,6 +23,18 @@
             <validation>
                 <mandatory />
             </validation>
+        </attribute>
+        
+        <attribute name="image" type="file">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+            <widget-params>
+                <param name="filter">image</param>
+                <param name="allowSources">external</param>
+            </widget-params>
         </attribute>
         
         <attribute name="version" type="composite">
@@ -43,13 +57,15 @@
                 </validation>
                 <default-value>0</default-value>
            </attribute>
-           <attribute name="preceding" type="content" contentType="abstract-reference-scenario" invert="maintenance/following">
+           <attribute name="preceding" type="content" contentType="abstract-reference-scenario" invert="version/following">
                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING</label>
                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING_DESC</description>
+               <widget>edition.select-referencetable-content</widget>
            </attribute>
-           <attribute name="following" type="content" contentType="abstract-reference-scenario" invert="maintenance/preceding">
+           <attribute name="following" type="content" contentType="abstract-reference-scenario" invert="version/preceding">
                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING</label>
                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING_DESC</description>
+               <widget>edition.select-referencetable-content</widget>
            </attribute>
         </attribute>
         
@@ -57,44 +73,49 @@
            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS</label>
            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_DESC</description>
            
-            <attribute name="authors" type="content" contentType="contacts" multiple="true">
+            <attribute name="authors" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
             
-            <attribute name="readers" type="content" contentType="contacts" multiple="true">
+            <attribute name="readers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
             
-            <attribute name="testers" type="content" contentType="contacts" multiple="true">
+            <attribute name="testers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
             
-            <attribute name="fixers" type="content" contentType="contacts" multiple="true">
+            <attribute name="fixers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
             
-            <attribute name="translaters" type="content" contentType="contacts" multiple="true">
+            <attribute name="translaters" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
         </attribute>
         
@@ -149,7 +170,7 @@
                     <mandatory />
                 </validation>
             </attribute>
-        </attribute>
+        </repeater>
         
 
         <repeater name="forum" initial-size="0" min-size="0">
@@ -174,6 +195,7 @@
                 <validation>
                     <mandatory />
                 </validation>
+                <widget>edition.select-referencetable-content</widget>
             </attribute>
             <attribute name="url" type="string">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_URL</label>
@@ -231,11 +253,12 @@
             <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
             
             <item ref="label" />
+            <item ref="image" />
             <item ref="version/*" />
             <item ref="persons/*" />
             <item ref="location/*" />
             <item ref="forum/*" />
-            <item ref="faq/*" />
+            <item ref="faqs/*" />
         </view>
     
         <!-- Abstract view -->
