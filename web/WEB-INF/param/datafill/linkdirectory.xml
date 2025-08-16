@@ -1,0 +1,168 @@
+<links>
+    <link>
+        <title>Mail</title>
+        <url>https://ametys.org/mail</url>
+        <url-type>URL</url-type>
+        <url-alternative>visiter le site ametys.org</url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["NOTIF_MENU"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-contact"}</picture>
+        <picture-alternative></picture-alternative>
+        <dynamic-info-provider>dynamic.info.dummy</dynamic-info-provider>
+    </link>
+    <link>
+        <title>Agenda</title>
+        <url>https://ametys.org/agenda</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["NOTIF_MENU"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-calendar"}</picture>
+        <picture-alternative></picture-alternative>
+        <dynamic-info-provider>dynamic.info.dummy</dynamic-info-provider>
+    </link>
+    <link>
+        <title>Annuaire</title>
+        <url>https://ametys.org/annuaire</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["QUICK_ACCESS", "APPS_METIERS"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-card"}</picture>
+        <picture-alternative></picture-alternative>
+    </link>
+    <link>
+        <title>Organigramme</title>
+        <url>https://ametys.org/orga</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["QUICK_ACCESS", "APPS_METIERS"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-card"}</picture>
+        <picture-alternative></picture-alternative>
+    </link>
+    <link>
+        <title>Formulaires</title>
+        <url>https://ametys.org/forms</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["QUICK_ACCESS", "APPS_METIERS"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-card"}</picture>
+        <picture-alternative></picture-alternative>
+    </link>
+    <link>
+        <title>Info managers</title>
+        <url>https://ametys.org/managers</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["QUICK_ACCESS"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-card"}</picture>
+        <picture-alternative></picture-alternative>
+    </link>
+    <link>
+        <title>Menu restaurant</title>
+        <url>https://ametys.org/menu</url>
+        <url-type>URL</url-type>
+        <url-alternative></url-alternative>
+        <content></content>
+        <color>7</color>
+        <themes>["QUICK_ACCESS", "APPS_METIERS"]</themes>
+        <picture>{"type":"glyph", "id":"intraneticon-card"}</picture>
+        <picture-alternative></picture-alternative>
+    </link>
+    <link>
+        <title>Documentation Ametys</title>
+        <url>https://docs.ametys.org</url>
+        <internal-url>https://docs.ametys.org</internal-url>
+        <url-type>URL</url-type>
+        <themes>["APPS_RH", "APPS_METIERS"]</themes>
+    </link>
+    <link>
+        <title>Forge Ametys</title>
+        <url>https://code.ametys.org</url>
+        <url-type>URL</url-type>
+        <status>NEW</status>
+        <themes>["APPS_RH", "MES_FAVORIS"]</themes>
+    </link>
+    <link>
+        <title>Recherche</title>
+        <url>/recherche</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["APPS_RH", "MES_FAVORIS"]</themes>
+    </link>
+    <link>
+        <title>Plan</title>
+        <url>/liens-utiles/plan-du-site</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["APPS_RH", "MES_FAVORIS"]</themes>
+    </link>
+    <link>
+        <title>Je suis nouveau.elle</title>
+        <url>/mon-espace-rh/nouveaux-arrivants</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["HOME"]</themes>
+    </link>
+    <link>
+        <title>Je télétravaille</title>
+        <url>/mon-espace-rh/carriere</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["HOME"]</themes>
+    </link>
+    <link>
+        <title>Je contribue sur l'intranet</title>
+        <url>/boite-a-outils/contribution-sur-l-intranet</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["HOME"]</themes>
+    </link>
+    <link>
+        <title>Je fais une réservation</title>
+        <url>/boite-a-outils/reservations</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["HOME"]</themes>
+    </link>
+    <link>
+        <title>J'ai besoin d'aide</title>
+        <url>/contacts/poser-une-question</url>
+        <url-type>PAGE</url-type>
+        <status>NEW</status>
+        <themes>["HOME"]</themes>
+    </link>
+    <link>
+        <title>Twitter</title>
+        <url>https://twitter.com/AmetysCMS</url>
+        <internal-url></internal-url>
+        <url-type>URL</url-type>
+        <picture>{"type":"glyph", "id":"fab fa-x-twitter"}</picture>
+        <themes>["SOCIAL_NETWORKS"]</themes>
+    </link>
+    <link>
+        <title>Facebook</title>
+        <url>https://www.facebook.com/AmetysCMS</url>
+        <internal-url></internal-url>
+        <url-type>URL</url-type>
+        <picture>{"type":"glyph", "id":"fab fa-facebook-f"}</picture>
+        <themes>["SOCIAL_NETWORKS"]</themes>
+    </link>
+    <link>
+        <title>Youtube</title>
+        <url>https://www.youtube.com/user/AmetysWebCMS</url>
+        <internal-url></internal-url>
+        <url-type>URL</url-type>
+        <picture>{"type":"glyph", "id":"fab fa-square-youtube"}</picture>
+        <themes>["SOCIAL_NETWORKS"]</themes>
+    </link>
+</links>
