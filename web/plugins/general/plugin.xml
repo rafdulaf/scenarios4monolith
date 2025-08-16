@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="https://www.ametys.org/schema/plugin"
+        xmlns:cms="http://www.ametys.org/schema/cms"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.ametys.org/schema/plugin https://www.ametys.org/schema/plugin-2.0.xsd"
+        runtimeVersion="4.8">
+        
+    <config>
+        <param id="companion.base.url" type="string">
+            <label i18n="true">CONFIG_COMPANION_BASE_URL</label>
+            <description i18n="true">CONFIG_COMPANION_BASE_URL_DESC</description>
+            <validation>
+                <mandatory/>
+                <regexp>^https?:\/\/((?!index\.html$).)*[^\/]$</regexp>
+                <invalidText i18n="true">plugin.core:PLUGINS_CORE_REGEXP_INVALID_HTTP_URL_START</invalidText>
+            </validation>
+            <default-value>https://companion.the-overlord.com</default-value>
+            <category i18n="true">CONFIG_CATEGORY_MONOLITH</category>
+            <group i18n="true">CONFIG_GROUP_LINK</group>
+            <order>1</order>
+        </param>
+    </config>
+    
+    <feature name="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO" 
+             deactivates="contentio/org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO"
+             depends="core-impl/runtime.current-user">
+        <components>
+            <component role="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO"
+                       class="fr.rafdulaf.scenarios4monolith.general.SynchronizableContentsCollectionDAO"/>
+            <component class="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionHelper"/>
+        </components>
+    </feature>
+    
+    <feature name="monolith.scenarios.contenttypes">
+         <extensions>
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="person"
+                       config="content-types/person.xml">
+            </extension>
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="forum"
+                       config="content-types/forum.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion-type"
+                       config="content-types/abstract-expansion-type.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion"
+                       config="content-types/abstract-expansion.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-reference-scenario"
+                       config="content-types/abstract-reference-scenario.xml">
+            </extension>
+            
+            <extension point="org.ametys.core.right.RightsExtensionPoint"
+                       id="abstract">
+                <right id="Right_ContentType_Person_Create">
+                    <label i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Forum_Create">
+                    <label i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Expansion_Type_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Expansion_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+            </extension>
+        </extensions>
+    </feature>   
+
+    <feature name="synchro">
+        <config>
+            <param-ref id="companion.base.url"/>
+        </config>
+        <extensions>
+            <extension id="json" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.CompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON</label>
+                <description i18n="true">SCC_JSON_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="mappingField" type="string">
+                        <label i18n="true">SCC_JSON_MAPPINGFIELD</label>
+                        <description i18n="true">SCC_JSON_MAPPINGFIELD_dESC</description>
+                        <default-value>{"title": ["title"], "origins": ["origins"], "identifier": ["id"]}</default-value>
+                        <widget>edition.textarea</widget>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension id="json-maps" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.MapsCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_MAPS</label>
+                <description i18n="true">SCC_JSON_MAPS_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension id="json-heroes" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.HeroesCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_HEROES</label>
+                <description i18n="true">SCC_JSON_HEROES_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension id="json-tiles" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.TilesCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_TILES</label>
+                <description i18n="true">SCC_JSON_TILES_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension id="json-equipments" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.EquipmentsSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_EQUIPMENTS</label>
+                <description i18n="true">SCC_JSON_EQUIPMENTS_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension id="json-spells" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.SpellsCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_SPELLS</label>
+                <description i18n="true">SCC_JSON_SPELLS_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
+            <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
+                       id="reference"
+                       class="fr.rafdulaf.scenarios4monolith.general.operator.ReferenceSynchronizingContentOperator"/>
+            <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
+                       id="reference-and-token"
+                       class="fr.rafdulaf.scenarios4monolith.general.operator.ReferenceAndImageTokenSynchronizingContentOperator"/>
+        </extensions>
+    </feature> 
+    
+</plugin>

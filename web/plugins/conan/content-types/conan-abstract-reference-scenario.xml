@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type abstract="true" extends="abstract-reference-scenario">
+        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_DESC</description>
+        <icons>
+            <glyph>ametysicon-document209</glyph>
+        </icons>
+        
+        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC</description>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
+        
+        <attribute name="board" type="content" contentType="conan-board">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD_DESC</description>
+            <validation>
+               <mandatory />
+            </validation>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
+        
+        <attribute name="game" type="composite">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_DESC</description>
+           
+            <attribute name="heroes" type="content" multiple="true" contentType="conan-hero">
+               <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_HEROES</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_HEROES_DESC</description>
+               
+               <widget>edition.select-referencetable-content</widget>
+            </attribute>
+    
+            <attribute name="tiles" type="content" multiple="true" contentType="conan-tile">
+               <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TILES</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TILES_DESC</description>
+               
+               <widget>edition.select-referencetable-content</widget>
+            </attribute>
+    
+            <attribute name="equipments" type="content" multiple="true" contentType="conan-equipment">
+               <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_EQUIPMENTS</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_EQUIPMENTS_DESC</description>
+               
+               <widget>edition.select-referencetable-content</widget>
+            </attribute>
+    
+            <attribute name="spells" type="content" multiple="true" contentType="conan-spell">
+               <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_SPELLS</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_SPELLS_DESC</description>
+               
+               <widget>edition.select-referencetable-content</widget>
+            </attribute>
+    
+            <attribute name="tokens" type="content" multiple="true" contentType="conan-token">
+               <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TOKENS</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TOKENS_DESC</description>
+               
+               <widget>edition.select-referencetable-content</widget>
+            </attribute>
+        </attribute>
+
+        <view name="main" override="true">
+            <item ref="origins" order-before="archived" />
+            <item ref="board" order-before="archived" />
+            <item ref="game/*" order-before="archived" />
+        </view>
+        
+    </content-type>
+</extension>

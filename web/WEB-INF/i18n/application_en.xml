@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright 2010 Anyware Services
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   -->
+<catalogue xml:lang="en">
+    <message key="APPLICATION_PRODUCT_LABEL">Scenarios for Monolith</message>
+
+    <!--  RIBBON -->
+    <message key="RIBBON_TABS_TAB_HOME_LABEL">Home</message>    
+	<message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_TOOL_LABEL">Tools</message>
+	<message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_ADMIN_TOOL_LABEL">Administration tools</message>
+	<message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_MYPAGE_LABEL">Personal pages</message>
+	
+	<message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_GROUPS_LABEL">Groups</message>
+	<message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_PROFILES_LABEL">Profiles</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_USERS_GROUPS_LABEL">CMS Users</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_FOUSERS_FOGROUPS_LABEL">Site Users</message>
+	<message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_RIGHTS_ASSIGNMENT_CONTEXT_LABEL">Grant privileges</message>
+	
+	<!-- DublinCore enumerator -->
+	<message key="DUBLIN_CORE_PUBLISHER_ACME">ACME Corporation</message>
+	<message key="DUBLIN_CORE_RIGHTS_ACME">Copyright © ACME 2011</message>
+	<message key="DUBLIN_CORE_RIGHTS_FREE">Free of use</message>
+	<message key="DUBLIN_CORE_LANGUAGE_FR">French (fr)</message>
+	<message key="DUBLIN_CORE_LANGUAGE_EN">English (en)</message>
+	<message key="DUBLIN_CORE_LANGUAGE_ES">Spanish (es)</message>
+	<message key="DUBLIN_CORE_LANGUAGE_DE">German (de)</message>
+	
+	<!-- Gadgets Groups -->
+	<message key="GADGETS_GROUP_GAMES">Games and entertainments</message>
+	<message key="GADGETS_GROUP_OFFICE_TOOLS">Office tools</message>
+	<message key="GADGETS_GROUP_NEWS">News</message>
+	
+</catalogue>

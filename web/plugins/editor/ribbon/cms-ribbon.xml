@@ -1,0 +1,20 @@
+<ribbon  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://ametys.org/cms/3.0/ribbon.xsd">
+
+    <exclude>
+        <control>org.ametys.cms.edition.link.InsertMenu</control>
+        <control>org.ametys.cms.edition.toc.Insert</control>
+        <control>org.ametys.cms.edition.symbol.Insert</control>
+        <control>org.ametys.cms.edition.htmlexpert.Insert</control>
+    </exclude>          
+    <tabs>
+        <tab label="plugin.cms:RIBBON_TABS_TAB_CONTENT_EDIT_LABEL" override="true">
+            <groups>
+                <group label="plugin.cms:RIBBON_TABS_TAB_CONTENT_EDIT_GROUPS_GROUP_INSERT_LABEL" override="true" controlsOrder="3.10">
+                    <control id="fr.rafdulaf.scenario.link.menu.InsertScenarioElement"/>
+                </group>
+            </groups>
+        </tab>
+    </tabs>
+    
+</ribbon>

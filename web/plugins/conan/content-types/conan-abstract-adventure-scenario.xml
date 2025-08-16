@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type abstract="true">
+        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DESC</description>
+        <icons>
+            <glyph>ametysicon-document209</glyph>
+        </icons>
+        
+        <attribute name="difficulty" type="long">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY_DESC</description>
+            <validation>
+               <mandatory />
+            </validation>
+            <default-value>1</default-value>
+            <widget-params>
+                <param name="minValue">0</param>
+                <param name="maxValue">3</param>
+            </widget-params>
+        </attribute>
+        
+        <view name="main">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
+
+            <item ref="difficulty" />
+        </view>
+        
+    </content-type>
+</extension>

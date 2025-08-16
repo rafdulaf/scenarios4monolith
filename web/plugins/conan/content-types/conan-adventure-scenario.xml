@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="conan-reference-adventure-scenario">
+        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_NEW</default-title>
+        <icons>
+            <glyph>ametysicon-document209</glyph>
+        </icons>
+
+        <right>Right_ContentType_Conan_Adventure_Scenario_Create</right>
+        
+        <attribute name="introduction" type="rich-text">
+            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION_DESC</description>
+            <validation>
+               <mandatory />
+            </validation>
+            <widget-params>
+                <param name="height">150</param>
+            </widget-params>
+        </attribute>
+
+        <attribute name="objectives" type="composite">
+           <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_DESC</description>
+           
+            <attribute name="heroes" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_HEROES</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_HEROES_DESC</description>
+                <validation>
+                   <mandatory />
+                </validation>
+                <widget-params>
+                    <param name="height">80</param>
+                </widget-params>
+            </attribute>
+            <attribute name="overlord" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_OVERLORD</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_OVERLORD_DESC</description>
+                <validation>
+                   <mandatory />
+                </validation>
+                <widget-params>
+                    <param name="height">80</param>
+                </widget-params>
+            </attribute>
+        </attribute>
+
+        <attribute name="side" type="boolean">
+            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+            <enumeration>
+                <entry>
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_HEROES</label>
+                    <value>true</value>
+                </entry>
+                <entry>
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_OVERLORD</label>
+                    <value>false</value>
+                </entry>
+            </enumeration>
+        </attribute>
+
+        <attribute name="heroes" type="composite">
+           <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_DESC</description>
+           
+            <attribute name="introduction" type="string">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_INTRODUCTION</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_INTRODUCTION_DESC</description>
+            </attribute>
+    
+            <attribute name="strain" type="long">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_STRAIN</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_STRAIN_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+                <default-value>0</default-value>
+            </attribute>
+    
+            <repeater name="configurations" initial-size="1" min-size="1">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_DESC</description>
+                <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_ADD</add-label>
+                <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_REMOVE</del-label>
+                <header-label>{title}</header-label>
+                
+                <attribute name="title" type="string">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_TITLE</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_TITLE_DESC</description>
+                </attribute>
+                <repeater name="heroes" initial-size="1" min-size="1">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_DESC</description>
+                    <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ADD</add-label>
+                    <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_REMOVE</del-label>
+                    <header-label>{name}</header-label>
+                    
+                    <attribute name="alternative" type="boolean">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE_DESC</description>
+                    </attribute>
+                    <attribute name="optional" type="boolean">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL_DESC</description>
+                    </attribute>
+                    <attribute name="sheet" type="content" contentType="conan-hero">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET_DESC</description>
+                        <validation>
+                            <mandatory />
+                        </validation>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="alternatives" type="content" contentType="conan-hero" multiple="true">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES_DESC</description>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="equipments" type="content" contentType="conan-equipment" multiple="true">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS_DESC</description>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS_DESC</description>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <repeater name="allies" initial-size="0" min-size="0">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_REMOVE</del-label>
+                        <header-label>{tile}</header-label>
+                        
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+    
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="flex">2</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="minis" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="flex">1</param>
+                            </widget-params>
+                            <default-value>1</default-value>
+                        </attribute>
+                        <attribute name="minis2" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="flex">1</param>
+                            </widget-params>
+                            <default-value>0</default-value>
+                        </attribute>
+                    </repeater>
+                    <attribute name="text" type="string">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT_DESC</description>
+                    </attribute>
+                </repeater>
+            </repeater>
+        </attribute>
+        
+        <attribute name="overlord" type="composite">
+           <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_DESC</description>
+           
+            <repeater name="configurations" initial-size="1" min-size="1">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_DESC</description>
+                <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_ADD</add-label>
+                <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_REMOVE</del-label>
+                <header-label>{title}</header-label>
+                
+                <attribute name="title" type="string">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_TITLE</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_TITLE_DESC</description>
+                </attribute>
+    
+                <attribute name="gemMax" type="long">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMMAX</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMMAX_DESC</description>
+                    <validation>
+                        <mandatory />
+                    </validation>
+                    <default-value>10</default-value>
+                </attribute>
+                <attribute name="gemStrain" type="long">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMSTRAIN</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMSTRAIN_DEX</description>
+                    <validation>
+                        <mandatory />
+                    </validation>
+                    <default-value>3</default-value>
+                </attribute>
+                <attribute name="gemGain" type="long">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN_DESC</description>
+                    <validation>
+                        <mandatory />
+                    </validation>
+                    <default-value>5</default-value>
+                </attribute>
+            </repeater>
+    
+            <attribute name="introduction" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_INTRODUCTION</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_INTRODUCTION_DESC</description>
+                <widget-params>
+                    <param name="height">80</param>
+                </widget-params>
+            </attribute>
+            
+            <attribute name="events" type="composite">
+               <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_DESC</description>
+               
+                <attribute name="introduction" type="rich-text">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_INTRODUCTION</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_INTRODUCTION_DESC</description>
+                    <widget-params>
+                        <param name="height">80</param>
+                    </widget-params>
+                </attribute>
+                
+                <repeater name="rules" initial-size="0" min-size="0">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_DESC</description>
+                    <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_ADD</add-label>
+                    <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_REMOVE</del-label>
+                    <header-label>[{number}] {title}</header-label>
+                    
+                    <attribute name="title" type="string">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TITLE</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TITLE_DESC</description>
+                        <validation>
+                            <mandatory />
+                        </validation>
+                    </attribute>
+                    <attribute name="number" type="long">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_DESC</description>
+                        <validation>
+                            <mandatory />
+                        </validation>
+                        <enumeration>
+                            <entry>
+                                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_0</label>
+                                <value>0</value>
+                            </entry>
+                            <entry>
+                                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_1</label>
+                                <value>1</value>
+                            </entry>
+                            <entry>
+                                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_2</label>
+                                <value>2</value>
+                            </entry>
+                            <entry>
+                                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_3</label>
+                                <value>3</value>
+                            </entry>
+                        </enumeration>
+                        <default-value>1</default-value>
+                    </attribute>
+                    <attribute name="text" type="rich-text">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT_DESC</description>
+                        <validation>
+                           <mandatory />
+                        </validation>
+                        <widget-params>
+                            <param name="height">80</param>
+                        </widget-params>
+                    </attribute>
+                </repeater>
+            </attribute>
+            
+            <attribute name="river" type="composite">
+               <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC</description>
+               
+                <attribute name="introduction" type="rich-text">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION_DESC</description>
+                    <widget-params>
+                        <param name="height">80</param>
+                    </widget-params>
+                </attribute>
+                
+                <repeater name="tiles" initial-size="8" min-size="8" max-size="8">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_REMOVE</del-label>
+                        <header-label>{tile}</header-label>
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+                        
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="minis" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="width">150</param>
+                            </widget-params>
+                            <default-value>1</default-value>
+                        </attribute>
+                        <attribute name="minis2" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="width">150</param>
+                            </widget-params>
+                            <default-value>0</default-value>
+                        </attribute>
+                        <attribute name="lifePoints" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS_DESC</description>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">130</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="text" type="string">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT_DESC</description>
+                        </attribute>
+                </repeater>
+
+                <repeater name="riverAlternates" initial-size="0" min-size="0">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_REMOVE</del-label>
+                        <header-label>{number} - {tile}</header-label>
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+                        
+                        <attribute name="number" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER_DESC</description>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">130</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="lifePoints" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS_DESC</description>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">130</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="text" type="string">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT_DESC</description>
+                        </attribute>
+                </repeater>
+                
+                <repeater name="riverLater" initial-size="0" min-size="0">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_REMOVE</del-label>
+                        <header-label>{tile}</header-label>
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+                        
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="minis2" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="width">150</param>
+                            </widget-params>
+                            <default-value>0</default-value>
+                        </attribute>
+                        <attribute name="lifePoints" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS_DESC</description>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">130</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="text" type="string">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT_DESC</description>
+                        </attribute>
+                </repeater>
+
+                <attribute name="additional" type="rich-text">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL_DESC</description>
+                    <widget-params>
+                        <param name="height">80</param>
+                    </widget-params>
+                </attribute>
+                
+                <repeater name="heroes" initial-size="0" min-size="0">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_DESC</description>
+                    <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_ADD</add-label>
+                    <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_REMOVE</del-label>
+                    <header-label>{tile}</header-label>
+                    
+                    <attribute name="sheet" type="content" contentType="conan-hero">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET_DESC</description>
+                        <validation>
+                            <mandatory />
+                        </validation>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="text" type="rich-text">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT_DESC</description>
+                        <widget-params>
+                            <param name="height">80</param>
+                        </widget-params>
+                    </attribute>
+                </repeater>
+                
+            </attribute>
+        </attribute>
+
+        <repeater name="rules" initial-size="0" min-size="0">
+            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_DESC</description>
+            <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_ADD</add-label>
+            <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_REMOVE</del-label>
+            <header-label>{title}</header-label>
+            
+            <attribute name="title" type="string">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
+            <attribute name="text" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT</label>
+                <description i18n="true">"CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT_DESC"</description>
+                <validation>
+                    <mandatory />
+                </validation>
+                <widget-params>
+                    <param name="height">80</param>
+                </widget-params>
+            </attribute>
+        </repeater>
+            
+        <view name="main" override="true">
+            <item ref="introduction" order-before="image" group="general"/>
+            <item ref="side" group="general"/>
+            <item ref="objectives/*" group="general"/>
+            
+            <group role="tab" name="heroes" order-after="general">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_HEROES</label>
+                
+                <item ref="heroes/*"/>
+            </group>
+            <group role="tab" name="overlord" order-after="heroes">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_OVERLORD</label>
+                
+                <item ref="overlord/*"/>
+            </group>
+            <group role="tab" name="rules" order-after="overlord">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_RULES</label>
+                
+                <item ref="rules/*"/>
+            </group>
+        </view>
+    </content-type>
+</extension>

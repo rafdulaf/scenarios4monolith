@@ -1,0 +1,16 @@
+/.project
+/.classpath
+/.project
+/.settings
+/migration-helper.json
+/main/
+/development/mode/dev.properties
+/web/WEB-INF/classes
+/web/WEB-INF/data
+/web/WEB-INF/lib
+/web/models/demo
+/web/models/event
+/web/skins/demo
+/web/skins/event
+/web/skins/blog
+        

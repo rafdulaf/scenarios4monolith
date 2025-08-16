@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright 2022 Anyware Services
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   -->
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<workflow>
+    <initial-actions>
+        <action id="0" name="plugin.cms:WORKFLOW_ACTION_CREATE">
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.ResetWorkflowIdFunction</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                            <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentValidationFunctionsExtensionPoint</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                            <arg name="major">false</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+        <action id="1" name="plugin.cms:WORKFLOW_ACTION_CREATE">
+            <restrict-to>
+                <conditions>
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.CreateContentRightCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.CreateReferenceTableContentFunction</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                            <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentValidationFunctionsExtensionPoint</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+        <!-- Création + modification -->
+        <action id="11" name="plugin.cms:WORKFLOW_ACTION_CREATE">
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.CreateContentFunction</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <!-- <unconditional-result old-status=" " status=" " step="9001" /> -->
+                <unconditional-result old-status=" " status=" " step="1" />
+            </results>
+            <post-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                </function>
+            </post-functions>
+        </action>        
+        <action id="111" name="plugin.cms:WORKFLOW_ACTION_CREATE_BY_COPY">
+            <restrict-to>
+                <conditions>
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.CreateContentByCopyRightCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.copy.CreateContentByCopyFunction</arg>
+                    <arg name="nameComputationMode">GENERATED_KEY</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.EditContentFunction</arg>
+                    <arg name="notify">false</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                            <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentValidationFunctionsExtensionPoint</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+    </initial-actions>
+    
+    <!-- +
+         | COMMON ACTIONS
+         + -->
+    <common-actions>
+        <action id="2" name="plugin.cms:WORKFLOW_ACTION_EDIT">
+            <restrict-to>
+                <conditions type="AND">
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.ContentCheckRightsCondition</arg>
+                        <arg name="right">Workflow_Rights_Edition_Online</arg>
+                    </condition>
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.LockCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.EditContentFunction</arg>
+                    <arg name="notify">false</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                            <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentValidationFunctionsExtensionPoint</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+        <action id="22" name="plugin.cms:WORKFLOW_ACTION_EDIT_RELATIONS">
+            <restrict-to>
+                <conditions type="AND">
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.LockCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                            <arg name="major">false</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+        <action id="220" name="plugin.cms:WORKFLOW_ACTION_ADD_CONTENTTYPE">
+            <restrict-to>
+                <conditions type="AND">
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.LockCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                            <arg name="major">false</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+        <action id="222" name="plugin.cms:WORKFLOW_ACTION_EDIT_BY_COPY">
+            <restrict-to>
+                <conditions type="AND">
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.ContentCheckRightsCondition</arg>
+                        <arg name="right">Workflow_Rights_Edition_Online</arg>
+                    </condition>
+                    <condition type="avalon">
+                        <arg name="id">org.ametys.cms.workflow.LockCondition</arg>
+                    </condition>
+                </conditions>
+            </restrict-to>
+            <pre-functions>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.EditContentFunction</arg>
+                    <arg name="notify">false</arg>
+                </function>
+                <function type="avalon">
+                    <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                    <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentEditionFunctionsExtensionPoint</arg>
+                </function>
+            </pre-functions>
+            <results>
+                <result old-status=" " status=" " step="3">
+                    <conditions type="AND">
+                        <condition type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentCondition</arg>
+                        </condition>
+                    </conditions>
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.extensions.ExtensibleFunction</arg>
+                            <arg name="extension-point">org.ametys.cms.workflow.extensions.PostContentValidationFunctionsExtensionPoint</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidateContentFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.ValidationStepFunction</arg>
+                        </function>
+                    </post-functions>
+                </result>
+                <unconditional-result old-status=" " status=" " step="1">
+                    <post-functions>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.SetCurrentStepIdAndNotifyFunction</arg>
+                        </function>
+                        <function type="avalon">
+                            <arg name="id">org.ametys.cms.workflow.CreateVersionFunction</arg>
+                        </function>
+                    </post-functions>
+                </unconditional-result>
+            </results>
+        </action>
+    </common-actions>
+    
+    <steps>
+        <step id="1" name="plugin.cms:WORKFLOW_STATE_DRAFT">
+            <actions>
+                <common-action id="2" />
+                <common-action id="22" />
+                <common-action id="220" />
+                <common-action id="222" />
+            </actions>
+        </step>
+        <step id="3" name="plugin.cms:WORKFLOW_STATE_VALIDATED">
+            <actions>
+                <common-action id="2" />
+                <common-action id="22" />
+                <common-action id="220" />
+                <common-action id="222" />
+            </actions>
+        </step>
+    </steps>
+</workflow>

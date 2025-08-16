@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue xml:lang="fr">
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN ABSTRACT REFERENCE SCENARIO                     * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_LABEL">[Conan/Abstrait] Référence de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_DESC">Permet de référencer un scénario de Conan</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD">Plateau</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD_DESC">Plateau de jeu utilisé par le scénario</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC">Extension d'origine du scénario si officiel</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME">Éléments de jeu</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_DESC">Éléménts de jeu utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_HEROES_DESC">Fiche de héros utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TILES">Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TILES_DESC">Tuiles utilisées dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_EQUIPMENTS">Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_EQUIPMENTS_DESC">Cartes d'équipement utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_SPELLS_DESC">Carte de sorts utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TOKENS">Jetons ou salles</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_GAME_TOKENS_DESC">Jetons ou salles utilisés dans le scénario</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN ABSTRACT ADVENTURE SCENARIO                     * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_LABEL">[Conan/Abstrait] Scénario d'aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DESC">Scénario pour Conan en mode aventure</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY">Difficulté</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY_DESC">Difficulté du scénario</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN REFERENCE ADVENTURE SCENARIO                     * -->
+    <!-- ********************************************************* -->
+    
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_LABEL">[Conan] Ref. Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC">Référence à un scénario de Conan en mode Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW">Nouvelle référence de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT">[Conan] Créer une référence de scénario aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer une référence pour un scénario de Conan en mode aventure</message>
+    
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL">Général</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME">Éléments de jeu</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_WHERE">Où le trouver ?</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_HELP">Aides de jeu</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_PERSONS">Intervenants</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN ADVENTURE SCENARIO                              * -->
+    <!-- ********************************************************* -->
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_LABEL">[Conan] Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_DESC">Scénario de Conan en mode Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_NEW">Nouveau scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CREATE_RIGHT">[Conan] Créer un scénario aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer un scénario de Conan en mode aventure</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_OVERLORD">Overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_RULES">Règles spéciales</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION">Introduction</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION_DESC">Texte d'introduction du scénario</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES">Objectifs</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_DESC">Objectifs des joueurs dans le scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_HEROES_DESC">Objectif des héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_OVERLORD">Overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OBJECTIVES_OVERLORD_DESC">Objectif de l'overlord</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE">Camp qui débute</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_DESC">Nom du camp qui débute la partie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_OVERLORD">Overload</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_DESC">Mise en place des héros</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_INTRODUCTION">Texte introductif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_INTRODUCTION_DESC">Texte introductif de la configuration des héros</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_STRAIN">Fatigue de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_STRAIN_DESC">Nombre de gemmes en zone de fatigue pour les héroes en début de scénario</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS">Configurations de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_DESC">Mise en place pour les héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_ADD">Ajouter une configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_REMOVE">Supprimer une configuration</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_TITLE_DESC">Titre de la configuration à utiliser quand il existe plusieurs configurations de départ</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_DESC">Héroes dans la configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ADD">Ajouter un héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_REMOVE">Supprimer ce héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE">Alternative</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE_DESC">Ce héros est une alternative au héros précédent avec des équipements/sorts/alliés différents</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL">Optionnel</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL_DESC">Quand la configuration permet de choisir plus ou moins de héros, celui-ci est un héros complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET">Héros (choix principal)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET_DESC">Nom du héroes et ses alternatives possibles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES">Héros (choix alternatifs)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES_DESC">Nom des héroes alternatif possibles mais partageant le même équipements/sorts/alliés</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS">Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS_DESC">Équipements de départ du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS_DESC">Sorts de départ du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES">Alliés</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_DESC">Alliés du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_ADD">Ajouter un allié</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_REMOVE">Supprimer un allié</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE_DESC">Tuile de l'allié du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS">Nombre de figurines (départ)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS_DESC">Nombre de figurines associées à la tuile et placées en début de partie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2">Nombre de figurines (réserve)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2_DESC">Nombre de figurines associées à la tuile nécessaire en plus au maximum pendant la partie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT">Texte</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT_DESC">Texte complémentaire pour le héros</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD">Overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_DESC">Mise en place de l'Overlord</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS">Configurations de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_DESC">Mise en place pour les héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_ADD">Ajouter une configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_REMOVE">Supprimer une configuration</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_TITLE_DESC">Titre de la configuration à utiliser quand il existe plusieurs configurations</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMMAX">Gemmes disponibles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMMAX_DESC">Nombre de gemmes en zone de d'énergie disponible pour l'overlord en début de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMSTRAIN">Fatigue de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_STRAIN_DESC">Nombre de gemmes en zone de fatigue pour l'overlord' en début de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN">Récupération</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN_DESC">Nombre de gemmes récupérées par tourde l'overlord (en début de scénario)</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_INTRODUCTION">Texte introductif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_INTRODUCTION_DESC">Texte introductif de la configuration de l'overlord</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS">Événements</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_DESC">Événements du scénario (renfort ou autre)</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_INTRODUCTION">Introduction</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_INTRODUCTION_DESC">Texte d'introduction des événements pour spécifier par exemple si tous les événéments sont à faire ou un seul</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES">Règles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_DESC">Règles des événements</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_ADD">Ajouter une règle</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_REMOVE">Supprimer une règle</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TITLE_DESC">Titre de l'événement</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER">Numéro de carte renfort</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_DESC">Lorsque plusieurs cartes renforts sont présentes, identifiez le numéro de la carte reliée à cet événement</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_0">Toutes les cartes de renfort</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_1">Carte renfort 1</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_2">Carte renfort 2</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_3">Carte renfort 3</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT">Textes</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT_DESC">Texte de la règle de l'événement</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER">Rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC">Description de la rivière de départ</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION">Texte d'introduction</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION_DESC">Texte introductif à la partie rivière</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES">Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC">Tuiles composant la rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD">Ajouter une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_REMOVE">Supprimer une tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS">Nombre (départ)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS_DESC">Nombre de figurines nécessaires lors de la mise en place</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2">Nombre (réserve)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2_DESC">Nombre de figurines maximal nécessaires en réserve en plus</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS_DESC">Sorts de l'unité si applicable</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT_DESC">Texte additionnel pour la tuile</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES">Tuiles alternatives</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_DESC">Proposition de tuiles alternatives pour la rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_ADD">Ajouter une alternative</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_REMOVE">Supprimer une alternative</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER">Numéro</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER_DESC">Numéro de la rivière pour laquelle proposer une alternative</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS_DESC">Sorts de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT_DESC">Texte additionnel pour la tuile</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER">Tuiles complémentaires (mise en jeu plus tard)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_DESC">Tuiles pouvant être ajoutées à la rivière dans le scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_ADD">Ajouter une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_REMOVE">Supprimer une tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2">Nombre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2_DESC">Nombre de figurines maximal nécessaires</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS_DESC">Sorts de l'unité si applicable</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT_DESC">Texte additionnel pour la tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL">Texte additionnel</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL_DESC">Texte additionnel de la partie rivière</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES">Héros de l'overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_DESC">Fiches de héros gérés par l'overlord (ou un joueur complémentaire)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_ADD">Ajouter un héros de l'overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_REMOVE">Supprimer un héros de l'overlord</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET_DESC">Fiche de héros</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT">Texte explicatif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT_DESC">Texte explicatif quand à l'utilisation de ce héros par l'overlord</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES">Règles spéciales</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_DESC">Règles spéciales du scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_ADD">Ajouter une règle spéciale</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_REMOVE">Supprimer une règle spéciale</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE_DESC">Titre de la règle spéciale</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT">Texte</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT_DESC">Texte de la règle spéciale</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN EXPANSION TYPE                                  * -->
+    <!-- ********************************************************* -->
+    
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_LABEL">[Conan] Type d'extensions</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_DESC">Type d'extension pour le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_NEW">Nouveau type d'extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT">[Conan] Créer un type d'extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC">Droit de créer un type d'extension de jeu Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN EXPANSION                                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_LABEL">[Conan] Extensions</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_DESC">Extension pour le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_NEW">Nouvelle extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_CREATE_RIGHT">[Conan] Créer une extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC">Droit de créer une extension de jeu Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN BOARDS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_BOARD_LABEL">[Conan] Plateaux</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_DESC">Plateaux de jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_NEW">Nouveau plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT">[Conan] Créer un plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC">Droit de créer un nouveau plateau de jeu Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_BOARD_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_NAME_DESC">Nom du plateau</message>
+    
+    <message key="CONTENT_TYPES_CONAN_BOARD_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ID_DESC">Identifiant du Compagnon de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_BOARD_SCC_ID">Identifiant unique</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
+    
+    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC">Extension d'origine du plateau</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN ABSTRACT SCENARIO ELEMENT                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_LABEL">[Conan/Abstrait] Élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_DESC">Type parent des éléments que l'ont peut retrouver référence dans un texte de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME_DESC">Nom de l'élément</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE">Image</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE_DESC">Image représentant l'élément</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2">Image 2</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2_DESC">Image 2 représentant l'élément</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID_DESC">Identifiant dans le Compagnon de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID">Identifiant unique</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS_DESC">Extension d'origine de l'élément'</message>
+    
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN SCENARIO ELEMENT                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_LABEL">[Conan] Autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_DESC">TAutres élément que l'ont peut retrouver référence dans un texte de scénario (dés...)</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_NEW">Nouvel autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT">[Conan] Créer un autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT_DESC">Droit de créer un nouvel autre élément de scénario pour Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN HEROES                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_HERO_LABEL">[Conan] Héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_DESC">Fiche de héros dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_NEW">Nouveau héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT">[Conan] Créer un héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT_DESC">Droit de créer un nouveau héros pour Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN TILES                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_TILE_LABEL">[Conan] Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_DESC">Tuiles de l'overlord dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_NEW">Nouvelle tuile</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT">[Conan] Créer une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT_DESC">Droit de créer une nouvelle tuile pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_TILE_COLOR">Couleur</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_COLOR_DESC">Couleur de la tuile</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN EQUIPMENTS                                      * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_LABEL">[Conan] Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_DESC">Carte d'équipement dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NEW">Nouvel équipement</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT">[Conan] Créer un équipement</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT_DESC">Droit de créer une nouvel équipement pour Conan dans la table de référence</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN SPELLS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_SPELL_LABEL">[Conan] Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_DESC">Carte de sort dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_NEW">Nouveau sort</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT">[Conan] Créer un sort</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT_DESC">Droit de créer un nouveau sort pour Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN TOKENS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_TOKEN_LABEL">[Conan] Jetons ou salles</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_DESC">Jeton ou salles dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_NEW">Nouveau jeton ou salle</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT">[Conan] Créer un jeton/salle</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT_DESC">Droit de créer un nouveau jeton ou salle pour Conan dans la table de référence</message>
+
+</catalogue>

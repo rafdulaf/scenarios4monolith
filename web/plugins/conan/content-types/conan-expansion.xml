@@ -1,0 +1,24 @@
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="abstract-expansion">
+        <label i18n="true">CONTENT_TYPES_CONAN_EXPANSION_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_EXPANSION_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_EXPANSION_NEW</default-title>
+        
+        <icons>
+            <glyph>ametysicon-puzzle-piece1</glyph>
+        </icons>
+
+        <right>Right_ContentType_Conan_Expansion_Create</right>
+        
+        <attribute name="type" type="content" contentType="conan-expansion-type">
+            <label i18n="true">plugin.general:CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE</label>
+            <description i18n="true">plugin.general:CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
+        
+    </content-type>
+</extension>
+        

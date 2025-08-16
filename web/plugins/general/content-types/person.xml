@@ -1,0 +1,53 @@
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="org.ametys.cms.ArchivedContent">
+        <label i18n="true">CONTENT_TYPES_PERSON_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_PERSON_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_PERSON_NEW</default-title>
+        
+        <right>Right_ContentType_Person_Create</right>
+
+        <icons>
+            <glyph>ametysicon-body-people</glyph>
+        </icons>
+        
+        <tags>
+            <tag>reference-table</tag>
+            <tag>global</tag>
+        </tags>
+        
+        <attribute name="title" type="string">
+            <label i18n="true">CONTENT_TYPES_PERSON_NAME</label>
+            <description i18n="true">CONTENT_TYPES_PERSON_NAME_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+
+        <attribute name="link" type="string">
+            <label i18n="true">CONTENT_TYPES_PERSON_LINK</label>
+            <description i18n="true">CONTENT_TYPES_PERSON_LINK_DESC</description>
+            <validation>
+                <regexp>^https?:\/\/[^\s?;#]+(?&lt;!\/)$</regexp>
+                <invalidText i18n="true">plugin.core:PLUGINS_CORE_REGEXP_INVALID_HTTP_URL</invalidText>
+            </validation>
+        </attribute>
+        
+        <view name="main" override="true">
+            <item ref="title" order-before="archived" />
+            <item ref="link" order-before="archived" />
+        </view>
+        
+        <view name="default-edition" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="details" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="index" override="true">
+            <item ref="title" order-before="archived" />
+        </view>        
+    </content-type>
+</extension>
+        

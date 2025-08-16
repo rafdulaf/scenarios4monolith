@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type abstract="true">
+        <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_DESC</description>
+        <icons>
+            <glyph>ametysicon-document209</glyph>
+        </icons>
+        
+        <attribute name="title" type="string">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+        
+        <attribute name="image" type="file">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+            <widget-params>
+                <param name="filter">image</param>
+                <param name="allowSources">external</param>
+            </widget-params>
+        </attribute>
+        
+        <attribute name="version" type="composite">
+           <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION</label>
+           <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_DESC</description>
+           
+           <attribute name="major" type="long">
+               <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR</label>
+               <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR_DESC</description>
+                <validation>
+                    <mandatory/>
+                </validation>
+                <default-value>1</default-value>
+           </attribute>
+           <attribute name="minor" type="long">
+               <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR</label>
+               <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR_DESC</description>
+                <validation>
+                    <mandatory/>
+                </validation>
+                <default-value>0</default-value>
+           </attribute>
+        </attribute>
+        
+        <attribute name="persons" type="composite">
+           <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS</label>
+           <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_DESC</description>
+           
+            <attribute name="authors" type="content" contentType="person" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS_DESC</description>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+            
+            <attribute name="readers" type="content" contentType="person" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS_DESC</description>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+            
+            <attribute name="testers" type="content" contentType="person" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS_DESC</description>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+            
+            <attribute name="fixers" type="content" contentType="person" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC</description>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+            
+            <attribute name="translaters" type="content" contentType="person" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC</description>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+        </attribute>
+        
+        <attribute name="humans" type="long" multiple="true">
+           <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS</label>
+           <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS_DESC</description>
+           
+            <validation>
+                <mandatory/>
+            </validation>
+            <default-value>2</default-value>
+            <widget-params>
+                <param name="minValue">2</param>
+                <param name="maxValue">6</param>
+            </widget-params>
+        </attribute>
+        
+        
+        <repeater name="location" initial-size="0" min-size="0">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC</description>
+            <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD</add-label>
+            <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_REMOVE</del-label>
+            <header-label>{type} - {value} p{page}</header-label>
+            
+            <attribute name="type" type="string" multiple="true">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+                <enumeration>
+                    <entry>
+                        <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_BOOK</label>
+                        <value>book</value>
+                    </entry>
+                    <entry>
+                        <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_PDF</label>
+                        <value>pdf</value>
+                    </entry>
+                    <entry>
+                        <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_URL</label>
+                        <value>url</value>
+                    </entry>
+                </enumeration>
+            </attribute>
+
+            <attribute name="value" type="string">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
+
+            <attribute name="page" type="long">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE_DESC</description>
+            </attribute>
+        </repeater>
+        
+
+        <repeater name="forum" initial-size="0" min-size="0">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_DESC</description>
+            <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_ADD</add-label>
+            <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_REMOVE</del-label>
+            <header-label>{name}</header-label>
+            
+            <attribute name="name" type="content" contentType="forum">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+                <widget>edition.select-referencetable-content</widget>
+            </attribute>
+            <attribute name="url" type="string">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_URL</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_URL_DESC</description>
+                <validation>
+                    <mandatory />
+                    <regexp>^https?:\/\/[^\s?;#]+(?&lt;!\/)$</regexp>
+                    <invalidText i18n="true">plugin.core:PLUGINS_CORE_REGEXP_INVALID_HTTP_URL</invalidText>
+                </validation>
+            </attribute>
+        </repeater>
+        
+        <repeater name="faqs" initial-size="0" min-size="0">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_DESC</description>
+            <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ADD</add-label>
+            <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_REMOVE</del-label>
+            <header-label>{question}</header-label>
+            
+            <attribute name="question" type="string">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
+            <attribute name="answer" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
+        </repeater>
+        
+        <!-- Full view -->
+        <view name="main">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
+            
+            <item ref="title" />
+            <item ref="image" />
+            <item ref="version/*" />
+            <item ref="humans" />
+            <item ref="persons/*" />
+            <item ref="location/*" />
+            <item ref="forum/*" />
+            <item ref="faqs/*" />
+        </view>
+    
+        <!-- Abstract view -->
+        <view name="abstract">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_ABSTRACT</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_ABSTRACT_DESC</description>
+            
+            <item ref="title" />
+        </view>
+        
+        <!-- Link view -->
+        <view name="link">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_LINK</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_LINK_DESC</description>
+            
+            <item ref="title" />
+        </view>
+    
+        <!-- Property view -->
+        <view name="details" internal="true">
+            <item ref="title" />
+        </view>
+        
+    </content-type>
+</extension>

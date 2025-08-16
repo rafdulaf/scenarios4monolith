@@ -1,0 +1,40 @@
+<sitemap>
+    <page template="index" name="index" title="Accueil"/>
+    <page template="page" title="Mon organisation" tags="SECTION">
+            <page template="page" title="L'institution"/>
+            <page template="page" title="Annuaire"/>
+            <page template="page" title="Organigramme"/>
+            <page template="page" title="Actualités"/>
+    </page>
+    <page template="page" name="mon-espace-rh" title="Mon espace RH" tags="SECTION">
+            <page template="page" name="nouveaux-arrivants" title="Nouveaux arrivants"/>
+            <page template="page" name="carriere" title="Carrière"/>
+            <page template="page" title="Rémunération"/>
+            <page template="page" title="Absences et congés"/>
+            <page template="page" title="Formation et concours"/>
+            <page template="page" title="Emploi et mobilité"/>
+            <page template="page" title="Espace managers"/>
+    </page>
+    <page template="page" name="ressources" title="Ressources" tags="SECTION"/>
+    <page template="page" name="boite-a-outils" title="Boîte à outils" tags="SECTION">
+        <page template="page" name="contribution-sur-l-intranet" title="Contribuer sur l'intranet directement en ligne"/>
+        <page template="page" name="reservations" title="Faire une réservation"/>
+    </page>
+    <page template="page" name="contacts" title="Contacts" tags="FOOTER_LINKS_CONTACTS">
+    	<page template="page" name="poser-une-question" title="Poser une question"/>
+    </page>
+    <page template="page" name="liens-utiles" title="Liens utiles" tags="FOOTER_LINKS_OTHERS">
+    	<page template="page" title="Mentions légales"/>
+    	<page template="page" name="plan-du-site" title="Plan du site"/>
+    	<page template="page" title="Conditions générales d'utilisation"/>
+    </page>
+    <page template="page" title="Découvrir Ametys" tags="FOOTER_LINKS_HIGHLIGHT"/>
+    <page template="page" name="recherche" title="Recherche" tags="SEARCH"/>
+    <page template="page" title="Publier une annonce" tags="PUBLISH_ADS"/>
+    <page template="page" title="Tous les documents" tags="ALL_DOCUMENTS"/>
+    <page template="page" title="Inscription" tags="USER_SIGNUP"/>
+    <page template="page" title="Modifier mon mot de passe" tags="USER_PASSWORD_CHANGE"/>
+    <page template="page" title="Toutes les infos flash" tags="ALL_FLASH_INFO"/>
+    <page template="page" title="Glossaire" tags="GLOSSARY"/>
+    <page template="page" title="RGPD" tags="GDPR_PAGE"/>
+</sitemap>

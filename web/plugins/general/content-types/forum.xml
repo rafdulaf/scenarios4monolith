@@ -1,0 +1,55 @@
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="org.ametys.cms.ArchivedContent">
+        <label i18n="true">CONTENT_TYPES_FORUM_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_FORUM_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_FORUM_NEW</default-title>
+        
+        <right>Right_ContentType_Forum_Create</right>
+
+        <icons>
+            <glyph>ametysicon-comments1</glyph>
+        </icons>
+        
+        <tags>
+            <tag>reference-table</tag>
+            <tag>global</tag>
+        </tags>
+        
+        <attribute name="title" type="string">
+            <label i18n="true">CONTENT_TYPES_FORUM_NAME</label>
+            <description i18n="true">CONTENT_TYPES_FORUM_NAME_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+
+        <attribute name="url" type="string">
+            <label i18n="true">CONTENT_TYPES_FORUM_URL</label>
+            <description i18n="true">CONTENT_TYPES_FORUM_URL_DESC</description>
+            <validation>
+                <mandatory />
+                <regexp>^https?:\/\/[^\s?;#]+(?&lt;!\/)$</regexp>
+                <invalidText i18n="true">plugin.core:PLUGINS_CORE_REGEXP_INVALID_HTTP_URL</invalidText>
+            </validation>
+        </attribute>
+        
+        <view name="main" override="true">
+            <item ref="title" order-before="archived" />
+            <item ref="url" order-before="archived" />
+        </view>
+        
+        <view name="default-edition" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="details" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="index" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+    </content-type>
+</extension>
+        

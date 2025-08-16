@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue xml:lang="fr">
+
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_LABEL">Élément de scénario</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_ERROR_TITLE">Impossible de récupérer le titre</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_ERROR_DESCRIPTION">Impossible de récupérer la description</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_DESCRIPTION">Élément de scénarion : </message>
+
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_LABEL">Insérer un élément de scénario</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_DESCRIPTION">Inséréer une référence à un élement de scénario comme un héros, une tuile, un équipement, un sort...</message>
+
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_SELECT_CONTENT">Séléctionnez un élément de scénario</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_HINT">Choissiez comment insérer cet élément :</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT">Texte</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_NO">Pas d'image</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_BIG">Grande</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_MEDIUM">Moyenne</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_SMALL">Petite</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_BIG">Grande</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_MEDIUM">Moyenne</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_SMALL">Petite</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_OK">Ok</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_CANCEL">Annuler</message>
+    
+</catalogue>

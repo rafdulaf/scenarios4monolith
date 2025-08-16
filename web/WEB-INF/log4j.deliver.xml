@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+   Copyright 2010 Anyware Services
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   --><log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender class="org.apache.log4j.rolling.RollingFileAppender" name="servlet">
+        <param name="Encoding" value="UTF-8"/>
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+          <param name="FileNamePattern" value="${ametys.home.dir}/logs/ametys-cms-%d.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %-5p [%c] (%t;%X{requestURI}) %m%n"/> 
+        </layout>
+        <filter class="org.ametys.core.util.AmetysExceptionFilter"/>
+    </appender>
+    
+    <appender class="org.apache.log4j.rolling.RollingFileAppender" name="migration">
+        <param name="Encoding" value="UTF-8"/>
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+          <param name="FileNamePattern" value="${ametys.home.dir}/logs/migration-%d.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %-5p [%c] (%t;%X{requestURI}) %m%n"/> 
+        </layout>
+        <filter class="org.ametys.core.util.AmetysExceptionFilter"/>
+    </appender>
+    
+    <appender class="org.apache.log4j.rolling.RollingFileAppender" name="start-actions">
+        <param name="Encoding" value="UTF-8"/>
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+          <param name="FileNamePattern" value="${ametys.home.dir}/logs/start-actions-%d.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %-5p [%c] (%t;%X{requestURI}) %m%n"/> 
+        </layout>
+        <filter class="org.ametys.core.util.AmetysExceptionFilter"/>
+    </appender>
+
+    <!-- Specific appender to forensic events -->
+    <appender class="org.apache.log4j.rolling.RollingFileAppender" name="forensic">
+        <param name="Encoding" value="UTF-8"/>
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+            <param name="FileNamePattern" value="${ametys.home.dir}/logs/forensic-%d{yyyy-MM}.log.gz"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout"> 
+           <param name="ConversionPattern" value="%d %-5p [%c] (%t;%X{requestURI}) %m%n"/>
+        </layout>
+        <filter class="org.ametys.core.util.AmetysExceptionFilter"/>
+    </appender>
+                        
+    <category name="org.ametys.core.trace.ForensicLogger" additivity="false">
+        <priority value="info"/>
+        <appender-ref ref="forensic"/>
+    </category>
+    
+    <!-- Specific appender to forensic events -->
+    <!-- <appender name="forensic" class="org.apache.log4j.rolling.RollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+          <param name="FileNamePattern" value="${ametys.home.dir}/logs/forensic-%d.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %-5p [%c] (%t;%X{requestURI}) %m%n"/> 
+        </layout>
+        <filter class="org.ametys.core.util.AmetysExceptionFilter"/>
+    </appender> -->
+
+    <!-- Category to uncomment to trace events (and its associated appender) -->
+    <!-- <category name="org.ametys.core.trace.ForensicLogger" additivity="false">
+        <priority value="info"/>
+        <appender-ref ref="forensic"/>
+    </category> -->
+    
+    <category additivity="false" name="org.ametys.core.migration">
+        <priority value="info"/>
+        <appender-ref ref="migration"/>
+    </category>
+    
+    <category additivity="false" name="org.ametys.plugins.deploystarter.Init">
+        <priority value="info"/>
+        <appender-ref ref="start-actions"/>
+    </category>
+    
+    <root>
+        <priority value="error"/>
+        <appender-ref ref="servlet"/>
+    </root>
+</log4j:configuration>

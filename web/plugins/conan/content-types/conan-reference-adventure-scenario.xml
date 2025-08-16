@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="conan-abstract-adventure-scenario, conan-abstract-reference-scenario">
+        <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW</default-title>
+        <icons>
+            <glyph>ametysicon-arrow-down-in-box</glyph>
+        </icons>
+
+        <right>Right_ContentType_Conan_Reference_Adventure_Scenario_Create</right>
+        
+        <view name="main">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
+
+            <group role="tab" name="general">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL</label>
+                
+                <item ref="title"/>
+                <item ref="version/*"/>
+                
+                <item ref="difficulty"/>
+                <item ref="humans" />
+                <item ref="board"/>
+                <item ref="image"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME</label>
+                
+                <item ref="game/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_WHERE</label>
+
+                <item ref="origins"/>
+                <item ref="location/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_HELP</label>
+                
+                <item ref="forum/*"/>
+                <item ref="faqs/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_PERSONS</label>
+                
+                <item ref="persons/*"/>
+            </group>
+        </view>
+        
+    </content-type>
+</extension>

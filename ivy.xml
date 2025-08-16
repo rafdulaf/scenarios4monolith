@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><ivy-module version="2.0">
+    <info organisation="${project.ivy.org}" module="${project.ivy.module}" branch="${project.branch}"/>
+    <configurations>
+    <conf name="runtime" extends="web_runtime" visibility="private"/>
+    <conf name="compile" extends="web_compile" visibility="private"/>
+    <conf name="web_runtime" extends="web_runtime_dependencies" visibility="private"/>
+    <conf name="web_runtime_dependencies" visibility="private"/>
+    <conf name="web_compile" extends="web_compile_dependencies" visibility="private"/>
+    <conf name="web_compile_dependencies" visibility="private"/>
+  </configurations>
+    <dependencies>
+        <dependency org="org.ametys" name="cms" branch="4.9.x" rev="4.9.1" conf="web_compile_dependencies->compile_dependencies;web_runtime_dependencies->runtime_dependencies;web_compile,web_runtime->runtime"/>
+        <dependency org="org.ametys.plugins" name="contenttypes-editor" branch="1.17.x" rev="1.17.0" conf="web_compile_dependencies->compile_dependencies,runtime-except-ametys-dependencies;web_runtime_dependencies->runtime-except-ametys-dependencies;web_compile,web_runtime->runtime"/>
+        <dependency org="org.ametys.plugins" name="datasources-explorer" branch="1.14.x" rev="1.14.0" conf="web_compile_dependencies->compile_dependencies,runtime-except-ametys-dependencies;web_runtime_dependencies->runtime-except-ametys-dependencies;web_compile,web_runtime->runtime"/>
+        <dependency org="org.ametys.plugins" name="content-io" branch="3.19.x" rev="3.19.0" conf="web_compile_dependencies->compile_dependencies,runtime-except-ametys-dependencies;web_runtime_dependencies->runtime-except-ametys-dependencies;web_compile,web_runtime->runtime"/>
+    </dependencies>
+</ivy-module>

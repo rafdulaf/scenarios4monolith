@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright 2010 Anyware Services
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   -->
+<catalogue xml:lang="fr">
+    <message key="APPLICATION_PRODUCT_LABEL">Scénartios pour Monolith</message>
+
+    <!--  Ribbon -->
+    <message key="RIBBON_TABS_TAB_HOME_LABEL">Accueil</message>    
+    <message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_TOOL_LABEL">Outils</message>
+    <message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_ADMIN_TOOL_LABEL">Outils administratifs</message>
+    <message key="RIBBON_TABS_TAB_HOME_GROUPS_GROUP_MYPAGE_LABEL">Pages perso</message>
+    
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_GROUPS_LABEL">Groupes</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_PROFILES_LABEL">Profils</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_USERS_GROUPS_LABEL">Utilisateurs du CMS</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_FOUSERS_FOGROUPS_LABEL">Utilisateurs du site</message>
+    <message key="RIBBON_TABS_TAB_RIGHTS_HANDLE_RIGHTS_ASSIGNMENT_CONTEXT_LABEL">Assignation des profils</message>
+    
+    <!-- DublinCore enumerator -->
+    <message key="DUBLIN_CORE_PUBLISHER_ACME">ACME</message>
+    <message key="DUBLIN_CORE_RIGHTS_ACME">Copyright © ACME 2011</message>
+    <message key="DUBLIN_CORE_RIGHTS_FREE">Libre de droits</message>
+    <message key="DUBLIN_CORE_LANGUAGE_FR">Français (fr)</message>
+    <message key="DUBLIN_CORE_LANGUAGE_EN">Anglais (en)</message>
+    <message key="DUBLIN_CORE_LANGUAGE_ES">Espagnol (es)</message>
+    <message key="DUBLIN_CORE_LANGUAGE_DE">Allemand (de)</message>
+    
+    <!-- Gadgets Groups -->
+    <message key="GADGETS_GROUP_GAMES">Jeux et divertissement</message>
+    <message key="GADGETS_GROUP_OFFICE_TOOLS">Outils bureautiques</message>
+    <message key="GADGETS_GROUP_NEWS">Actualités</message>
+    
+    <!-- login.xsl -->
+    <message key="LOGIN_SCREEN_INTRO_AMETYS_TITLE">Essayez Ametys</message>
+    <message key="LOGIN_SCREEN_INTRO_AMETYS_DESCRIPTION"></message>
+    <message key="LOGIN_SCREEN_INTRO_AMETYS_AVAILABLE_IDENTIFIERS">Les identifiants suivants sont disponibles :</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_TITLE">Rejoignez la communauté Ametys</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_DESCRIPTION">Les ressources suivantes vous permettront de trouver la documentation et le support dont vous pourriez avoir besoin.</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_WEBSITE">Site web www.ametys.org</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_DOC">Documentation Ametys</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_FORUM">Forum de la communauté</message>
+    <message key="LOGIN_SCREEN_INTRO_RESOURCES_ISSUES">Signalisation de bugs et demandes d'évolutions</message>
+    <message key="LOGIN_SCREEN_INTRO_NETWORKS_TITLE">Suivez-nous sur les réseaux :</message>
+    <message key="LOGIN_SCREEN_INTRO_NETWORKS_FACEBOOK">Suivez-nous sur Facebook</message>
+    <message key="LOGIN_SCREEN_INTRO_NETWORKS_TWITTER">Suivez-nous sur Twitter</message>
+</catalogue>

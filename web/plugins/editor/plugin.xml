@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="https://www.ametys.org/schema/plugin"
+        xmlns:cms="http://www.ametys.org/schema/cms"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.ametys.org/schema/plugin https://www.ametys.org/schema/plugin-2.0.xsd"
+        runtimeVersion="4.8">
+    
+    <feature name="editor">
+        <extensions>
+            <extension  id="fr.rafdulaf.scenario.link.menu.InsertScenarioElement"
+                        point="org.ametys.core.ui.RibbonControlsManager"
+                        class="org.ametys.core.ui.StaticClientSideElement">
+                <class name="Ametys.cms.editor.EditorButtonController">
+                    <action>Ametys.plugins.cms.editor.Links.insertScenarioElementLink</action>
+                    <initialize>Ametys.plugins.cms.editor.Links.initializeScenarioElementLinks</initialize>
+                    <selection-node-type>!a</selection-node-type>
+                    
+                    <label i18n="true">EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_LABEL</label>
+                    <description i18n="true">EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_DESCIPTION</description>
+                    
+                    <icon-glyph>ametysicon-abecedary4</icon-glyph>
+                    <base config="true">companion.base.url</base>
+                </class> 
+                <scripts>
+                    <file plugin="cms">js/Ametys/plugins/cms/editor/Links.js</file>
+                    <file plugin="cms">js/Ametys/plugins/cms/editor/Links/LinkHandler.js</file>
+                    <file>js/Ametys/scenario/Links/ScenarioElementLinkHandler.js</file>
+                    <file>js/Ametys/scenario/Links.js</file>
+                    <file>js/Ametys/scenario/ChooseScenarioElement.js</file>
+                </scripts>
+                <css>
+                    <file>css/ChooseScenarioElement.css</file>
+                </css>
+            </extension>
+            
+            <extension id="fr.rafdulaf.scenario.Editor"
+                           point="org.ametys.core.ui.RibbonImportManager"
+                           class="org.ametys.core.ui.StaticRibbonImportManager">
+                <workspace match="cms|web">
+                    <file>ribbon/cms-ribbon.xml</file>
+                </workspace>
+           </extension>            
+        </extensions>
+    </feature>
+        
+</plugin>
