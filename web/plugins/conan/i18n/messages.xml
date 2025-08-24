@@ -5,7 +5,7 @@
     <!-- * ABSTRACT REFERENCE SCENARIO                           * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO">[Abstrait] Référence de scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LABEL">[Abstrait] Référence de scénario</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_DESC">Permet de référencer un scénario</message>
     
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE">Titre</message>
@@ -82,10 +82,32 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_FAQ_ANSWER_DESC">Réponse à la question</message>
 
     <!-- ********************************************************* -->
+    <!-- * ABSTRACT EXPANSION TYPE                               * -->
+    <!-- ********************************************************* -->
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_LABEL">[Abstrait] Type d'extensions</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_DESC">Liste les types d'extensions du jeu</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME">Titre</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME_DESC">Titre du type d''extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * ABSTRACT EXPANSION                                    * -->
+    <!-- ********************************************************* -->
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_LABEL">[Abstrait] Extensions</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_DESC">Liste les extensions du jeu</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME">Titre</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME_DESC">Titre de l'extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type de l'extension</message>
+
+    <!-- ********************************************************* -->
     <!-- * PERSON                                                * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_PERSON">Personne</message>
+    <message key="CONTENT_TYPES_PERSON_LABEL">Personne</message>
     <message key="CONTENT_TYPES_PERSON_DESC">Personne intervenant dans un scénario</message>
     <message key="CONTENT_TYPES_PERSON_NEW">Nouvelle personne</message>
     <message key="CONTENT_TYPES_PERSON_CREATE_RIGHT">Créer une personne</message>
@@ -101,7 +123,7 @@
     <!-- * FORUM                                                 * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_FORUM">Forum lié</message>
+    <message key="CONTENT_TYPES_FORUM_LABEL">Forum lié</message>
     <message key="CONTENT_TYPES_FORUM_DESC">Forum vers lequel seront fait des liens</message>
     <message key="CONTENT_TYPES_FORUM_NEW">Nouveau forum</message>
     <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT">Créer un forum lié</message>
@@ -117,7 +139,7 @@
     <!-- * CONAN ABSTRACT REFERENCE SCENARIO                     * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO">[Conan/Abstrait] Référence de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_LABEL">[Conan/Abstrait] Référence de scénario</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_DESC">Permet de référencer un scénario de Conan</message>
     
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD">Plateau</message>
@@ -127,7 +149,7 @@
     <!-- * CONAN ABSTRACT ADVENTURE SCENARIO                     * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO">[Conan/Abstrait] Scénario d'aventure</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_LABEL">[Conan/Abstrait] Scénario d'aventure</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DESC">Scénario pour Conan en mode aventure</message>
     
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DIFFICULTY">Difficulté</message>
@@ -137,31 +159,52 @@
     <!-- * CONAN REFERENCE ADVENTURE SCENARIO                     * -->
     <!-- ********************************************************* -->
     
-    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO">[Conan] Aventure (référence)</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_LABEL">[Conan] Aventure (référence)</message>
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC">Référence à un scénario de Conan en mode Aventure</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW">Nouvelle référence de scénario</message>
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT">[Conan] Créer une référence de scénario aventure</message>
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer une référence pour un scénario de Conan en mode aventure</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN EXPANSION TYPE                                  * -->
+    <!-- ********************************************************* -->
+    
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_LABEL">[Conan] Type d'extensions</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_DESC">Type d'extension pour le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_TYPE_NEW">Nouveau type d'extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT">[Conan] Créer un type d'extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC">Droit de créer un type d'extension de jeu Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONAN EXPANSION                                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_LABEL">[Conan] Extensions</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_DESC">Extension pour le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EXPANSION_NEW">Nouvelle extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_CREATE_RIGHT">[Conan] Créer une extension</message>
+    <message key="CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC">Droit de créer une extension de jeu Conan dans la table de référence</message>
 
     <!-- ********************************************************* -->
     <!-- * CONAN BOARDS                                          * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_CONAN_BOARDS">[Conan] Plateaux</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_DESC">Plateaux de jeu Conan</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_NEW">Nouveau plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_LABEL">[Conan] Plateaux</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_DESC">Plateaux de jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_NEW">Nouveau plateau</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT">[Conan] Créer un plateau</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC">Droit de créer un nouveau plateau de jeu Conan dans la table de référence</message>
 
-    <message key="CONTENT_TYPES_CONAN_BOARDS_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_NAME_DESC">Nom du plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_NAME_DESC">Nom du plateau</message>
     
-    <message key="CONTENT_TYPES_CONAN_BOARDS_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
     
-    <message key="CONTENT_TYPES_CONAN_BOARDS_IMAGE">Image</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_IMAGE_DESC">Image du plateau</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS">Originie</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC">Extension d'origine du plateau</message>
     
-    <message key="CONTENT_TYPES_CONAN_BOARDS_COMPOSITION">Composition</message>
-    <message key="CONTENT_TYPES_CONAN_BOARDS_COMPOSITION_DESC">Liste des plateaux nécessaire si le plateau est en fait un assemblage d'autres plateaux simples (non composés eux-mêmes)</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION">Composition</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION_DESC">Liste des plateaux nécessaire si le plateau est en fait un assemblage d'autres plateaux simples (non composés eux-mêmes)</message>
 
 </catalogue>

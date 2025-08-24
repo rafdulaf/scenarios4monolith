@@ -1,7 +1,6 @@
-<extension 
-       class="org.ametys.cms.contenttype.DefaultContentType">
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
     <content-type extends="org.ametys.cms.ArchivedContent">
-        <label i18n="true">CONTENT_TYPES_PERSON</label>
+        <label i18n="true">CONTENT_TYPES_PERSON_LABEL</label>
         <description i18n="true">CONTENT_TYPES_PERSON_DESC</description>
         <default-title i18n="true">CONTENT_TYPES_PERSON_NEW</default-title>
         

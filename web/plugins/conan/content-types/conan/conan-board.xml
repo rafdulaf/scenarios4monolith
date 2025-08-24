@@ -1,10 +1,8 @@
-<extension 
-       id="person"
-       class="org.ametys.cms.contenttype.DefaultContentType">
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
     <content-type extends="org.ametys.cms.ArchivedContent">
-        <label i18n="true">CONTENT_TYPES_CONAN_BOARDS</label>
-        <description i18n="true">CONTENT_TYPES_CONAN_BOARDS_DESC</description>
-        <default-title i18n="true">CONTENT_TYPES_CONAN_BOARDS_NEW</default-title>
+        <label i18n="true">CONTENT_TYPES_CONAN_BOARD_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_BOARD_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_BOARD_NEW</default-title>
         
         <right>Right_ContentType_Conan_Board_Create</right>
 
@@ -18,43 +16,39 @@
         </tags>
         
         <attribute name="title" type="multilingual-string">
-            <label i18n="true">CONTENT_TYPES_CONAN_BOARDS_NAME</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_BOARDS_NAME_DESC</description>
+            <label i18n="true">CONTENT_TYPES_CONAN_BOARD_NAME</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_BOARD_NAME_DESC</description>
             <validation>
                 <mandatory />
             </validation>
         </attribute>
 
         <attribute name="identifier" type="string">
-            <label i18n="true">CONTENT_TYPES_CONAN_BOARDS_ID</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_BOARDS_ID_DESC</description>
+            <label i18n="true">CONTENT_TYPES_CONAN_BOARD_ID</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_BOARD_ID_DESC</description>
             <validation>
                 <mandatory />
             </validation>
         </attribute>
 
-        <attribute name="image" type="file">
-            <label i18n="true">CONTENT_TYPES_CONAN_BOARDS_IMAGE</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_BOARDS_IMAGE_DESC</description>
+        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
+            <label i18n="true">CONTENT_TYPES_CONAN_BOARD_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC</description>
             <validation>
                 <mandatory />
             </validation>
-            <widget-params>
-                <param name="filter">image</param>
-                <param name="allowSources">external</param>
-            </widget-params>
         </attribute>
-        
-        <attribute name="composition" type="content" multiple="true" contentType="conan-boards">
-            <label i18n="true">CONTENT_TYPES_CONAN_BOARDS_COMPOSITION</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_BOARDS_COMPOSITION_DESC</description>
+
+        <attribute name="composition" type="content" multiple="true" contentType="conan-board">
+            <label i18n="true">CONTENT_TYPES_CONAN_BOARD_COMPOSITION</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_BOARD_COMPOSITION_DESC</description>
             <widget>edition.select-referencetable-content</widget>
         </attribute>
         
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
             <item ref="identifier" order-before="archived" />
-            <item ref="image" order-before="archived" />
+            <item ref="origins" order-before="archived" />
             <item ref="composition" order-before="archived" />
         </view>
         

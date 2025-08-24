@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension class="org.ametys.cms.contenttype.DefaultContentType">
     <content-type extends="conan-abstract-adventure-scenario, conan-abstract-reference-scenario">
-        <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO</label>
+        <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_LABEL</label>
         <description i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW</default-title>
         <icons>
             <glyph>ametysicon-document209</glyph>
         </icons>

@@ -17,6 +17,16 @@
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion-type"
+                       config="content-types/abstract-expansion-type.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion"
+                       config="content-types/abstract-expansion.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="abstract-reference-scenario"
                        config="content-types/abstract-reference-scenario.xml">
             </extension>
@@ -33,14 +43,34 @@
                     <description i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC</description>
                     <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
                 </right>
+                <right id="Right_ContentType_Expansion_Type_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Expansion_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
             </extension>
         </extensions>
     </feature>
     <feature name="monolith.scenarios.contenttypes.conan" depends="monolith.scenarios.contenttypes">
         <extensions>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="conan-boards"
-                       config="content-types/conan/conan-boards.xml">
+                       id="conan-board"
+                       config="content-types/conan/conan-board.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-expansion-type"
+                       config="content-types/conan/conan-expansion-type.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-expansion"
+                       config="content-types/conan/conan-expansion.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
@@ -63,6 +93,16 @@
                 <right id="Right_ContentType_Conan_Board_Create">
                     <label i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT</label>
                     <description i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Expansion_Type_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Expansion_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC</description>
                     <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
                 </right>
                 <right id="Right_ContentType_Conan_Reference_Adventure_Scenario_Create">

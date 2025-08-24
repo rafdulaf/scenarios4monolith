@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension class="org.ametys.cms.contenttype.DefaultContentType">
     <content-type abstract="true">
-        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO</label>
+        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_LABEL</label>
         <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_ADVENTURE_SCENARIO_DESC</description>
         <icons>
             <glyph>ametysicon-document209</glyph>
