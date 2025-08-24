@@ -37,6 +37,9 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC">Correcteurs du scénario intervenus lors de la saisie dans cet outil pour appliquer les corrections officielles (ou pas) intervenues après publication</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS">Traducteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC">Traducteurs originaux du scénario quand il existe une traduction officielle ou intervenus lors de la saisie dans cet outil</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC">Extension d'origine du scénario si officiel</message>
     
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</message>
@@ -201,7 +204,7 @@
     <message key="CONTENT_TYPES_CONAN_BOARD_ID">Identifiant</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
     
-    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS">Originie</message>
+    <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS">Origine</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC">Extension d'origine du plateau</message>
     
     <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION">Composition</message>

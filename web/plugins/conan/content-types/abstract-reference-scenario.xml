@@ -119,6 +119,11 @@
             </attribute>
         </attribute>
         
+        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC</description>
+        </attribute>
+
         <repeater name="location" initial-size="0" min-size="0">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC</description>
@@ -256,6 +261,7 @@
             <item ref="image" />
             <item ref="version/*" />
             <item ref="persons/*" />
+            <item ref="origins"/>
             <item ref="location/*" />
             <item ref="forum/*" />
             <item ref="faqs/*" />
