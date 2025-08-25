@@ -19,5 +19,13 @@
                 <param name="maxValue">3</param>
             </widget-params>
         </attribute>
+        
+        <view name="main">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
+
+            <item ref="difficulty" />
+        </view>
+        
     </content-type>
 </extension>
