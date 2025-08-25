@@ -74,6 +74,31 @@
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-hero"
+                       config="content-types/conan/conan-hero.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-tile"
+                       config="content-types/conan/conan-tile.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-equipment"
+                       config="content-types/conan/conan-equipment.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-spell"
+                       config="content-types/conan/conan-spell.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-token"
+                       config="content-types/conan/conan-token.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-abstract-reference-scenario"
                        config="content-types/conan/conan-abstract-reference-scenario.xml">
             </extension>
@@ -93,6 +118,31 @@
                 <right id="Right_ContentType_Conan_Board_Create">
                     <label i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT</label>
                     <description i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Hero_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Tile_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Equipment_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Spell_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Token_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT_DESC</description>
                     <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
                 </right>
                 <right id="Right_ContentType_Conan_Expansion_Type_Create">

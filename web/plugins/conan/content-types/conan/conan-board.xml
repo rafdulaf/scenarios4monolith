@@ -7,7 +7,7 @@
         <right>Right_ContentType_Conan_Board_Create</right>
 
         <icons>
-            <glyph>ametysicon-puzzle-piece1</glyph>
+            <glyph>ametysicon-code-html-picture62</glyph>
         </icons>
         
         <tags>
@@ -37,6 +37,7 @@
             <validation>
                 <mandatory />
             </validation>
+           <widget>edition.select-referencetable-content</widget>
         </attribute>
 
         <attribute name="composition" type="content" multiple="true" contentType="conan-board">

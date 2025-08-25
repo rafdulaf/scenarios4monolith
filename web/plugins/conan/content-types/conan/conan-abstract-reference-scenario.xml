@@ -11,17 +11,39 @@
            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION</label>
            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_DESC</description>
            
-           <attribute name="preceding" type="content" contentType="conan-reference-scenario" invert="version/following">
+           <attribute name="major" type="long">
+               <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR</label>
+               <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR_DESC</description>
+                <validation>
+                    <mandatory/>
+                </validation>
+                <default-value>1</default-value>
+           </attribute>
+           <attribute name="minor" type="long">
+               <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR</label>
+               <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR_DESC</description>
+                <validation>
+                    <mandatory/>
+                </validation>
+                <default-value>0</default-value>
+           </attribute>
+           <attribute name="preceding" type="content" contentType="conan-abstract-reference-scenario" invert="version/following">
                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING</label>
                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING_DESC</description>
                <widget>edition.select-referencetable-content</widget>
            </attribute>
-           <attribute name="following" type="content" contentType="conan-reference-scenario" invert="version/preceding">
+           <attribute name="following" type="content" contentType="conan-abstract-reference-scenario" invert="version/preceding">
                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING</label>
                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING_DESC</description>
                <widget>edition.select-referencetable-content</widget>
            </attribute>
         </attribute>        
+
+        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC</description>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
         
         <attribute name="board" type="content" contentType="conan-board">
             <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD</label>
@@ -32,17 +54,50 @@
             <widget>edition.select-referencetable-content</widget>
         </attribute>
         
-        <!-- 
-            TODO
-            
-            elements non listés par ailleurs (tables de ref)
-            
-            spells
-            equipment
-            token
-            miniature
-            heroes
-            tiles
-         -->
+        <attribute name="heroes" type="content" multiple="true" contentType="conan-hero">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_HEROES</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_HEROES_DESC</description>
+           
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
+        <attribute name="tiles" type="content" multiple="true" contentType="conan-tile">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TILES</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TILES_DESC</description>
+           
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
+        <attribute name="equipments" type="content" multiple="true" contentType="conan-equipment">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_EQUIPMENTS</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_EQUIPMENTS_DESC</description>
+           
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
+        <attribute name="spells" type="content" multiple="true" contentType="conan-spell">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_SPELLS</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_SPELLS_DESC</description>
+           
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
+        <attribute name="tokens" type="content" multiple="true" contentType="conan-token">
+           <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TOKENS</label>
+           <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TOKENS_DESC</description>
+           
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
+        <view name="main" override="true">
+            <item ref="origins" order-before="archived" />
+            <item ref="board" order-before="archived" />
+            <item ref="heroes" order-before="archived" />
+            <item ref="tiles" order-before="archived" />
+            <item ref="equipments" order-before="archived" />
+            <item ref="spells" order-before="archived" />
+            <item ref="tokens" order-before="archived" />
+        </view>
+        
     </content-type>
 </extension>

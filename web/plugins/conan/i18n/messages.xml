@@ -38,9 +38,6 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS">Traducteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC">Traducteurs originaux du scénario quand il existe une traduction officielle ou intervenus lors de la saisie dans cet outil</message>
 
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC">Extension d'origine du scénario si officiel</message>
-    
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD">Ajouter un emplacement</message>
@@ -110,8 +107,8 @@
     <!-- * PERSON                                                * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_PERSON_LABEL">Personne</message>
-    <message key="CONTENT_TYPES_PERSON_DESC">Personne intervenant dans un scénario</message>
+    <message key="CONTENT_TYPES_PERSON_LABEL">Personnes</message>
+    <message key="CONTENT_TYPES_PERSON_DESC">Personnes intervenant dans un scénario</message>
     <message key="CONTENT_TYPES_PERSON_NEW">Nouvelle personne</message>
     <message key="CONTENT_TYPES_PERSON_CREATE_RIGHT">Créer une personne</message>
     <message key="CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC">Droit de créer une nouvelle personne dans la table de référence</message>
@@ -126,7 +123,7 @@
     <!-- * FORUM                                                 * -->
     <!-- ********************************************************* -->
 
-    <message key="CONTENT_TYPES_FORUM_LABEL">Forum lié</message>
+    <message key="CONTENT_TYPES_FORUM_LABEL">Forums liés</message>
     <message key="CONTENT_TYPES_FORUM_DESC">Forum vers lequel seront fait des liens</message>
     <message key="CONTENT_TYPES_FORUM_NEW">Nouveau forum</message>
     <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT">Créer un forum lié</message>
@@ -147,6 +144,24 @@
     
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD">Plateau</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_BOARD_DESC">Plateau de jeu utilisé par le scénario</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC">Extension d'origine du scénario si officiel</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_HEROES_DESC">Fiche de héros utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TILES">Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TILES_DESC">Tuiles utilisées dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_EQUIPMENTS">Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_EQUIPMENTS_DESC">Cartes d'équipement utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_SPELLS_DESC">Carte de sorts utilisés dans le scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TOKENS">Jetons ou salles</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_REFERENCE_SCENARIO_TOKENS_DESC">Jetons ou salles utilisés dans le scénario</message>
 
     <!-- ********************************************************* -->
     <!-- * CONAN ABSTRACT ADVENTURE SCENARIO                     * -->
@@ -210,4 +225,99 @@
     <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION">Composition</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION_DESC">Liste des plateaux nécessaire si le plateau est en fait un assemblage d'autres plateaux simples (non composés eux-mêmes)</message>
 
+    <!-- ********************************************************* -->
+    <!-- * CONAN HEROES                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_HERO_LABEL">[Conan] Héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_DESC">Fiche de héros dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_NEW">Nouveau héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT">[Conan] Créer un héros</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT_DESC">Droit de créer un nouveau héros pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_HERO_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_NAME_DESC">Nom du héros</message>
+
+    <message key="CONTENT_TYPES_CONAN_HERO_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_HERO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_HERO_ORIGINS_DESC">Extension d'origine de la fiche de héros</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN TILES                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_TILE_LABEL">[Conan] Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_DESC">Tuiles de l'overlord dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_NEW">Nouvelle tuile</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT">[Conan] Créer une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT_DESC">Droit de créer une nouvelle tuile pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_TILE_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_NAME_DESC">Nom de la tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_TILE_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_TILE_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_ORIGINS_DESC">Extension d'origine de la tuile de l'overlord</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN EQUIPMENTS                                      * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_LABEL">[Conan] Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_DESC">Carte d'équipement dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NEW">Nouvel équipement</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT">[Conan] Créer un équipement</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT_DESC">Droit de créer une nouvel équipement pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NAME_DESC">Nom de l'équipement</message>
+
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ORIGINS_DESC">Extension d'origine de la carte d'équipement</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN SPELLS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_SPELL_LABEL">[Conan] Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_DESC">Carte de sort dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_NEW">Nouveau sort</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT">[Conan] Créer un sort</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT_DESC">Droit de créer un nouveau sort pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_SPELL_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_NAME_DESC">Nom du sort</message>
+
+    <message key="CONTENT_TYPES_CONAN_SPELL_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_SPELL_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_SPELL_ORIGINS_DESC">Extension d'origine de la carte de sort</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * CONAN TOKENS                                          * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_TOKEN_LABEL">[Conan] Jetons ou salles</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_DESC">Jeton ou salles dans le jeu Conan</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_NEW">Nouveau jeton ou salle</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT">[Conan] Créer un jeton/salle</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT_DESC">Droit de créer un nouveau jeton ou salle pour Conan dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_CONAN_TOKEN_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_NAME_DESC">Nom du jeton ou de la salle</message>
+
+    <message key="CONTENT_TYPES_CONAN_TOKEN_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_TOKEN_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_TOKEN_ORIGINS_DESC">Extension d'origine du jeton ou de la salle</message>
+    
 </catalogue>

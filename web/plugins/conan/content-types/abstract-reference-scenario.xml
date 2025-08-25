@@ -76,59 +76,40 @@
             <attribute name="authors" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS_DESC</description>
-                <validation>
-                    <mandatory />
-                </validation>
                 <widget>edition.select-referencetable-content</widget>
             </attribute>
             
             <attribute name="readers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS_DESC</description>
-                <validation>
-                    <mandatory />
-                </validation>
                 <widget>edition.select-referencetable-content</widget>
             </attribute>
             
             <attribute name="testers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS_DESC</description>
-                <validation>
-                    <mandatory />
-                </validation>
                 <widget>edition.select-referencetable-content</widget>
             </attribute>
             
             <attribute name="fixers" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC</description>
-                <validation>
-                    <mandatory />
-                </validation>
                 <widget>edition.select-referencetable-content</widget>
             </attribute>
             
             <attribute name="translaters" type="content" contentType="person" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC</description>
-                <validation>
-                    <mandatory />
-                </validation>
                 <widget>edition.select-referencetable-content</widget>
             </attribute>
         </attribute>
         
-        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
-            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS</label>
-            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_ORIGINS_DESC</description>
-        </attribute>
-
         <repeater name="location" initial-size="0" min-size="0">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_REMOVE</del-label>
+            <header-label>[{language}] {type} - {value} p{page}</header-label>
             
             <attribute name="type" type="string" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE</label>
@@ -183,6 +164,7 @@
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_REMOVE</del-label>
+            <header-label>[{language}] {name}</header-label>
             
             <attribute name="language" type="string">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_LANGUAGE</label>
@@ -218,6 +200,7 @@
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_REMOVE</del-label>
+            <header-label>[{language}]</header-label>
             
             <attribute name="language" type="string">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_LANGUAGE</label>
@@ -234,6 +217,7 @@
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_DESC</description>
                 <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_ADD</add-label>
                 <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_REMOVE</del-label>
+                <header-label>{question}</header-label>
                 
                 <attribute name="question" type="string">
                     <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS__QUESTIONS_QUESTION</label>
@@ -261,7 +245,6 @@
             <item ref="image" />
             <item ref="version/*" />
             <item ref="persons/*" />
-            <item ref="origins"/>
             <item ref="location/*" />
             <item ref="forum/*" />
             <item ref="faqs/*" />

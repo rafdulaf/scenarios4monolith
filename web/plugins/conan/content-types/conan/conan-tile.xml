@@ -1,13 +1,13 @@
 <extension class="org.ametys.cms.contenttype.DefaultContentType">
     <content-type extends="org.ametys.cms.ArchivedContent">
-        <label i18n="true">CONTENT_TYPES_CONAN_SPELL_LABEL</label>
-        <description i18n="true">CONTENT_TYPES_CONAN_SPELL_DESC</description>
-        <default-title i18n="true">CONTENT_TYPES_CONAN_SPELL_NEW</default-title>
+        <label i18n="true">CONTENT_TYPES_CONAN_TILE_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_TILE_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_TILE_NEW</default-title>
         
-        <right>Right_ContentType_Conan_Spell_Create</right>
+        <right>Right_ContentType_Conan_Tile_Create</right>
 
         <icons>
-            <glyph>ametysicon-sparkles</glyph>
+            <glyph>ametysicon-code-html-input-radio-off</glyph>
         </icons>
         
         <tags>
@@ -16,24 +16,24 @@
         </tags>
         
         <attribute name="title" type="multilingual-string">
-            <label i18n="true">CONTENT_TYPES_CONAN_SPELL_NAME</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_SPELL_NAME_DESC</description>
+            <label i18n="true">CONTENT_TYPES_CONAN_TILE_NAME</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_TILE_NAME_DESC</description>
             <validation>
                 <mandatory />
             </validation>
         </attribute>
 
         <attribute name="identifier" type="string">
-            <label i18n="true">CONTENT_TYPES_CONAN_SPELL_ID</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_SPELL_ID_DESC</description>
+            <label i18n="true">CONTENT_TYPES_CONAN_TILE_ID</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_TILE_ID_DESC</description>
             <validation>
                 <mandatory />
             </validation>
         </attribute>
         
         <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
-            <label i18n="true">CONTENT_TYPES_CONAN_SPELL_ORIGINS</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_SPELL_ORIGINS_DESC</description>
+            <label i18n="true">CONTENT_TYPES_CONAN_TILE_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_TILE_ORIGINS_DESC</description>
             <validation>
                 <mandatory />
             </validation>
