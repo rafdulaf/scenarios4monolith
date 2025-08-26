@@ -19,6 +19,7 @@
                 
                 <item ref="label"/>
                 <item ref="difficulty"/>
+                <item ref="humans" />
                 <item ref="image"/>
                 <item ref="version/*"/>
             </group>

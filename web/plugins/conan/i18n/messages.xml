@@ -20,10 +20,6 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR_DESC">Version majeure du scénario</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR">Mineure</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR_DESC">Version mineure du scénario</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING">Version précédente</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_PRECEDING_DESC">Version précédente du scénario</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING">Version suivante</message>
-    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_FOLLOWING_DESC">Version plus récente du scénario</message>
     
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS">Personnes</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_DESC">Personnes intervennues dans le scénarios</message>
@@ -37,6 +33,9 @@
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC">Correcteurs du scénario intervenus lors de la saisie dans cet outil pour appliquer les corrections officielles (ou pas) intervenues après publication</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS">Traducteurs</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC">Traducteurs originaux du scénario quand il existe une traduction officielle ou intervenus lors de la saisie dans cet outil</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS">Nombre total de joueurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS_DESC">Nombre total de joueurs possibles en incluant les héros et les overlords.&lt;br/>Plusieurs valeurs sont possibles (une par ligne) si le scénario accepte plusieurs configurations.</message>
 
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</message>
     <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</message>
