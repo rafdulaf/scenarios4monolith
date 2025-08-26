@@ -182,6 +182,12 @@
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW">Nouvelle référence de scénario</message>
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT">[Conan] Créer une référence de scénario aventure</message>
     <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer une référence pour un scénario de Conan en mode aventure</message>
+    
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL">Général</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME">Éléments de jeu</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_WHERE">Où le trouver ?</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_HELP">Aides de jeu</message>
+    <message key="CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_PERSONS">Intervenants</message>
 
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->

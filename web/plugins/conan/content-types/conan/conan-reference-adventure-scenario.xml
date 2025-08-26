@@ -10,6 +10,46 @@
 
         <right>Right_ContentType_Conan_Reference_Adventure_Scenario_Create</right>
         
-        <!-- TODO views -->
+        <view name="main">
+            <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
+            <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
+
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL</label>
+                
+                <item ref="label"/>
+                <item ref="difficulty"/>
+                <item ref="image"/>
+                <item ref="version/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME</label>
+                
+                <item ref="board"/>
+                <item ref="heroes"/>
+                <item ref="tiles"/>
+                <item ref="equipments"/>
+                <item ref="spells"/>
+                <item ref="tokens"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_WHERE</label>
+
+                <item ref="origins"/>
+                <item ref="location/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_HELP</label>
+                
+                <item ref="forum/*"/>
+                <item ref="faqs/*"/>
+            </group>
+            <group role="tab">
+                <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_PERSONS</label>
+                
+                <item ref="persons/*"/>
+            </group>
+        </view>
+        
     </content-type>
 </extension>
