@@ -21,8 +21,8 @@
     
 	<map:pipelines>
 		<map:pipeline>
-			<map:match pattern="conan-reference-*.*">
-                <map:redirect-to uri="cocoon://_plugins/web/content-type.{1}.{2}?pluginName={request-attr:pluginName}"/>
+			<map:match pattern="conan-*.*">
+                <map:redirect-to uri="cocoon://_plugins/web/content-type.conan-{1}.{2}?pluginName={request-attr:pluginName}"/>
 			</map:match>
 		</map:pipeline>
 	</map:pipelines>

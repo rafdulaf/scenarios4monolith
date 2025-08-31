@@ -5,7 +5,7 @@
         <description i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_DESC</description>
         <default-title i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_NEW</default-title>
         <icons>
-            <glyph>ametysicon-document209</glyph>
+            <glyph>ametysicon-arrow-down-in-box</glyph>
         </icons>
 
         <right>Right_ContentType_Conan_Reference_Adventure_Scenario_Create</right>
@@ -14,19 +14,20 @@
             <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
             <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
 
-            <group role="tab">
+            <group role="tab" name="general">
                 <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL</label>
                 
                 <item ref="label"/>
+                <item ref="version/*"/>
+                
                 <item ref="difficulty"/>
                 <item ref="humans" />
+                <item ref="board"/>
                 <item ref="image"/>
-                <item ref="version/*"/>
             </group>
             <group role="tab">
                 <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME</label>
                 
-                <item ref="board"/>
                 <item ref="heroes"/>
                 <item ref="tiles"/>
                 <item ref="equipments"/>

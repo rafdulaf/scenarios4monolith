@@ -113,6 +113,11 @@
                        config="content-types/conan/conan-reference-adventure-scenario.xml">
             </extension>
 
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-adventure-scenario"
+                       config="content-types/conan/conan-adventure-scenario.xml">
+            </extension>
+
             <extension point="org.ametys.core.right.RightsExtensionPoint"
                        id="conan">
                 <right id="Right_ContentType_Conan_Board_Create">
@@ -158,6 +163,11 @@
                 <right id="Right_ContentType_Conan_Reference_Adventure_Scenario_Create">
                     <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT</label>
                     <description i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Adventure_Scenario_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC</description>
                     <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
                 </right>
             </extension>
