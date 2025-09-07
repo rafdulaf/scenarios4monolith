@@ -199,6 +199,7 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CREATE_RIGHT_DESC">Droit de créer un scénario de Conan en mode aventure</message>
     
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_OVERLORD">Overlord</message>
 
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTIONS">Introductions</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTIONS_DESC">Textes d'introduction du scénario</message>
@@ -223,32 +224,57 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_HEROES">Héros</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_SIDE_OVERLORD">Overload</message>
     
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_STRAIN">Fatigue de départ</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_STRAIN_DESC">Nombre de gemmes en zone de fatigue pour les héroes en début de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROINTRODUCTION">Texte introductif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROINTRODUCTION_DESC">Texte introductif de la configuration des héros</message>
     
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS">Configurations de départ</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_DESC">Mise en place pour les héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_ADD">Ajouter une configuration</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_REMOVE">Supprimer une configuration</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_TITLE">Titre</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_TITLE_DESC">Titre de la configuration à utiliser quand il existe plusieurs configurations dans la même langue</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROSTRAIN">Fatigue de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROSTRAIN_DESC">Nombre de gemmes en zone de fatigue pour les héroes en début de scénario</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS">Configurations de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_DESC">Mise en place pour les héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_ADD">Ajouter une configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_REMOVE">Supprimer une configuration</message>
 
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES">Héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_DESC">Héroes dans la configuration</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_ADD">Ajouter un héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_REMOVE">Supprimer ce héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_OPTIONAL">Optionnel</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_OPTIONAL_DESC">Quand la configuration permet de choisir plus ou moins de héros, celui-ci est un héros complémentaire</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_NAME_DESC">Nom du héroes</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_EQUIPMENTS">Équipements</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_EQUIPMENTS_DESC">Équipements de départ du héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_SPELLS">Sorts</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_SPELLS_DESC">Sorts de départ du héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_TILES">Alliés</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_TILES_DESC">Alliés du héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_TEXT">Texte</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_CONFIGURATIONS_HEROES_TEXT_DESC">Texte complémentaire pour le héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_TITLE_DESC">Titre de la configuration à utiliser quand il existe plusieurs configurations dans la même langue</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_DESC">Héroes dans la configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_ADD">Ajouter un héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_REMOVE">Supprimer ce héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_OPTIONAL">Optionnel</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_OPTIONAL_DESC">Quand la configuration permet de choisir plus ou moins de héros, celui-ci est un héros complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_NAME_DESC">Nom du héroes</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_EQUIPMENTS">Équipements</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_EQUIPMENTS_DESC">Équipements de départ du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_SPELLS_DESC">Sorts de départ du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_TILES">Alliés</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_TILES_DESC">Alliés du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_TEXT">Texte</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROCONFIGURATIONS_HEROES_TEXT_DESC">Texte complémentaire pour le héros</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDINTRODUCTION">Texte introductif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDINTRODUCTION_DESC">Texte introductif de la configuration de l'overlord</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS">Configurations de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_DESC">Mise en place pour les héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_ADD">Ajouter une configuration</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_REMOVE">Supprimer une configuration</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_TITLE_DESC">Titre de la configuration à utiliser quand il existe plusieurs configurations</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMMAX">Gemmes disponibles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMMAX_DESC">Nombre de gemmes en zone de d'énergie disponible pour l'overlord en début de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMSTRAIN">Fatigue de départ</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDSTRAIN_DESC">Nombre de gemmes en zone de fatigue pour l'overlord' en début de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMGAIN">Récupération</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMGAIN_DESC">Nombre de gemmes récupérées par tourde l'overlord (en début de scénario)</message>
+
     
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->
