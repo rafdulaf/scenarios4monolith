@@ -8,8 +8,11 @@
         </icons>
         
         <!-- TODO set title with label+version -->
+        <!-- TODO translations (avec validation de l'unicité)-->
+        <!-- TODO Créer : choisir la langue -->
+        <!-- TODO dédoublonage -->
         
-        <attribute name="title" type="multilingual-string">
+        <attribute name="title" type="string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
             <validation>
@@ -17,7 +20,7 @@
             </validation>
         </attribute>
         
-        <attribute name="label" type="multilingual-string">
+        <attribute name="label" type="string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
             <validation>
@@ -114,7 +117,7 @@
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_REMOVE</del-label>
-            <header-label>[{language}] {type} - {value} p{page}</header-label>
+            <header-label>{type} - {value} p{page}</header-label>
             
             <attribute name="type" type="string" multiple="true">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE</label>
@@ -150,17 +153,6 @@
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE_DESC</description>
             </attribute>
-
-            <attribute name="language" type="string">
-                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_LANGUAGE</label>
-                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_LANGUAGE_DESC</description>
-                <enumeration>
-                    <custom-enumerator class="org.ametys.cms.languages.LanguageEnumerator"/>
-                </enumeration>
-                <validation>
-                    <mandatory />
-                </validation>
-            </attribute>
         </repeater>
         
 
@@ -169,18 +161,8 @@
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_REMOVE</del-label>
-            <header-label>[{language}] {name}</header-label>
+            <header-label>{name}</header-label>
             
-            <attribute name="language" type="string">
-                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_LANGUAGE</label>
-                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_LANGUAGE_DESC</description>
-                <enumeration>
-                    <custom-enumerator class="org.ametys.cms.languages.LanguageEnumerator"/>
-                </enumeration>
-                <validation>
-                    <mandatory />
-                </validation>
-            </attribute>
             <attribute name="name" type="content" contentType="forum">
                 <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME</label>
                 <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME_DESC</description>
@@ -205,40 +187,22 @@
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_DESC</description>
             <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ADD</add-label>
             <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_REMOVE</del-label>
-            <header-label>[{language}]</header-label>
+            <header-label>{question}</header-label>
             
-            <attribute name="language" type="string">
-                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_LANGUAGE</label>
-                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_LANGUAGE_DESC</description>
-                <enumeration>
-                    <custom-enumerator class="org.ametys.cms.languages.LanguageEnumerator"/>
-                </enumeration>
+            <attribute name="question" type="string">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION_DESC</description>
                 <validation>
                     <mandatory />
                 </validation>
             </attribute>
-            <repeater name="questions" initial-size="1" min-size="1">
-                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS</label>
-                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_DESC</description>
-                <add-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_ADD</add-label>
-                <del-label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_REMOVE</del-label>
-                <header-label>{question}</header-label>
-                
-                <attribute name="question" type="string">
-                    <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS__QUESTIONS_QUESTION</label>
-                    <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTIONS_QUESTION_DESC</description>
-                    <validation>
-                        <mandatory />
-                    </validation>
-                </attribute>
-                <attribute name="answer" type="rich-text">
-                    <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_FAQ_ANSWER</label>
-                    <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_FAQ_ANSWER_DESC</description>
-                    <validation>
-                        <mandatory />
-                    </validation>
-                </attribute>
-            </repeater>
+            <attribute name="answer" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER</label>
+                <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
         </repeater>
         
         <!-- Full view -->

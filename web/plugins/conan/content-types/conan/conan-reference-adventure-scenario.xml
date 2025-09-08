@@ -28,11 +28,7 @@
             <group role="tab">
                 <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GAME</label>
                 
-                <item ref="heroes"/>
-                <item ref="tiles"/>
-                <item ref="equipments"/>
-                <item ref="spells"/>
-                <item ref="tokens"/>
+                <item ref="game/*"/>
             </group>
             <group role="tab">
                 <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_WHERE</label>
