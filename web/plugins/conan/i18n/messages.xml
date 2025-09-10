@@ -230,16 +230,28 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_DESC">Héroes dans la configuration</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ADD">Ajouter un héros</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_REMOVE">Supprimer ce héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE">Alternative</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE_DESC">Ce héros est une alternative au héros précédent avec des équipements/sorts/alliés différents</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL">Optionnel</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL_DESC">Quand la configuration permet de choisir plus ou moins de héros, celui-ci est un héros complémentaire</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_NAME_DESC">Nom du héroes</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET">Héros (choix principal)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET_DESC">Nom du héroes et ses alternatives possibles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES">Héros (choix alternatifs)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES_DESC">Nom des héroes alternatif possibles mais partageant le même équipements/sorts/alliés</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS">Équipements</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_EQUIPMENTS_DESC">Équipements de départ du héros</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS">Sorts</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS_DESC">Sorts de départ du héros</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TILES">Alliés</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TILES_DESC">Alliés du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES">Alliés</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_DESC">Alliés du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_ADD">Ajouter un allié</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_REMOVE">Supprimer un allié</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE_DESC">Tuile de l'allié du héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS">Nombre de figurines (départ)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS_DESC">Nombre de figurines associées à la tuile et placées en début de partie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2">Nombre de figurines (réserve)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2_DESC">Nombre de figurines associées à la tuile nécessaire en plus au maximum pendant la partie</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT">Texte</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT_DESC">Texte complémentaire pour le héros</message>
 
@@ -300,8 +312,10 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE">Tuile</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE_DESC">Tuile à cet emplacement de la rivière</message>
     
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS">Nombre</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS_DESC">Nombre de figurines maximal nécessaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS">Nombre (départ)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS_DESC">Nombre de figurines nécessaires lors de la mise en place</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2">Nombre (réserve)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2_DESC">Nombre de figurines maximal nécessaires en réserve en plus</message>
 
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS">Points de vie</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>

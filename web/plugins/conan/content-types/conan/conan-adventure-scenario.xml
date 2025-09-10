@@ -101,16 +101,25 @@
                     <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_REMOVE</del-label>
                     <header-label>{name}</header-label>
                     
+                    <attribute name="alternative" type="boolean">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVE_DESC</description>
+                    </attribute>
                     <attribute name="optional" type="boolean">
                         <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL</label>
                         <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_OPTIONAL_DESC</description>
                     </attribute>
-                    <attribute name="name" type="content" contentType="conan-hero">
-                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_NAME</label>
-                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_NAME_DESC</description>
+                    <attribute name="sheet" type="content" contentType="conan-hero">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SHEET_DESC</description>
                         <validation>
                             <mandatory />
                         </validation>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="alternatives" type="content" contentType="conan-hero" multiple="true">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALTERNATIVES_DESC</description>
                         <widget>edition.select-referencetable-content</widget>
                     </attribute>
                     <attribute name="equipments" type="content" contentType="conan-equipment" multiple="true">
@@ -123,11 +132,56 @@
                         <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_SPELLS_DESC</description>
                         <widget>edition.select-referencetable-content</widget>
                     </attribute>
-                    <attribute name="tiles" type="content" contentType="conan-tile" multiple="true">
-                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TILES</label>
-                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TILES_DESC</description>
-                        <widget>edition.select-referencetable-content</widget>
-                    </attribute>
+                    <repeater name="allies" initial-size="0" min-size="0">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_REMOVE</del-label>
+                        <header-label>{tile}</header-label>
+                        
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+    
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="flex">2</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="minis" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="flex">1</param>
+                            </widget-params>
+                            <default-value>1</default-value>
+                        </attribute>
+                        <attribute name="minis2" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_ALLIES_MINIS2_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="flex">1</param>
+                            </widget-params>
+                            <default-value>0</default-value>
+                        </attribute>
+                    </repeater>
                     <attribute name="text" type="string">
                         <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT</label>
                         <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_HEROES_CONFIGURATIONS_HEROES_TEXT_DESC</description>
@@ -279,17 +333,32 @@
                                 <condition id="tile" operator="eq"></condition>
                             </disable-conditions>
                             <widget-params>
-                                <param name="minValue">1</param>
-                                <param name="width">90</param>
+                                <param name="minValue">0</param>
+                                <param name="width">150</param>
                             </widget-params>
                             <default-value>1</default-value>
+                        </attribute>
+                        <attribute name="minis2" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                            <widget-params>
+                                <param name="minValue">0</param>
+                                <param name="width">150</param>
+                            </widget-params>
+                            <default-value>0</default-value>
                         </attribute>
                         <attribute name="lifePoints" type="long">
                             <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS</label>
                             <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS_DESC</description>
                             <widget-params>
                                 <param name="minValue">1</param>
-                                <param name="width">90</param>
+                                <param name="width">130</param>
                             </widget-params>
                             <disable-conditions>
                                 <condition id="tile" operator="eq"></condition>
