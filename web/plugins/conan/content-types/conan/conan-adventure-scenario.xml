@@ -169,8 +169,8 @@
                     <default-value>3</default-value>
                 </attribute>
                 <attribute name="gemGain" type="long">
-                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMGAIN</label>
-                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDCONFIGURATIONS_GEMGAIN_DESC</description>
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_CONFIGURATIONS_GEMGAIN_DESC</description>
                     <validation>
                         <mandatory />
                     </validation>
@@ -244,6 +244,75 @@
                             <param name="height">80</param>
                         </widget-params>
                     </attribute>
+                </repeater>
+            </attribute>
+            
+            <attribute name="river" type="composite">
+               <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER</label>
+               <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC</description>
+               
+                <repeater name="tiles" initial-size="8" min-size="8" max-size="8">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC</description>
+                        <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD</add-label>
+                        <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_REMOVE</del-label>
+                        <header-label>{tile}</header-label>
+                        <widget-params>
+                            <param name="mode">table</param>
+                        </widget-params>
+                        
+                        <attribute name="tile" type="content" contentType="conan-tile">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="minis" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS_DESC</description>
+                            <validation>
+                                <mandatory />
+                            </validation>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">90</param>
+                            </widget-params>
+                            <default-value>1</default-value>
+                        </attribute>
+                        <attribute name="lifePoints" type="long">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS_DESC</description>
+                            <widget-params>
+                                <param name="minValue">1</param>
+                                <param name="width">90</param>
+                            </widget-params>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                        </attribute>
+                        <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS_DESC</description>
+                            <widget>edition.select-referencetable-content</widget>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                            <widget-params>
+                                <param name="width">200</param>
+                            </widget-params>
+                        </attribute>
+                        <attribute name="text" type="string">
+                            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT</label>
+                            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT_DESC</description>
+                            <disable-conditions>
+                                <condition id="tile" operator="eq"></condition>
+                            </disable-conditions>
+                        </attribute>
                 </repeater>
             </attribute>
         </attribute>

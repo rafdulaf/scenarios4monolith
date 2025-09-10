@@ -7,20 +7,7 @@
             <glyph>ametysicon-document209</glyph>
         </icons>
         
-        <!-- TODO set title with label+version -->
-        <!-- TODO translations (avec validation de l'unicité)-->
-        <!-- TODO Créer : choisir la langue -->
-        <!-- TODO dédoublonage -->
-        
         <attribute name="title" type="string">
-            <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
-            <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
-            <validation>
-                <mandatory />
-            </validation>
-        </attribute>
-        
-        <attribute name="label" type="string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC</description>
             <validation>
@@ -210,7 +197,7 @@
             <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN</label>
             <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_MAIN_DESC</description>
             
-            <item ref="label" />
+            <item ref="title" />
             <item ref="image" />
             <item ref="version/*" />
             <item ref="humans" />
@@ -225,7 +212,7 @@
             <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_ABSTRACT</label>
             <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_ABSTRACT_DESC</description>
             
-            <item ref="label" />
+            <item ref="title" />
         </view>
         
         <!-- Link view -->
@@ -233,12 +220,12 @@
             <label i18n="true">plugin.cms:PLUGINS_CMS_VIEW_LINK</label>
             <description i18n="true">plugin.cms:PLUGINS_CMS_VIEW_LINK_DESC</description>
             
-            <item ref="label" />
+            <item ref="title" />
         </view>
     
         <!-- Property view -->
         <view name="details" internal="true">
-            <item ref="label" />
+            <item ref="title" />
         </view>
         
     </content-type>

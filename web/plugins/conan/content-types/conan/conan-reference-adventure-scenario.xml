@@ -17,7 +17,7 @@
             <group role="tab" name="general">
                 <label i18n="true">CONTENT_TYPES_CONAN_REFERENCE_ADVENTURE_SCENARIO_TAB_GENERAL</label>
                 
-                <item ref="label"/>
+                <item ref="title"/>
                 <item ref="version/*"/>
                 
                 <item ref="difficulty"/>

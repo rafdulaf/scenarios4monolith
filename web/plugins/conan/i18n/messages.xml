@@ -289,6 +289,28 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT">Textes</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_TEXT_DESC">Texte de la règle de l'événement</message>
 
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER">Rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC">Description de la rivière de départ</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES">Tuiles</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC">Tuiles composant la rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD">Ajouter une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_REMOVE">Supprimer une tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS">Nombre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS_DESC">Nombre de figurines maximal nécessaire</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS_DESC">Sorts de l'unité si applicable</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT_DESC">Texte additionnel pour la tuile</message>
     
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->
