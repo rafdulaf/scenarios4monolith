@@ -157,9 +157,6 @@
                             <validation>
                                 <mandatory />
                             </validation>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                             <widget-params>
                                 <param name="minValue">0</param>
                                 <param name="flex">1</param>
@@ -172,9 +169,6 @@
                             <validation>
                                 <mandatory />
                             </validation>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                             <widget-params>
                                 <param name="minValue">0</param>
                                 <param name="flex">1</param>
@@ -329,9 +323,6 @@
                             <validation>
                                 <mandatory />
                             </validation>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                             <widget-params>
                                 <param name="minValue">0</param>
                                 <param name="width">150</param>
@@ -344,9 +335,6 @@
                             <validation>
                                 <mandatory />
                             </validation>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                             <widget-params>
                                 <param name="minValue">0</param>
                                 <param name="width">150</param>
@@ -360,17 +348,11 @@
                                 <param name="minValue">1</param>
                                 <param name="width">130</param>
                             </widget-params>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                         </attribute>
                         <attribute name="spells" type="content" contentType="conan-spell" multiple="true">
                             <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS</label>
                             <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS_DESC</description>
                             <widget>edition.select-referencetable-content</widget>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                             <widget-params>
                                 <param name="width">200</param>
                             </widget-params>
@@ -378,9 +360,6 @@
                         <attribute name="text" type="string">
                             <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT</label>
                             <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT_DESC</description>
-                            <disable-conditions>
-                                <condition id="tile" operator="eq"></condition>
-                            </disable-conditions>
                         </attribute>
                 </repeater>
             </attribute>

@@ -5,117 +5,66 @@
         xsi:schemaLocation="https://www.ametys.org/schema/plugin https://www.ametys.org/schema/plugin-2.0.xsd"
         runtimeVersion="4.8">
         
-    <feature name="monolith.scenarios.contenttypes">
-         <extensions>
-            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="person"
-                       config="content-types/person.xml">
-            </extension>
-            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="forum"
-                       config="content-types/forum.xml">
-            </extension>
-
-            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="abstract-expansion-type"
-                       config="content-types/abstract-expansion-type.xml">
-            </extension>
-
-            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="abstract-expansion"
-                       config="content-types/abstract-expansion.xml">
-            </extension>
-
-            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
-                       id="abstract-reference-scenario"
-                       config="content-types/abstract-reference-scenario.xml">
-            </extension>
-            
-            <extension point="org.ametys.core.right.RightsExtensionPoint"
-                       id="abstract">
-                <right id="Right_ContentType_Person_Create">
-                    <label i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT</label>
-                    <description i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC</description>
-                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
-                </right>
-                <right id="Right_ContentType_Forum_Create">
-                    <label i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT</label>
-                    <description i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC</description>
-                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
-                </right>
-                <right id="Right_ContentType_Expansion_Type_Create">
-                    <label i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT</label>
-                    <description i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC</description>
-                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
-                </right>
-                <right id="Right_ContentType_Expansion_Create">
-                    <label i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT</label>
-                    <description i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC</description>
-                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
-                </right>
-            </extension>
-        </extensions>
-    </feature>
-    <feature name="monolith.scenarios.contenttypes.conan" depends="monolith.scenarios.contenttypes">
+    <feature name="monolith.scenarios.contenttypes.conan" depends="general/monolith.scenarios.contenttypes">
         <extensions>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-board"
-                       config="content-types/conan/conan-board.xml">
+                       config="content-types/conan-board.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-expansion-type"
-                       config="content-types/conan/conan-expansion-type.xml">
+                       config="content-types/conan-expansion-type.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-expansion"
-                       config="content-types/conan/conan-expansion.xml">
+                       config="content-types/conan-expansion.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-hero"
-                       config="content-types/conan/conan-hero.xml">
+                       config="content-types/conan-hero.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-tile"
-                       config="content-types/conan/conan-tile.xml">
+                       config="content-types/conan-tile.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-equipment"
-                       config="content-types/conan/conan-equipment.xml">
+                       config="content-types/conan-equipment.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-spell"
-                       config="content-types/conan/conan-spell.xml">
+                       config="content-types/conan-spell.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-token"
-                       config="content-types/conan/conan-token.xml">
+                       config="content-types/conan-token.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-abstract-reference-scenario"
-                       config="content-types/conan/conan-abstract-reference-scenario.xml">
+                       config="content-types/conan-abstract-reference-scenario.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-abstract-adventure-scenario"
-                       config="content-types/conan/conan-abstract-adventure-scenario.xml">
+                       config="content-types/conan-abstract-adventure-scenario.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-reference-adventure-scenario"
-                       config="content-types/conan/conan-reference-adventure-scenario.xml">
+                       config="content-types/conan-reference-adventure-scenario.xml">
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-adventure-scenario"
-                       config="content-types/conan/conan-adventure-scenario.xml">
+                       config="content-types/conan-adventure-scenario.xml">
             </extension>
 
             <extension point="org.ametys.core.right.RightsExtensionPoint"

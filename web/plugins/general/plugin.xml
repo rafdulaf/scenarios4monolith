@@ -16,4 +16,56 @@
             </extension>
         </extensions>
     </feature>
+    
+    <feature name="monolith.scenarios.contenttypes">
+         <extensions>
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="person"
+                       config="content-types/person.xml">
+            </extension>
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="forum"
+                       config="content-types/forum.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion-type"
+                       config="content-types/abstract-expansion-type.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-expansion"
+                       config="content-types/abstract-expansion.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="abstract-reference-scenario"
+                       config="content-types/abstract-reference-scenario.xml">
+            </extension>
+            
+            <extension point="org.ametys.core.right.RightsExtensionPoint"
+                       id="abstract">
+                <right id="Right_ContentType_Person_Create">
+                    <label i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Forum_Create">
+                    <label i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Expansion_Type_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_TYPE_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Expansion_Create">
+                    <label i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_EXPANSION_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+            </extension>
+        </extensions>
+    </feature>    
 </plugin>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue xml:lang="fr">
+
+    <!-- ********************************************************* -->
+    <!-- * ABSTRACT REFERENCE SCENARIO                           * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LABEL">[Abstrait] Référence de scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_DESC">Permet de référencer un scénario</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_TITLE_DESC">Titre du scénario</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE">Image (environ 1024x1024)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_IMAGE_DESC">Image principale du scénario présentant la mise en place</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION">Version</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_DESC">Version du scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR">Majeure</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MAJOR_DESC">Version majeure du scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR">Mineure</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_VERSION_MINOR_DESC">Version mineure du scénario</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS">Personnes</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_DESC">Personnes intervennues dans le scénarios</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS">Auteurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_AUTHORS_DESC">Auteurs à l'origine du scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS">Relecteurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_READERS_DESC">Relecteurs du scénario intervenus à l'origine du scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS">Testeurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TESTERS_DESC">Testeurs intervenus à l'origine du scénario</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS">Correcteurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_FIXERS_DESC">Correcteurs du scénario intervenus lors de la saisie dans cet outil pour appliquer les corrections officielles (ou pas) intervenues après publication</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS">Traducteurs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_PERSONS_TRANSLATERS_DESC">Traducteurs originaux du scénario quand il existe une traduction officielle ou intervenus lors de la saisie dans cet outil</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS">Nombre total de joueurs (héros et overlords)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_HUMANS_DESC">Nombre total de joueurs possibles en incluant les héros et les overlords.&lt;br/>Plusieurs valeurs sont possibles (une par ligne) si le scénario accepte plusieurs configurations.</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION">Emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_DESC">Emplacement où trouver le scénario (livre, fichier...)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_ADD">Ajouter un emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_REMOVE">Supprimer cet emplacement</message>
+
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE">Type</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_DESC">Type d'emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_BOOK">Livre (nom)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_PDF">Fichier PDF (url)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_TYPE_URL">Page Web (url)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE">Emplacement</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_VALUE_DESC">Valeur de l'emplacement selon le type choisir (Nom du livre, URL du fichier...)</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE">N° de page</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_LOCATION_PAGE_DESC">Numéro de page dans le livre ou le PDF (en cas de multiples scénarios)</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM">Forum</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_DESC">Forum de discussion autour du scénnario pour poser des questions sur les règles, parler stratégie, proposer des équilibrages ou d'autres configurations</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_ADD">Ajouter un forum</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_REMOVE">Supprimer un forum</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME">Nom</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_NAME_DESC">Nom du forum</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_URL">URL</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FORUM_URL_DESC">Lien vers le sujet de discussion de ce scénatio</message>
+    
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS">FAQs</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_DESC">Foire aux questions</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ADD">Ajouter une FAQ</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_REMOVE">Supprimer une FAQ</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION">Question</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_QUESTION_DESC">Question de la foire</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER">Réponse</message>
+    <message key="CONTENT_TYPES_ABSTRACT_REFERENCE_SCENARIO_FAQS_ANSWER_DESC">Réponse à la question</message>
+
+    <!-- ********************************************************* -->
+    <!-- * ABSTRACT EXPANSION TYPE                               * -->
+    <!-- ********************************************************* -->
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_LABEL">[Abstrait] Type d'extensions</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_DESC">Liste les types d'extensions du jeu</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME">Titre</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME_DESC">Titre du type d''extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * ABSTRACT EXPANSION                                    * -->
+    <!-- ********************************************************* -->
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_LABEL">[Abstrait] Extensions</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_DESC">Liste les extensions du jeu</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME">Titre</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME_DESC">Titre de l'extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type de l'extension</message>
+
+    <!-- ********************************************************* -->
+    <!-- * PERSON                                                * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_PERSON_LABEL">Personnes</message>
+    <message key="CONTENT_TYPES_PERSON_DESC">Personnes intervenant dans un scénario</message>
+    <message key="CONTENT_TYPES_PERSON_NEW">Nouvelle personne</message>
+    <message key="CONTENT_TYPES_PERSON_CREATE_RIGHT">Créer une personne</message>
+    <message key="CONTENT_TYPES_PERSON_CREATE_RIGHT_DESC">Droit de créer une nouvelle personne dans la table de référence</message>
+
+    <message key="CONTENT_TYPES_PERSON_NAME">Nom</message>
+    <message key="CONTENT_TYPES_PERSON_NAME_DESC">Nom public ou alias</message>
+    
+    <message key="CONTENT_TYPES_PERSON_LINK">Lien</message>
+    <message key="CONTENT_TYPES_PERSON_LINK_DESC">URL de profil pour contacter la personne (profil facebook, the-overlord...)</message>
+    
+    <!-- ********************************************************* -->
+    <!-- * FORUM                                                 * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_FORUM_LABEL">Forums liés</message>
+    <message key="CONTENT_TYPES_FORUM_DESC">Forum vers lequel seront fait des liens</message>
+    <message key="CONTENT_TYPES_FORUM_NEW">Nouveau forum</message>
+    <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT">Créer un forum lié</message>
+    <message key="CONTENT_TYPES_FORUM_CREATE_RIGHT_DESC">Droit de créer un nouveau lien vers un forum dans la table de référence</message>
+    
+    <message key="CONTENT_TYPES_FORUM_NAME">Nom</message>
+    <message key="CONTENT_TYPES_FORUM_NAME_DESC">Nom du forum lié</message>
+    
+    <message key="CONTENT_TYPES_FORUM_URL">URL</message>
+    <message key="CONTENT_TYPES_FORUM_URL">Lien vers la racine du forum</message>
+    
+</catalogue>
