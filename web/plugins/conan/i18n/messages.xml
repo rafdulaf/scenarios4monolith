@@ -171,6 +171,7 @@
 
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER">Numéro de carte renfort</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_DESC">Lorsque plusieurs cartes renforts sont présentes, identifiez le numéro de la carte reliée à cet événement</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_0">Toutes les cartes de renfort</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_1">Carte renfort 1</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_2">Carte renfort 2</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORDEVENTS_NUMBER_3">Carte renfort 3</message>
@@ -186,22 +187,63 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD">Ajouter une tuile</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_REMOVE">Supprimer une tuile</message>
 
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE">Tuile</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILE_DESC">Tuile à cet emplacement de la rivière</message>
     
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS">Nombre (départ)</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS_DESC">Nombre de figurines nécessaires lors de la mise en place</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2">Nombre (réserve)</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_MINIS2_DESC">Nombre de figurines maximal nécessaires en réserve en plus</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS">Nombre (départ)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS_DESC">Nombre de figurines nécessaires lors de la mise en place</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2">Nombre (réserve)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_MINIS2_DESC">Nombre de figurines maximal nécessaires en réserve en plus</message>
 
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS">Points de vie</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
 
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS">Sorts</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_SPELLS_DESC">Sorts de l'unité si applicable</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_SPELLS_DESC">Sorts de l'unité si applicable</message>
     
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT">Texte complémentaire</message>
-    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_EVENTS_RULES_TEXT_DESC">Texte additionnel pour la tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TEXT_DESC">Texte additionnel pour la tuile</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES">Tuiles alternatives</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_DESC">Proposition de tuiles alternatives pour la rivière</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_ADD">Ajouter une alternative</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_REMOVE">Supprimer une alternative</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER">Numéro</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_NUMBER_DESC">Numéro de la rivière pour laquelle proposer une alternative</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_SPELLS_DESC">Sorts de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ALTERNATES_TEXT_DESC">Texte additionnel pour la tuile</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER">Tuiles complémentaires (mise en jeu plus tard)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_DESC">Tuiles pouvant être ajoutées à la rivière dans le scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_ADD">Ajouter une tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_REMOVE">Supprimer une tuile</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE">Tuile</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TILE_DESC">Tuile à cet emplacement de la rivière</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2">Nombre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_MINIS2_DESC">Nombre de figurines maximal nécessaires</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS">Points de vie</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_LIFEPOINTS_DESC">Points de vie de l'unité si applicable</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS">Sorts</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_SPELLS_DESC">Sorts de l'unité si applicable</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT">Texte complémentaire</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT_DESC">Texte additionnel pour la tuile</message>
+    
     
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->
