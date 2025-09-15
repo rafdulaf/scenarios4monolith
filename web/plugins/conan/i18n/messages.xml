@@ -182,6 +182,9 @@
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER">Rivière</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC">Description de la rivière de départ</message>
 
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION">Texte d'introduction</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION_DESC">Texte introductif à la partie rivière</message>
+
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES">Tuiles</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC">Tuiles composant la rivière</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_ADD">Ajouter une tuile</message>
@@ -243,7 +246,20 @@
     
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT">Texte complémentaire</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT_DESC">Texte additionnel pour la tuile</message>
-    
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL">Texte additionnel</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL_DESC">Texte additionnel de la partie rivière</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES">Héros de l'overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_DESC">Fiches de héros gérés par l'overlord (ou un joueur complémentaire)</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_ADD">Ajouter un héros de l'overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_REMOVE">Supprimer un héros de l'overlord</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET">Héros</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET_DESC">Fiche de héros</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT">Texte explicatif</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT_DESC">Texte explicatif quand à l'utilisation de ce héros par l'overlord</message>
     
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->

@@ -303,6 +303,14 @@
                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER</label>
                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_DESC</description>
                
+                <attribute name="introduction" type="rich-text">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_INTRODUCTION_DESC</description>
+                    <widget-params>
+                        <param name="height">80</param>
+                    </widget-params>
+                </attribute>
+                
                 <repeater name="tiles" initial-size="8" min-size="8" max-size="8">
                         <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES</label>
                         <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_TILES_DESC</description>
@@ -468,6 +476,38 @@
                             <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT</label>
                             <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_LATER_TEXT_DESC</description>
                         </attribute>
+                </repeater>
+
+                <attribute name="additional" type="rich-text">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_ADDITIONAL_DESC</description>
+                    <widget-params>
+                        <param name="height">80</param>
+                    </widget-params>
+                </attribute>
+                
+                <repeater name="heroes" initial-size="0" min-size="0">
+                    <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_DESC</description>
+                    <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_ADD</add-label>
+                    <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_REMOVE</del-label>
+                    <header-label>{tile}</header-label>
+                    
+                    <attribute name="sheet" type="content" contentType="conan-hero">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_SHEET_DESC</description>
+                        <validation>
+                            <mandatory />
+                        </validation>
+                        <widget>edition.select-referencetable-content</widget>
+                    </attribute>
+                    <attribute name="text" type="rich-text">
+                        <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT</label>
+                        <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT_DESC</description>
+                        <widget-params>
+                            <param name="height">80</param>
+                        </widget-params>
+                    </attribute>
                 </repeater>
                 
             </attribute>
