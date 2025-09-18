@@ -123,5 +123,25 @@
     
     <message key="CONTENT_TYPES_FORUM_URL">URL</message>
     <message key="CONTENT_TYPES_FORUM_URL">Lien vers la racine du forum</message>
+
+    <!-- ********************************************************* -->
+    <!-- * CONFIG                                                * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONFIG_CATEGORY_MONOLITH">Monolith</message>
+    <message key="CONFIG_GROUP_LINK">Liens externes</message>
+
+    <message key="CONFIG_COMPANION_BASE_URL">Compagnon</message>
+    <message key="CONFIG_COMPANION_BASE_URL_DESC">URL racine du compagnon de Monoligh</message>
+
+    <!-- ********************************************************* -->
+    <!-- * SCC                                                   * -->
+    <!-- ********************************************************* -->
+
+    <message key="SCC_JSON">Source de données JSON</message>
+    <message key="SCC_JSON_DESC">Synchronisation avec les données du Compagnon de Monolith</message>
+
+    <message key="SCC_JSON_PATH">Chemin du fichier JSON</message>
+    <message key="SCC_JSON_PATH_DESC">Chemin du fichier JSON dans le compagnon (url configurée en paramètre de configuration générale)&lt;br/>Exemple: Conan/data/equipments</message>
     
 </catalogue>
