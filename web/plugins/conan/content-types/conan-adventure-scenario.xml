@@ -512,6 +512,32 @@
                 
             </attribute>
         </attribute>
+
+        <repeater name="rules" initial-size="0" min-size="0">
+            <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_DESC</description>
+            <add-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_ADD</add-label>
+            <del-label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_REMOVE</del-label>
+            <header-label>{title}</header-label>
+            
+            <attribute name="title" type="string">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE</label>
+                <description i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE_DESC</description>
+                <validation>
+                    <mandatory />
+                </validation>
+            </attribute>
+            <attribute name="text" type="rich-text">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT</label>
+                <description i18n="true">"CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT_DESC"</description>
+                <validation>
+                    <mandatory />
+                </validation>
+                <widget-params>
+                    <param name="height">80</param>
+                </widget-params>
+            </attribute>
+        </repeater>
             
         <view name="main" override="true">
             <item ref="introduction" order-before="image" group="general"/>
@@ -527,6 +553,11 @@
                 <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_OVERLORD</label>
                 
                 <item ref="overlord/*"/>
+            </group>
+            <group role="tab" name="rules" order-after="overlord">
+                <label i18n="true">CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_RULES</label>
+                
+                <item ref="rules/*"/>
             </group>
         </view>
     </content-type>

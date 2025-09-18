@@ -70,6 +70,7 @@
     
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_HEROES">Héros</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_OVERLORD">Overlord</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_TAB_RULES">Règles spéciales</message>
 
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION">Introduction</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_INTRODUCTION_DESC">Texte d'introduction du scénario</message>
@@ -260,6 +261,17 @@
 
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT">Texte explicatif</message>
     <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_OVERLORD_RIVER_HEROES_TEXT_DESC">Texte explicatif quand à l'utilisation de ce héros par l'overlord</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES">Règles spéciales</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_DESC">Règles spéciales du scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_ADD">Ajouter une règle spéciale</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_REMOVE">Supprimer une règle spéciale</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE">Titre</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TITLE_DESC">Titre de la règle spéciale</message>
+
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT">Texte</message>
+    <message key="CONTENT_TYPES_CONAN_ADVENTURE_SCENARIO_RULES_TEXT_DESC">Texte de la règle spéciale</message>
     
     <!-- ********************************************************* -->
     <!-- * CONAN EXPANSION TYPE                                  * -->
