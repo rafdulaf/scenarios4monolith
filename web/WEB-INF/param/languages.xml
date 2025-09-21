@@ -17,10 +17,10 @@
 <languages>
     <language code="fr" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_FR</language>
     <language code="en" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_EN</language>
+    <language code="it" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_IT</language>
     <!-- 
     <language code="es" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_ES</language>
     <language code="de" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_DE</language>
-    <language code="it" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_IT</language>
     <language code="zh" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_ZH</language>
     <language code="pt" i18n="true">plugin.cms:PLUGINS_CMS_LANGUAGES_LABEL_PT</language> 
     -->

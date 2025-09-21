@@ -1,21 +1,34 @@
 package fr.rafdulaf.scenarios4monolith.general;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
 
+import org.apache.avalon.framework.activity.Disposable;
+import org.apache.avalon.framework.activity.Initializable;
 import org.apache.avalon.framework.service.ServiceException;
 import org.apache.avalon.framework.service.ServiceManager;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.io.CloseMode;
 import org.slf4j.Logger;
 
 import org.ametys.cms.repository.Content;
 import org.ametys.cms.repository.ModifiableContent;
 import org.ametys.cms.repository.WorkflowAwareContent;
+import org.ametys.core.util.HttpUtils;
 import org.ametys.core.util.JSONUtils;
 import org.ametys.plugins.contentio.synchronize.impl.AbstractDefaultSynchronizableContentsCollection;
 import org.ametys.plugins.repository.metadata.MultilingualString;
+import org.ametys.runtime.config.Config;
 import org.ametys.runtime.model.View;
 
 import com.opensymphony.workflow.WorkflowException;
@@ -23,16 +36,22 @@ import com.opensymphony.workflow.WorkflowException;
 /**
  * Synchronize with the Companion data
  */
-public class CompanionSynchronizableCollection extends AbstractDefaultSynchronizableContentsCollection
+public class CompanionSynchronizableCollection extends AbstractDefaultSynchronizableContentsCollection implements Initializable, Disposable
 {
     private JSONUtils _jsonUtils;
+    private CloseableHttpClient _httpClient;
 
     @Override
-        public void service(ServiceManager manager) throws ServiceException
-        {
-            super.service(manager);
-            _jsonUtils = (JSONUtils) manager.lookup(JSONUtils.ROLE);
-        }
+    public void service(ServiceManager manager) throws ServiceException
+    {
+        super.service(manager);
+        _jsonUtils = (JSONUtils) manager.lookup(JSONUtils.ROLE);
+    }
+    
+    public void initialize() throws Exception
+    {
+        _httpClient = HttpUtils.createHttpClient(0, 30);
+    }
     
     public String getIdField()
     {
@@ -40,14 +59,125 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     }
     
     @Override
-    protected Map<String, Map<String, Object>> internalSearch(Map<String, Object> searchParameters, int offset, int limit, List<Object> sort, Logger logger)
+    protected Map<String, List<String>> _getMapping(Map<String, Map<String, Object>> results)
     {
-        // TODO
-        return Map.of(
-            "carbu", Map.of("identifier", "carbu", "title", "{\"fr\": \"Carburant\", \"en\": \"Fuel\"}", "type", "Essence")
-        );
+        Map<String, List<String>> mapping = super._getMapping(results);
+        
+        //
+        String titleMapping = (String) this.getParameterValues().get("titleField");
+        
+        List<String> titleMappings = mapping.computeIfAbsent("title", l -> new ArrayList<String>());
+        titleMappings = new ArrayList<>(titleMappings);
+        titleMappings.add(titleMapping);
+        mapping.put("title", titleMappings);
+        mapping.remove(titleMapping);
+
+        List<String> identifierMappings = mapping.computeIfAbsent("identifier", l -> new ArrayList<String>());
+        identifierMappings = new ArrayList<>(identifierMappings);
+        identifierMappings.add("id");
+        mapping.put("identifier", identifierMappings);
+        mapping.remove("id");
+
+        return mapping;
     }
     
+    @SuppressWarnings("unchecked")
+    private Map<String, Map<String, Object>> _read(String url, String dataField)
+    {
+        try
+        {
+            // Prepare a request object
+            HttpGet request = new HttpGet(url);
+            
+            // Execute the request
+            return _httpClient.execute(request, response -> {
+                if (response.getCode() != 200)
+                {
+                    throw new IllegalStateException("Could not join " + url + ". Error code " + response.getCode());
+                }
+                
+                try
+                {
+                    String responseAsString = EntityUtils.toString(response.getEntity(), "UTF-8");
+                    Map<String, Object> convertJsonToMap = _jsonUtils.convertJsonToMap(responseAsString);
+                    Object data = convertJsonToMap.get(dataField);
+                    if (data instanceof Map m)
+                    {
+                        return (Map<String, Map<String, Object>>) m;
+                    }
+                    else if (data instanceof List l)
+                    {
+                        // Convert list to map using the id field
+                        return ((List<Map<String, Object>>) l)
+                                .stream()
+                                .filter(item -> item.containsKey("id"))
+                                .collect(
+                                    java.util.stream.Collectors.toMap(
+                                        item -> item.get("id").toString(),
+                                        item -> item,
+                                        (x, y) -> y,
+                                        LinkedHashMap::new
+                                    )
+                                );
+                    }
+                    else
+                    {
+                        throw new IllegalStateException("Joined at " + url + ". But cannot parse the response " + data.getClass().getCanonicalName());
+                    }
+                }
+                catch (IllegalArgumentException e)
+                {
+                    throw new IllegalStateException("Joined at " + url + ". But cannot parse the response.", e);
+                }
+            });
+        }
+        catch (IOException e)
+        {
+            throw new IllegalStateException("Could not join " + url, e);
+        }
+    }
+    
+    @Override
+    protected Map<String, Map<String, Object>> internalSearch(Map<String, Object> searchParameters, int offset, int limit, List<Object> sort, Logger logger)
+    {
+        String baseUrl = Config.getInstance().getValue("companion.base.url");
+        String folder = (String) this.getParameterValues().get("folder");
+        String file = (String) this.getParameterValues().get("file");
+        String dataField = (String) this.getParameterValues().get("data");
+        String[] languages = StringUtils.split((String) this.getParameterValues().get("languages"), ", ");
+        
+        Map<String, Map<String, Object>> data = _read(baseUrl + "/" + folder + "/" + file + ".json", dataField);
+        for (String lang : languages)
+        {
+            Map<String, Map<String, Object>> localData = _read(baseUrl + "/" + folder + "/" + file + "/lang/" + file + "." + lang + ".json", dataField);
+            _addLang(data, localData, lang);
+        }
+        
+        return data;
+    }
+    
+    private void _addLang(Map<String, Map<String, Object>> data, Map<String, Map<String, Object>> localData, String lang)
+    {
+        for (String key : localData.keySet())
+        {
+            for (Entry<String, Object> entry : localData.get(key).entrySet())
+            {
+                if (entry.getValue() instanceof String s)
+                {
+                    String existing = (String) data.get(key).computeIfAbsent(entry.getKey(), l -> "{}");
+                    Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
+                    json.put(lang, s);
+                    data.get(key).put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
+                }
+                else
+                {
+                    throw new IllegalStateException("Cannot merge non string value for " + entry.getKey() + " in lang " + lang);
+                }
+            }
+        }
+        
+    }
+
     @Override
     public ModifiableContent getContent(String lang, String idValue, boolean forceStrictCheck)
     {
@@ -120,5 +250,10 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         }
         
         return super._editContent(content, view, values, additionalParameters, create, notSynchronizedContentIds, logger);
+    }
+    
+    public void dispose()
+    {
+        _httpClient.close(CloseMode.GRACEFUL);
     }
 }

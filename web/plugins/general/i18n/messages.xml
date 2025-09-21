@@ -79,6 +79,8 @@
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME_DESC">Titre du type d''extension</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID">Identifiant</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN">Colonne</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN_DESC">Emplacement du type d'extensions dans l'écran de choix du Companion</message>
     
     <!-- ********************************************************* -->
     <!-- * ABSTRACT EXPANSION                                    * -->
@@ -141,7 +143,19 @@
     <message key="SCC_JSON">Source de données JSON</message>
     <message key="SCC_JSON_DESC">Synchronisation avec les données du Compagnon de Monolith</message>
 
-    <message key="SCC_JSON_PATH">Chemin du fichier JSON</message>
-    <message key="SCC_JSON_PATH_DESC">Chemin du fichier JSON dans le compagnon (url configurée en paramètre de configuration générale)&lt;br/>Exemple: Conan/data/equipments</message>
+    <message key="SCC_JSON_FOLDER">Dossier du JSON</message>
+    <message key="SCC_JSON_FOLDER_DESC">Chemin du fichier JSON dans le compagnon (url configurée en paramètre de configuration générale)&lt;br/>Exemple: Conan/data</message>
+    
+    <message key="SCC_JSON_FILE">Fichier du JSON</message>
+    <message key="SCC_JSON_FILE_DESC">Nom du fichier JSON dans le compagnon (url configurée en paramètre de configuration générale)&lt;br/>Exemple: spell</message>
+    
+    <message key="SCC_JSON_DATA">Champ de données</message>
+    <message key="SCC_JSON_DATA_DESC">Identifiant dans le json du champ avec les données</message>
+    
+    <message key="SCC_JSON_LANGUAGES">Langues</message>"
+    <message key="SCC_JSON_LANGUAGES_DESC">Liste des langues à synchroniser</message>
+    
+    <message key="SCC_JSON_TITLEFIELD">Identifiant du titre</message>
+    <message key="SCC_JSON_TITLEFIELD_DESC">Identifiant du titre dans le json</message>
     
 </catalogue>

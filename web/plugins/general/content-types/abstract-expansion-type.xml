@@ -28,9 +28,18 @@
             </validation>
         </attribute>
 
+        <attribute name="column" type="string">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
             <item ref="identifier" order-before="archived" />
+            <item ref="column" order-before="archived" />
         </view>
         
         <view name="default-edition" override="true">
