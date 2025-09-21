@@ -21,6 +21,16 @@
         </param>
     </config>
     
+    <feature name="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO" 
+             deactivates="contentio/org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO"
+             depends="core-impl/runtime.current-user">
+        <components>
+            <component role="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionDAO"
+                       class="fr.rafdulaf.scenarios4monolith.general.SynchronizableContentsCollectionDAO"/>
+            <component class="org.ametys.plugins.contentio.synchronize.SynchronizableContentsCollectionHelper"/>
+        </components>
+    </feature>
+    
     <feature name="ribbon">
         <extensions>
             <extension id="monolith.scenarios.general.ribbon"
