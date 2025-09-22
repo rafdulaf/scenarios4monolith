@@ -69,8 +69,8 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         List<String> titleMappings = mapping.computeIfAbsent("title", l -> new ArrayList<String>());
         titleMappings = new ArrayList<>(titleMappings);
         titleMappings.add(titleMapping);
-        mapping.put("title", titleMappings);
         mapping.remove(titleMapping);
+        mapping.put("title", titleMappings);
 
         List<String> identifierMappings = mapping.computeIfAbsent("identifier", l -> new ArrayList<String>());
         identifierMappings = new ArrayList<>(identifierMappings);
@@ -237,16 +237,18 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     @Override
     protected boolean _editContent(WorkflowAwareContent content, Optional<View> view, Map<String, Object> values, Map<String, Object> additionalParameters, boolean create, Set<String> notSynchronizedContentIds, Logger logger) throws WorkflowException
     {
-        if (values.containsKey("title")
-            && "multilingual-string".equals(content.getDefinition("title").getType().getId()))
+        for (String key : values.keySet())
         {
-            MultilingualString title = new MultilingualString();
-            
-            @SuppressWarnings("unchecked")
-            Map<String, String> titleVariants = (Map) _jsonUtils.convertJsonToMap((String) values.get("title"));
-            titleVariants.entrySet().stream().forEach(e -> title.add(Locale.forLanguageTag(e.getKey()), e.getValue()));
-            
-            values.put("title", title);
+            if ("multilingual-string".equals(content.getDefinition(key).getType().getId()))
+            {
+                MultilingualString ms = new MultilingualString();
+                
+                @SuppressWarnings("unchecked")
+                Map<String, String> titleVariants = (Map) _jsonUtils.convertJsonToMap((String) values.get(key));
+                titleVariants.entrySet().stream().forEach(e -> ms.add(Locale.forLanguageTag(e.getKey()), e.getValue()));
+                
+                values.put(key, ms);
+            }
         }
         
         return super._editContent(content, view, values, additionalParameters, create, notSynchronizedContentIds, logger);

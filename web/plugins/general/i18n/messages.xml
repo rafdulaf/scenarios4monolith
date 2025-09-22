@@ -89,10 +89,14 @@
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_DESC">Liste les extensions du jeu</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME">Titre</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_NAME_DESC">Titre de l'extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT">Titre court</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT_DESC">Titre court de l'extension</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID">Identifiant</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type</message>
-    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type de l'extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_DESC">Type de l'extension</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_MANDATORY">Obligatoire</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_MANDATORY_DESC">Jeu de base</message>
 
     <!-- ********************************************************* -->
     <!-- * PERSON                                                * -->

@@ -20,6 +20,14 @@
             </validation>
         </attribute>
 
+        <attribute name="short" type="multilingual-string">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+
         <attribute name="identifier" type="string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_ID</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC</description>
@@ -37,10 +45,19 @@
             <widget>edition.select-referencetable-content</widget>
         </attribute>
 
+        <attribute name="mandatory" type="boolean">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_MANDATORY</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_MANDATORY_DESC</description>
+            <default>false</default>
+            <widget>edition.select-referencetable-content</widget>
+        </attribute>
+
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
+            <item ref="short" order-before="archived" />
             <item ref="identifier" order-before="archived" />
             <item ref="type" order-before="archived" />
+            <item ref="mandatory" order-before="archived" />
         </view>
         
         <view name="default-edition" override="true">
