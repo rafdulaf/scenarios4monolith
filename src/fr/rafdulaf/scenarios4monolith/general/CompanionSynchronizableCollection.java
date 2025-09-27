@@ -1,7 +1,6 @@
 package fr.rafdulaf.scenarios4monolith.general;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -58,27 +57,12 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         return "identifier";
     }
     
+    @SuppressWarnings("unchecked")
     @Override
     protected Map<String, List<String>> _getMapping(Map<String, Map<String, Object>> results)
     {
-        Map<String, List<String>> mapping = super._getMapping(results);
-        
-        //
-        String titleMapping = (String) this.getParameterValues().get("titleField");
-        
-        List<String> titleMappings = mapping.computeIfAbsent("title", l -> new ArrayList<String>());
-        titleMappings = new ArrayList<>(titleMappings);
-        titleMappings.add(titleMapping);
-        mapping.remove(titleMapping);
-        mapping.put("title", titleMappings);
-
-        List<String> identifierMappings = mapping.computeIfAbsent("identifier", l -> new ArrayList<String>());
-        identifierMappings = new ArrayList<>(identifierMappings);
-        identifierMappings.add("id");
-        mapping.put("identifier", identifierMappings);
-        mapping.remove("id");
-
-        return mapping;
+        String mappingField = (String) this.getParameterValues().get("mappingField");
+        return (Map) _jsonUtils.convertJsonToMap(mappingField);
     }
     
     @SuppressWarnings("unchecked")
@@ -146,36 +130,83 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         String dataField = (String) this.getParameterValues().get("data");
         String[] languages = StringUtils.split((String) this.getParameterValues().get("languages"), ", ");
         
-        Map<String, Map<String, Object>> data = _read(baseUrl + "/" + folder + "/" + file + ".json", dataField);
+        Map<String, Map<String, Object>> data = _flat(_read(baseUrl + "/" + folder + "/" + file + ".json", dataField));
         for (String lang : languages)
         {
-            Map<String, Map<String, Object>> localData = _read(baseUrl + "/" + folder + "/" + file + "/lang/" + file + "." + lang + ".json", dataField);
-            _addLang(data, localData, lang);
+            Map<String, Map<String, Object>> localData = _flat(_read(baseUrl + "/" + folder + "/" + file + "/lang/" + file + "." + lang + ".json", dataField));
+            for (String key : localData.keySet())
+            {
+                _addLang(data.get(key), localData.get(key), lang);
+            }
         }
         
         return data;
     }
     
-    private void _addLang(Map<String, Map<String, Object>> data, Map<String, Map<String, Object>> localData, String lang)
+    private Map<String, Map<String, Object>> _flat(Map<String, Map<String, Object>> data)
     {
-        for (String key : localData.keySet())
+        Map<String, Map<String, Object>> finalMap = new LinkedHashMap<>();
+        
+        for (String key : data.keySet())
         {
-            for (Entry<String, Object> entry : localData.get(key).entrySet())
-            {
-                if (entry.getValue() instanceof String s)
+            Map<String, Object> miniMap = new LinkedHashMap<>();
+            _doFlat(data.get(key), miniMap, "");
+            finalMap.put(key, miniMap);
+        }
+        
+        return finalMap;
+    }
+
+    private void _doFlat(Map<String, Object> data, Map<String, Object> result, String prefix)
+    {
+        for (Entry<String, Object> entry : data.entrySet())
+        {
+            _underFlat(entry.getValue(), result, prefix + entry.getKey());
+        }
+    }
+    @SuppressWarnings("unchecked")
+    private void _underFlat(Object object, Map<String, Object> result, String prefix)
+    {
+        switch (object)
+        {
+            case Number n -> result.put(prefix, n);
+            case Boolean b -> result.put(prefix, b);
+            case String s -> result.put(prefix, s);
+            case Map m -> _doFlat(m, result, prefix + "/");
+            case List l -> {
+                if (l.size() == 0 || l.get(0) instanceof Number || l.get(0) instanceof Boolean || l.get(0) instanceof String)
                 {
-                    String existing = (String) data.get(key).computeIfAbsent(entry.getKey(), l -> "{}");
-                    Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
-                    json.put(lang, s);
-                    data.get(key).put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
+                    result.put(prefix, l);
+                    return;
                 }
                 else
                 {
-                    throw new IllegalStateException("Cannot merge non string value for " + entry.getKey() + " in lang " + lang);
+                    for (int i=0; i<l.size(); i++)
+                    {
+                        _underFlat(l.get(i), result, prefix + "[" + i + "]");
+                    }
                 }
             }
+            case null, default -> throw new IllegalStateException("Cannot flatten " + object.getClass().toString() + " value for " + prefix);
         }
-        
+    }
+    
+    private void _addLang(Map<String, Object> data, Map<String, Object> localData, String lang)
+    {
+        for (Entry<String, Object> entry : localData.entrySet())
+        {
+            if (entry.getValue() instanceof String s)
+            {
+                String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
+                Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
+                json.put(lang, s);
+                data.put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
+            }
+            else
+            {
+                throw new IllegalStateException("Cannot merge " + entry.getValue().getClass().toString() + " value for " + entry.getKey() + " in lang " + lang);
+            }
+        }
     }
 
     @Override

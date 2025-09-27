@@ -1,5 +1,6 @@
 package fr.rafdulaf.scenarios4monolith.general;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -49,19 +50,21 @@ public class ReferenceSynchronizingContentOperator implements SynchronizingConte
                 ModelItem modelItem = cType.getModelItem(remoteValue.getKey());
                 if (modelItem instanceof ContentAttributeDefinition cad)
                 {
-                    if (remoteValue.getValue().size() >= 1)
+                    List<Object> values = new ArrayList<>();
+                    for (Object value : remoteValue.getValue())
                     {
-                        String indentifier = remoteValue.getValue().get(0).toString();
-                        Content value = _getContentByIdentifier(indentifier, cad.getContentTypeId());
-                        if (value == null)
+                        String indentifier = value.toString();
+                        Content contentValue = _getContentByIdentifier(indentifier, cad.getContentTypeId());
+                        if (contentValue == null)
                         {
                             logger.error("The content with identifier '{}' and content type '{}' does not exist, cannot set the reference attribute '{}'", indentifier, cad.getContentTypeId(), remoteValue.getKey());
                         }
                         else
                         {
-                            remoteValue.setValue(List.of(value.getId()));
+                            values.add(contentValue.getId());
                         }
                     }
+                    remoteValue.setValue(values);
                 }
             }
         }

@@ -159,8 +159,8 @@
     <message key="SCC_JSON_LANGUAGES">Langues</message>"
     <message key="SCC_JSON_LANGUAGES_DESC">Liste des langues à synchroniser</message>
     
-    <message key="SCC_JSON_TITLEFIELD">Identifiant du titre</message>
-    <message key="SCC_JSON_TITLEFIELD_DESC">Identifiant du titre dans le json</message>
+    <message key="SCC_JSON_MAPPINGFIELD">Mapping</message>
+    <message key="SCC_JSON_MAPPINGFIELD_DESC">Json de mapping, par ex {"title": ["description/title"]}</message>
 
     <message key="SCC_JSON_REFERENCE_OPERATOR">Résolution des références</message>
     

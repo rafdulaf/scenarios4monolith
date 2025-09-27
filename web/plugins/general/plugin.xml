@@ -137,10 +137,11 @@
                            <mandatory/>
                         </validation>
                     </param>                    
-                    <param id="titleField" type="string">
-                        <label i18n="true">SCC_JSON_TITLEFIELD</label>
-                        <description i18n="true">SCC_JSON_TITLEFIELD_DESC</description>
+                    <param id="mappingField" type="string">
+                        <label i18n="true">SCC_JSON_MAPPINGFIELD</label>
+                        <description i18n="true">SCC_JSON_MAPPINGFIELD_dESC</description>
                         <default-value>title</default-value>
+                        <widget>edition.textarea</widget>
                         <validation>
                            <mandatory/>
                         </validation>
