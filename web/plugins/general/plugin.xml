@@ -172,6 +172,9 @@
             <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
                        id="reference"
                        class="fr.rafdulaf.scenarios4monolith.general.ReferenceSynchronizingContentOperator"/>
+            <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
+                       id="heroes"
+                       class="fr.rafdulaf.scenarios4monolith.general.HeroesSynchronizingContentOperator"/>
         </extensions>
     </feature> 
     

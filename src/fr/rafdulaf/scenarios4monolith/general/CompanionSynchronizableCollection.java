@@ -209,6 +209,13 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 json.put(lang, s);
                 data.put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
             }
+            else if (entry.getValue() instanceof Number n)
+            {
+                String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
+                Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
+                json.put(lang, n);
+                data.put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
+            }
             else
             {
                 throw new IllegalStateException("Cannot merge " + entry.getValue().getClass().toString() + " value for " + entry.getKey() + " in lang " + lang);
