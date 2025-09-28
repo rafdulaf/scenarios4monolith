@@ -37,7 +37,7 @@ import com.opensymphony.workflow.WorkflowException;
  */
 public class CompanionSynchronizableCollection extends AbstractDefaultSynchronizableContentsCollection implements Initializable, Disposable
 {
-    private JSONUtils _jsonUtils;
+    protected JSONUtils _jsonUtils;
     private CloseableHttpClient _httpClient;
 
     @Override
