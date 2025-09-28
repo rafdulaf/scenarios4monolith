@@ -66,7 +66,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     }
     
     @SuppressWarnings("unchecked")
-    private Map<String, Map<String, Object>> _read(String url, String dataField)
+    protected Map<String, Map<String, Object>> _read(String url, String dataField)
     {
         try
         {
@@ -84,7 +84,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 {
                     String responseAsString = EntityUtils.toString(response.getEntity(), "UTF-8");
                     Map<String, Object> convertJsonToMap = _jsonUtils.convertJsonToMap(responseAsString);
-                    Object data = convertJsonToMap.get(dataField);
+                    Object data = StringUtils.isNotBlank(dataField) ? convertJsonToMap.get(dataField) : convertJsonToMap;
                     if (data instanceof Map m)
                     {
                         return (Map<String, Map<String, Object>>) m;
@@ -92,17 +92,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                     else if (data instanceof List l)
                     {
                         // Convert list to map using the id field
-                        return ((List<Map<String, Object>>) l)
-                                .stream()
-                                .filter(item -> item.containsKey("id"))
-                                .collect(
-                                    java.util.stream.Collectors.toMap(
-                                        item -> item.get("id").toString(),
-                                        item -> item,
-                                        (x, y) -> y,
-                                        LinkedHashMap::new
-                                    )
-                                );
+                        return _listToMap(l);
                     }
                     else
                     {
@@ -119,6 +109,22 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         {
             throw new IllegalStateException("Could not join " + url, e);
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    protected Map<String, Map<String, Object>> _listToMap(List l)
+    {
+        return ((List<Map<String, Object>>) l)
+                .stream()
+                .filter(item -> item.containsKey("id"))
+                .collect(
+                    java.util.stream.Collectors.toMap(
+                        item -> item.get("id").toString(),
+                        item -> item,
+                        (x, y) -> y,
+                        LinkedHashMap::new
+                    )
+                );
     }
     
     @Override
@@ -143,7 +149,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         return data;
     }
     
-    private Map<String, Map<String, Object>> _flat(Map<String, Map<String, Object>> data)
+    protected Map<String, Map<String, Object>> _flat(Map<String, Map<String, Object>> data)
     {
         Map<String, Map<String, Object>> finalMap = new LinkedHashMap<>();
         
@@ -157,7 +163,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         return finalMap;
     }
 
-    private void _doFlat(Map<String, Object> data, Map<String, Object> result, String prefix)
+    protected void _doFlat(Map<String, Object> data, Map<String, Object> result, String prefix)
     {
         for (Entry<String, Object> entry : data.entrySet())
         {
@@ -165,10 +171,11 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         }
     }
     @SuppressWarnings("unchecked")
-    private void _underFlat(Object object, Map<String, Object> result, String prefix)
+    protected void _underFlat(Object object, Map<String, Object> result, String prefix)
     {
         switch (object)
         {
+            case null -> result.put(prefix, null);
             case Number n -> result.put(prefix, n);
             case Boolean b -> result.put(prefix, b);
             case String s -> result.put(prefix, s);
@@ -187,11 +194,11 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                     }
                 }
             }
-            case null, default -> throw new IllegalStateException("Cannot flatten " + object.getClass().toString() + " value for " + prefix);
+            default -> throw new IllegalStateException("Cannot flatten " + object.getClass().toString() + " value for " + prefix);
         }
     }
     
-    private void _addLang(Map<String, Object> data, Map<String, Object> localData, String lang)
+    protected void _addLang(Map<String, Object> data, Map<String, Object> localData, String lang)
     {
         for (Entry<String, Object> entry : localData.entrySet())
         {

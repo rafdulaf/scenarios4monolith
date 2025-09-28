@@ -40,17 +40,10 @@
            <widget>edition.select-referencetable-content</widget>
         </attribute>
 
-        <attribute name="composition" type="content" multiple="true" contentType="conan-board">
-            <label i18n="true">CONTENT_TYPES_CONAN_BOARD_COMPOSITION</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_BOARD_COMPOSITION_DESC</description>
-            <widget>edition.select-referencetable-content</widget>
-        </attribute>
-        
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
             <item ref="identifier" order-before="archived" />
             <item ref="origins" order-before="archived" />
-            <item ref="composition" order-before="archived" />
         </view>
         
         <view name="default-edition" override="true">

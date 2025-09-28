@@ -312,9 +312,6 @@
     <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS">Origine</message>
     <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC">Extension d'origine du plateau</message>
     
-    <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION">Composition</message>
-    <message key="CONTENT_TYPES_CONAN_BOARD_COMPOSITION_DESC">Liste des plateaux nécessaire si le plateau est en fait un assemblage d'autres plateaux simples (non composés eux-mêmes)</message>
-
     <!-- ********************************************************* -->
     <!-- * CONAN HEROES                                          * -->
     <!-- ********************************************************* -->

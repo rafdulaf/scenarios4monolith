@@ -125,9 +125,6 @@
                         <label i18n="true">SCC_JSON_DATA</label>
                         <description i18n="true">SCC_JSON_DATA_DESC</description>
                         <default-value>list</default-value>
-                        <validation>
-                           <mandatory/>
-                        </validation>
                     </param>                    
                     <param id="languages" type="string">
                         <label i18n="true">SCC_JSON_LANGUAGES</label>
@@ -140,7 +137,7 @@
                     <param id="mappingField" type="string">
                         <label i18n="true">SCC_JSON_MAPPINGFIELD</label>
                         <description i18n="true">SCC_JSON_MAPPINGFIELD_dESC</description>
-                        <default-value>title</default-value>
+                        <default-value>{"title": ["title"]}</default-value>
                         <widget>edition.textarea</widget>
                         <validation>
                            <mandatory/>
@@ -148,9 +145,33 @@
                     </param>                    
                 </parameters>
             </extension>
+            <extension id="json-maps" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.MapsCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_MAPS</label>
+                <description i18n="true">SCC_JSON_MAPS_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
             <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
-                          id="reference"
-                        class="fr.rafdulaf.scenarios4monolith.general.ReferenceSynchronizingContentOperator"/>        
+                       id="reference"
+                       class="fr.rafdulaf.scenarios4monolith.general.ReferenceSynchronizingContentOperator"/>
         </extensions>
     </feature> 
     
