@@ -54,7 +54,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     
     public String getIdField()
     {
-        return "identifier";
+        return "scc_identifier";
     }
     
     @SuppressWarnings("unchecked")
@@ -114,19 +114,44 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     @SuppressWarnings("unchecked")
     protected Map<String, Map<String, Object>> _listToMap(List l)
     {
-        return ((List<Map<String, Object>>) l)
-                .stream()
-                .filter(item -> item.containsKey("id"))
-                .collect(
-                    java.util.stream.Collectors.toMap(
-                        item -> item.get("id").toString(),
-                        item -> item,
-                        (x, y) -> y,
-                        LinkedHashMap::new
-                    )
-                );
+        Map<String, Map<String, Object>> result = new LinkedHashMap<>();
+        
+        for (Map<String, Object> item : (List<Map<String, Object>>) l)
+        {
+            int count = 1;
+            if (item.containsKey("count"))
+            {
+                count = Integer.parseInt(item.get("count").toString());
+            }
+            
+            if (item.containsKey("id"))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    String sccId = _findSCCId(item.get("id").toString(), result.keySet());
+                    item.put("scc_indentifier", sccId);
+                    result.put(sccId, item);
+                }
+            }
+        }
+        
+        return result;
     }
     
+    private String _findSCCId(String string, Set<String> keySet)
+    {
+        int i = 1;
+        while (true)
+        {
+            String candidate = string + "#" + i;
+            if (!keySet.contains(candidate))
+            {
+                return candidate;
+            }
+            i++;
+        }
+    }
+
     @Override
     protected Map<String, Map<String, Object>> internalSearch(Map<String, Object> searchParameters, int offset, int limit, List<Object> sort, Logger logger)
     {
@@ -140,9 +165,9 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         for (String lang : languages)
         {
             Map<String, Map<String, Object>> localData = _flat(_read(baseUrl + "/" + folder + "/" + file + "/lang/" + file + "." + lang + ".json", dataField));
-            for (String key : localData.keySet())
+            for (String key : data.keySet())
             {
-                _addLang(data.get(key), localData.get(key), lang);
+                _addLang(data.get(key), localData.get(StringUtils.substringBefore(key, "#")), lang);
             }
         }
         
@@ -202,18 +227,11 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     {
         for (Entry<String, Object> entry : localData.entrySet())
         {
-            if (entry.getValue() instanceof String s)
+            if (entry.getValue() instanceof String | entry.getValue() instanceof Number)
             {
                 String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
                 Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
-                json.put(lang, s);
-                data.put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
-            }
-            else if (entry.getValue() instanceof Number n)
-            {
-                String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
-                Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
-                json.put(lang, n);
+                json.put(lang, entry.getValue());
                 data.put(entry.getKey(), _jsonUtils.convertObjectToJson(json));
             }
             else

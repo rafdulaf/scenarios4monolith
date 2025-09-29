@@ -78,9 +78,11 @@
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME">Titre</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_NAME_DESC">Titre du type d''extension</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_ID_DESC">Identifiant du Compagnon de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_SCC_ID">Identifiant unique</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN">Colonne</message>
-    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN_DESC">Emplacement du type d'extensions dans l'écran de choix du Companion</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN_DESC">Emplacement du type d'extensions dans l'écran de choix du Compagnon</message>
     
     <!-- ********************************************************* -->
     <!-- * ABSTRACT EXPANSION                                    * -->
@@ -92,7 +94,9 @@
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT">Titre court</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SHORT_DESC">Titre court de l'extension</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC">Identifiant de synchronisation avec le Companion de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_ID_DESC">Identifiant du Compagnon de Conan</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SCC_ID">Identifiant unique</message>
+    <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE">Type</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_DESC">Type de l'extension</message>
     <message key="CONTENT_TYPES_ABSTRACT_EXPANSION_MANDATORY">Obligatoire</message>

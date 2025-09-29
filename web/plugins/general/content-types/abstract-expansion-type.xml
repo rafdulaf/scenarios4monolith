@@ -28,6 +28,14 @@
             </validation>
         </attribute>
 
+        <attribute name="scc_identifier" type="string">
+            <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_SCC_ID</label>
+            <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_SCC_ID_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+
         <attribute name="column" type="string">
             <label i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN</label>
             <description i18n="true">CONTENT_TYPES_ABSTRACT_EXPANSION_TYPE_COLUMN_DESC</description>
@@ -38,6 +46,7 @@
 
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
+            <item ref="scc_identifier" order-before="archived" />
             <item ref="identifier" order-before="archived" />
             <item ref="column" order-before="archived" />
         </view>

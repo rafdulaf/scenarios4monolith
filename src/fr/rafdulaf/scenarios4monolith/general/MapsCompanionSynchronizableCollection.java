@@ -75,18 +75,19 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
         for (String lang : languages)
         {
             Map<String, Map<String, Object>> localData = _flat((Map) unflatenDataByLanguage.get(lang).get("list"));
-            for (String key : localData.keySet())
+            for (String key : listData.keySet())
             {
-                _addLang(listData.get(key), localData.get(key), lang);
+                _addLang(listData.get(key), localData.get(StringUtils.substringBefore(key, "#")), lang);
             }
         }
         for (Entry<String, Map<String, Object>> entry : listData.entrySet())
         {
-            String id = entry.getKey();
+            String sccId = entry.getKey();
+            Object id = entry.getValue().get("id");
             Object title = entry.getValue().get("description/title");
             Object origins = entry.getValue().get("description/origins");
             
-            finalData.put(id, Map.of(
+            finalData.put(sccId, Map.of(
                 "id", id,
                 "title", title,
                 "origins", origins
@@ -99,9 +100,9 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
         for (String lang : languages)
         {
             Map<String, Map<String, Object>> localData = _flat((Map) unflatenDataByLanguage.get(lang).get("parts"));
-            for (String key : localData.keySet())
+            for (String key : partsData.keySet())
             {
-                _addLang(partsData.get(key), localData.get(key), lang);
+                _addLang(partsData.get(key), localData.get(StringUtils.substringBefore(key, "#")), lang);
             }
         }
         for (Entry<String, Map<String, Object>> entry : partsData.entrySet())
@@ -114,32 +115,32 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
         for (String lang : languages)
         {
             Map<String, Map<String, Object>> localData = _flat((Map) unflatenDataByLanguage.get(lang).get("compositions"));
-            for (String key : localData.keySet())
+            for (String key : compositionsData.keySet())
             {
-                _addLang(compositionsData.get(key), localData.get(key), lang);
+                _addLang(compositionsData.get(key), localData.get(StringUtils.substringBefore(key, "#")), lang);
             }
         }
         for (Object composition : (List) unflatenData.get("compositions"))
         {
             Map<String, Object> compo = (Map<String, Object>) composition;
             String id = (String) compo.get("id");
-            Object title = compositionsData.get(id).get("description/title");
+            Object title = compositionsData.get(id + "#1").get("description/title");
             Set<String> origins = new HashSet<>();
             
             Map<String, Object> zonesJson = (Map<String, Object>) compo.get("zones");
             for (String zone : zonesJson.keySet())
             {
-                if (parts.containsKey(zone))
+                if (parts.containsKey(zone + "#1"))
                 {
-                    origins.addAll(parts.get(zone));
+                    origins.addAll(parts.get(zone + "#1"));
                 }
-                else // if (lists.containsKey(zone))
+                else // if (lists.containsKey(zone + "#1"))
                 {
-                    origins.addAll((List<String>) finalData.get(zone).get("origins"));
+                    origins.addAll((List<String>) finalData.get(zone + "#1").get("origins"));
                 }
             }
             
-            finalData.put(id, Map.of(
+            finalData.put(id + "#1", Map.of(
                 "id", id,
                 "title", title,
                 "origins", origins
@@ -158,9 +159,9 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
         }
         titles.values().stream().filter(t -> t.size() > 1).forEach(t ->
         {
-            for (String id : t)
+            for (String sccId : t)
             {
-                Map<String, Object> data = finalData.get(id);
+                Map<String, Object> data = finalData.get(sccId);
                 
                 List<String> origins = (List) data.get("origins");
                 List<MultilingualString> originsShorts = origins.stream().map(o -> _getContentByIdentifier(o, "conan-expansion")).map(o -> (MultilingualString) o.getValue("short")).toList();
@@ -173,8 +174,8 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
                 String newTitle = _jsonUtils.convertObjectToJson(titleData);
                 
                 
-                finalData.put(id, Map.of(
-                    "id", id,
+                finalData.put(sccId, Map.of(
+                    "id", data.get("id"),
                     "title", newTitle,
                     "origins", data.get("origins")
                 ));
