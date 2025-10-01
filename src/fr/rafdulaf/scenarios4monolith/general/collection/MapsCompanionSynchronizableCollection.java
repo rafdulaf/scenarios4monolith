@@ -1,45 +1,19 @@
-package fr.rafdulaf.scenarios4monolith.general;
+package fr.rafdulaf.scenarios4monolith.general.collection;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import org.apache.avalon.framework.service.ServiceException;
-import org.apache.avalon.framework.service.ServiceManager;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
-import org.ametys.cms.repository.Content;
-import org.ametys.cms.repository.ContentTypeExpression;
-import org.ametys.plugins.repository.AmetysObjectIterable;
-import org.ametys.plugins.repository.AmetysObjectIterator;
-import org.ametys.plugins.repository.AmetysObjectResolver;
-import org.ametys.plugins.repository.RepositoryConstants;
-import org.ametys.plugins.repository.metadata.MultilingualString;
-import org.ametys.plugins.repository.query.QueryHelper;
-import org.ametys.plugins.repository.query.expression.AndExpression;
-import org.ametys.plugins.repository.query.expression.Expression.Operator;
-import org.ametys.plugins.repository.query.expression.StringExpression;
 import org.ametys.runtime.config.Config;
 
 public class MapsCompanionSynchronizableCollection extends CompanionSynchronizableCollection
 {
-    private AmetysObjectResolver _ametysObjectResovler;
-
-    @Override
-    public void service(ServiceManager manager) throws ServiceException
-    {
-        super.service(manager);
-        _ametysObjectResovler = (AmetysObjectResolver) manager.lookup(AmetysObjectResolver.ROLE);
-    }
-    
     @Override
     protected Map<String, List<String>> _getMapping(Map<String, Map<String, Object>> results)
    {
@@ -147,62 +121,8 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
             ));
         }
         
-        // Lookup for dobbles
-        Map<String, List<String>> titles = new HashMap<>();
-        for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
-        {
-            String id = entry.getKey();
-            String title = (String) entry.getValue().get("title");
-            
-            List<String> t = titles.computeIfAbsent(title, tt -> new ArrayList<>());
-            t.add(id);
-        }
-        titles.values().stream().filter(t -> t.size() > 1).forEach(t ->
-        {
-            for (String sccId : t)
-            {
-                Map<String, Object> data = finalData.get(sccId);
-                
-                List<String> origins = (List) data.get("origins");
-                List<MultilingualString> originsShorts = origins.stream().map(o -> _getContentByIdentifier(o, "conan-expansion")).map(o -> (MultilingualString) o.getValue("short")).toList();
-                
-                Map<String, Object> titleData = _jsonUtils.convertJsonToMap((String) data.get("title"));
-                for (Entry<String, Object> titleLang : titleData.entrySet())
-                {
-                    titleLang.setValue(titleLang.getValue() + " (" + originsShorts.stream().map(ml -> ml.getValue(Locale.of(titleLang.getKey()))).collect(Collectors.joining(" ,")) + ")");
-                }
-                String newTitle = _jsonUtils.convertObjectToJson(titleData);
-                
-                
-                finalData.put(sccId, Map.of(
-                    "id", data.get("id"),
-                    "title", newTitle,
-                    "origins", data.get("origins")
-                ));
-            }
-        });
+        _undobble(finalData);
         
         return finalData;
     }
-    
-    private Content _getContentByIdentifier(String identifier, String contentType)
-    {
-        ContentTypeExpression allProjects = new  ContentTypeExpression(Operator.EQ, contentType);
-        StringExpression identifierExpresion = new StringExpression("identifier", Operator.EQ, identifier);
-        AndExpression exp = new AndExpression(allProjects, identifierExpresion);
-        
-        try (AmetysObjectIterable<Content> contents = _ametysObjectResovler.query(QueryHelper.getXPathQuery(null, RepositoryConstants.NAMESPACE_PREFIX + ":content", exp)))
-        {
-            AmetysObjectIterator<Content> iterator = contents.iterator();
-            if (!iterator.hasNext())
-            {
-                return null;
-            }
-            else
-            {
-                return iterator.next();
-            }
-        }
-    }
-
 }

@@ -154,6 +154,9 @@
     <message key="SCC_JSON_MAPS">Source de données JSON pour plateaux</message>
     <message key="SCC_JSON_MAPS_DESC">Synchronisation avec les données du Compagnon de Monolith dédiées aux plateaux</message>
 
+    <message key="SCC_JSON_HEROES">Source de données JSON pour héros</message>
+    <message key="SCC_JSON_HEROES_DESC">Synchronisation avec les données du Compagnon de Monolith dédiées aux plateaux</message>
+
     <message key="SCC_JSON_FOLDER">Dossier du JSON</message>
     <message key="SCC_JSON_FOLDER_DESC">Chemin du fichier JSON dans le compagnon (url configurée en paramètre de configuration générale)&lt;br/>Exemple: Conan/data</message>
     

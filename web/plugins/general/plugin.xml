@@ -103,7 +103,7 @@
             <extension id="json" 
                        class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
                        point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
-                <class name="fr.rafdulaf.scenarios4monolith.general.CompanionSynchronizableCollection"/>
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.CompanionSynchronizableCollection"/>
                 <label i18n="true">SCC_JSON</label>
                 <description i18n="true">SCC_JSON_DESC</description>
                 <parameters>
@@ -148,7 +148,7 @@
             <extension id="json-maps" 
                        class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
                        point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
-                <class name="fr.rafdulaf.scenarios4monolith.general.MapsCompanionSynchronizableCollection"/>
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.MapsCompanionSynchronizableCollection"/>
                 <label i18n="true">SCC_JSON_MAPS</label>
                 <description i18n="true">SCC_JSON_MAPS_DESC</description>
                 <parameters>
@@ -169,12 +169,45 @@
                     </param>                    
                 </parameters>
             </extension>
+            <extension id="json-heroes" 
+                       class="org.ametys.plugins.contentio.synchronize.impl.DefaultSynchronizableContentsCollectionModel" 
+                       point="org.ametys.plugins.contentio.synchronize.SynchronizeContentsCollectionModelExtensionPoint"> 
+                <class name="fr.rafdulaf.scenarios4monolith.general.collection.HeroesCompanionSynchronizableCollection"/>
+                <label i18n="true">SCC_JSON_HEROES</label>
+                <description i18n="true">SCC_JSON_HEROES_DESC</description>
+                <parameters>
+                    <param id="folder" type="string">
+                        <label i18n="true">SCC_JSON_FOLDER</label>
+                        <description i18n="true">SCC_JSON_FOLDER_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="file" type="string">
+                        <label i18n="true">SCC_JSON_FILE</label>
+                        <description i18n="true">SCC_JSON_FILE_DESC</description>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                    <param id="data" type="string">
+                        <label i18n="true">SCC_JSON_DATA</label>
+                        <description i18n="true">SCC_JSON_DATA_DESC</description>
+                        <default-value>list</default-value>
+                    </param>                    
+                    <param id="languages" type="string">
+                        <label i18n="true">SCC_JSON_LANGUAGES</label>
+                        <description i18n="true">SCC_JSON_LANGUAGES_DESC</description>
+                        <default-value>fr,en</default-value>
+                        <validation>
+                           <mandatory/>
+                        </validation>
+                    </param>                    
+                </parameters>
+            </extension>
             <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
                        id="reference"
-                       class="fr.rafdulaf.scenarios4monolith.general.ReferenceSynchronizingContentOperator"/>
-            <extension point="org.ametys.plugins.contentio.synchronize.SynchronizingContentOperatorExtensionPoint"
-                       id="heroes"
-                       class="fr.rafdulaf.scenarios4monolith.general.HeroesSynchronizingContentOperator"/>
+                       class="fr.rafdulaf.scenarios4monolith.general.operator.ReferenceSynchronizingContentOperator"/>
         </extensions>
     </feature> 
     

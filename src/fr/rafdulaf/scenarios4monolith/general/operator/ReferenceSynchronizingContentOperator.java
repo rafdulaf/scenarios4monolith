@@ -1,4 +1,4 @@
-package fr.rafdulaf.scenarios4monolith.general;
+package fr.rafdulaf.scenarios4monolith.general.operator;
 
 import java.util.ArrayList;
 import java.util.List;
