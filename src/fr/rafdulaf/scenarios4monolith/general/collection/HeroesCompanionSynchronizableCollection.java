@@ -22,7 +22,7 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
     
     @Override
     protected Map<String, List<String>> _getMapping(Map<String, Map<String, Object>> results)
-   {
+    {
         return Map.of(
             "title", List.of("name"),
             "identifier", List.of("id"),
