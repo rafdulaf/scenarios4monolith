@@ -42,6 +42,6 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
             }
         }
         
-        this._adapt(finalData);
+        super._adapt(finalData);
     }
 }
