@@ -382,7 +382,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     {
         for (Entry<String, Object> entry : localData.entrySet())
         {
-            if (entry.getValue() instanceof String | entry.getValue() instanceof Number | entry.getValue() == null)
+            if (entry.getValue() instanceof String | entry.getValue() instanceof Number | entry.getValue() instanceof Boolean | entry.getValue() == null)
             {
                 String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
                 Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);
