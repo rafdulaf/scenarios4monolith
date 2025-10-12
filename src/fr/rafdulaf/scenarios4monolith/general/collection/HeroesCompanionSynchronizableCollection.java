@@ -4,22 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.avalon.framework.service.ServiceException;
-import org.apache.avalon.framework.service.ServiceManager;
-
-import org.ametys.core.util.JSONUtils;
-
 public class HeroesCompanionSynchronizableCollection extends CompanionSynchronizableCollection
 {
-    private JSONUtils _jsonµUtils;
-
-    @Override
-    public void service(ServiceManager manager) throws ServiceException
-    {
-        super.service(manager);
-        _jsonµUtils = (JSONUtils) manager.lookup(JSONUtils.ROLE);
-    }
-    
     @Override
     protected Map<String, List<String>> _getMapping(Map<String, Map<String, Object>> results)
     {
@@ -32,7 +18,7 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
     
     
     @Override
-    protected void _undobble(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData)
     {
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
@@ -44,18 +30,18 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
                 String subname = data.get("subname").toString();
                 String name = data.get("name").toString();
                 
-                Map<String, Object> mapName = _jsonµUtils.convertJsonToMap(name);
-                Map<String, Object> mapSubname = _jsonµUtils.convertJsonToMap(subname);
+                Map<String, Object> mapName = _jsonUtils.convertJsonToMap(name);
+                Map<String, Object> mapSubname = _jsonUtils.convertJsonToMap(subname);
 
                 for (String lang : mapName.keySet())
                 {
                     mapName.put(lang, mapName.get(lang) + " " + mapSubname.get(lang));
                 }
                 
-                data.put("name", _jsonµUtils.convertObjectToJson(mapName));
+                data.put("name", _jsonUtils.convertObjectToJson(mapName));
             }
         }
         
-        super._undobble(finalData);
+        this._adapt(finalData);
     }
 }

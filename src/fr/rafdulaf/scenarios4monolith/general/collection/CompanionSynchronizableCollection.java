@@ -185,17 +185,44 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
             }
         }
         
+        _adapt(data);
+        
         _undobble(data);
         
         return data;
     }
     
-    protected void _undobble(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData)
     {
-        String identifierField = this._getMapping(null).get("identifier").get(0);
         String titleField = this._getMapping(null).get("title").get(0);
         
-        // Lookup for dobbles
+        // hidden name
+        for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
+        {
+            Map<String, Object> data = entry.getValue();
+            
+            // First add subname to name
+            if (data.containsKey("hiddenName"))
+            {
+                String subname = data.get("hiddenName").toString();
+                String name = data.get(titleField).toString();
+                
+                Map<String, Object> mapName = _jsonUtils.convertJsonToMap(name);
+                Map<String, Object> mapSubname = _jsonUtils.convertJsonToMap(subname);
+
+                for (String lang : mapName.keySet())
+                {
+                    String currentName = mapName.get(lang).toString();
+                    mapName.put(lang, currentName + (StringUtils.isBlank(currentName) ? "" : " ") + mapSubname.get(lang));
+                }
+                
+                data.put(titleField, _jsonUtils.convertObjectToJson(mapName));
+            }
+        }
+    }
+
+    protected List<Set<String>> _getDobbleElementsByTitle(Map<String, Map<String, Object>> finalData, String titleField, String identifierField)
+    {
         Map<String, Set<String>> titles = new HashMap<>();
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
@@ -205,13 +232,49 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
             Set<String> t = titles.computeIfAbsent(title, tt -> new HashSet<>());
             t.add(id);
         }
+        return titles.values().stream().filter(t -> t.size() > 1).toList();
+    }
+    
+    protected Map<String, Map<String, Object>> _getElementsByIdentifier(String identifier, Map<String, Map<String, Object>> finalData, String identifierField)
+    {
+        return finalData.entrySet().stream().filter(e -> e.getValue().get(identifierField).toString().equals(identifier)).collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+    }
+
+    protected void _undobble(Map<String, Map<String, Object>> finalData)
+    {
+        String identifierField = this._getMapping(null).get("identifier").get(0);
+        String titleField = this._getMapping(null).get("title").get(0);
         
-        titles.values().stream().filter(t -> t.size() > 1).forEach(t ->
+        _undobble(finalData, identifierField, titleField);
+        
+        List<Set<String>> dobbles = _getDobbleElementsByTitle(finalData, titleField, identifierField);
+        if (dobbles.size() > 1)
         {
-            for (String id : t)
+            throw new IllegalStateException("Dobbles at the end... " + dobbles.size() + " dobbles. For example: " + dobbles.get(0));
+        }
+    }
+
+    protected void _undobble(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)
+    {
+        _undobbleByOrigins(finalData, identifierField, titleField);
+    }
+    
+    protected void _undobbleByOrigins(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)
+    {
+        // Lookup for dobbles
+        List<Set<String>> dobbles = _getDobbleElementsByTitle(finalData, titleField, identifierField);
+        
+        for (Set<String> dobbleIds : dobbles)
+        {
+            Set<String> newTitles = new HashSet<>();
+            Map<String, Map<String, Object>> dataToUpdate = new HashMap<>();
+            
+            for (String id : dobbleIds)
             {
-                finalData.entrySet().stream().filter(e -> e.getValue().get(identifierField).toString().equals(id)).forEach(e -> {
-                    Map<String, Object> data = e.getValue();
+                
+                for(Map.Entry<String, Map<String, Object>> entry : _getElementsByIdentifier(id, finalData, identifierField).entrySet())
+                {
+                    Map<String, Object> data = entry.getValue();
                     
                     @SuppressWarnings("unchecked")
                     List<String> origins = (List) data.get("origins");
@@ -228,11 +291,22 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                         
                         Map<String, Object> newData = new LinkedHashMap<>(data);
                         newData.put(titleField, newTitle);
-                        finalData.put(e.getKey(), newData);
+                        dataToUpdate.put(entry.getKey(), newData);
+                        
+                        newTitles.add(newTitle);
                     }
-                });
+                    else
+                    {
+                        newTitles.add(data.get(titleField).toString());
+                    }
+                }
             }
-        });
+            
+            if (newTitles.size() > 1) // Otherwise titles are still equals (not interesting)
+            {
+                finalData.putAll(dataToUpdate);
+            }
+        }
     }
     
     private Content _getContentByIdentifier(String identifier, String contentType)
@@ -308,7 +382,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
     {
         for (Entry<String, Object> entry : localData.entrySet())
         {
-            if (entry.getValue() instanceof String | entry.getValue() instanceof Number)
+            if (entry.getValue() instanceof String | entry.getValue() instanceof Number | entry.getValue() == null)
             {
                 String existing = (String) data.computeIfAbsent(entry.getKey(), l -> "{}");
                 Map<String, Object> json = _jsonUtils.convertJsonToMap(existing);

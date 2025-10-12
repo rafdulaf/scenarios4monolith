@@ -121,6 +121,8 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
             ));
         }
         
+        _adapt(finalData);
+
         _undobble(finalData);
         
         return finalData;
