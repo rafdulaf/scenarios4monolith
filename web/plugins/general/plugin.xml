@@ -137,7 +137,7 @@
                     <param id="mappingField" type="string">
                         <label i18n="true">SCC_JSON_MAPPINGFIELD</label>
                         <description i18n="true">SCC_JSON_MAPPINGFIELD_dESC</description>
-                        <default-value>{"title": ["title"]}</default-value>
+                        <default-value>{"title": ["title"], "origins": ["origins"], "identifier": ["id"]}</default-value>
                         <widget>edition.textarea</widget>
                         <validation>
                            <mandatory/>

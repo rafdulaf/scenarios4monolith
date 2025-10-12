@@ -218,6 +218,24 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 
                 data.put(titleField, _jsonUtils.convertObjectToJson(mapName));
             }
+            
+            // Second add subid
+            if (data.containsKey("subid"))
+            {
+                String subname = data.get("subid").toString();
+                String name = data.get(titleField).toString();
+                
+                Map<String, Object> mapName = _jsonUtils.convertJsonToMap(name);
+
+                for (String lang : mapName.keySet())
+                {
+                    String currentName = mapName.get(lang).toString();
+                    mapName.put(lang, currentName + " " + subname);
+                }
+                
+                data.put(titleField, _jsonUtils.convertObjectToJson(mapName));
+            }
+            
         }
     }
 
