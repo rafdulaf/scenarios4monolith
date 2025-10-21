@@ -31,18 +31,6 @@
         </components>
     </feature>
     
-    <feature name="ribbon">
-        <extensions>
-            <extension id="monolith.scenarios.general.ribbon"
-                       point="org.ametys.core.ui.RibbonImportManager"
-                       class="org.ametys.core.ui.StaticRibbonImportManager">
-                <workspace match="cms|web">
-                    <file>ribbon/home.xml</file>
-                </workspace>
-            </extension>
-        </extensions>
-    </feature>
-    
     <feature name="monolith.scenarios.contenttypes">
          <extensions>
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"

@@ -28,7 +28,7 @@
     	</exclude>
     </plugins>
 
-    <workspaces default="web">
+    <workspaces default="cms">
         <theme>
 <!--             <workspace name="web">ametys-base</workspace> -->
         </theme>
