@@ -1,0 +1,39 @@
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type abstract="true" extends="org.ametys.cms.ArchivedContent">
+        <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_DESC</description>
+        
+        <icons>
+            <glyph>ametysicon-categories</glyph>
+        </icons>
+        
+        <tags>
+            <tag>reference-table</tag>
+            <tag>global</tag>
+        </tags>
+        
+        <attribute name="title" type="multilingual-string">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>  
+        
+        <view name="main" override="true">
+            <item ref="title" order-before="archived" />
+        </view>      
+        
+        <view name="default-edition" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="details" override="true">
+            <item ref="title" order-before="archived" />
+        </view>
+        
+        <view name="index" override="true">
+            <item ref="title" order-before="archived" />
+        </view>          
+    </content-type>
+</extension>

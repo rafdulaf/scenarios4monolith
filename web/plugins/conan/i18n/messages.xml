@@ -316,6 +316,16 @@
     <message key="CONTENT_TYPES_CONAN_BOARD_ORIGINS_DESC">Extension d'origine du plateau</message>
     
     <!-- ********************************************************* -->
+    <!-- * CONAN ABSTRACT SCENARIO ELEMENT                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_LABEL">[Conan/Abstrait] Élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ELEMENT_DESC">Type parent des éléments que l'ont peut retrouver référence dans un texte de scénario</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME">Nom</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME_DESC">Nom de l'élément</message>
+    
+    <!-- ********************************************************* -->
     <!-- * CONAN HEROES                                          * -->
     <!-- ********************************************************* -->
 

@@ -250,7 +250,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
             Set<String> t = titles.computeIfAbsent(title, tt -> new HashSet<>());
             t.add(id);
         }
-        return titles.values().stream().filter(t -> t.size() > 1).toList();
+        return titles.values().stream().filter(t -> t.size() > 1).distinct().toList();
     }
     
     protected Map<String, Map<String, Object>> _getElementsByIdentifier(String identifier, Map<String, Map<String, Object>> finalData, String identifierField)

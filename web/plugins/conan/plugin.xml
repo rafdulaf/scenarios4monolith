@@ -23,6 +23,11 @@
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-abstract-scenario-element"
+                       config="content-types/conan-abstract-scenario-element.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-hero"
                        config="content-types/conan-hero.xml">
             </extension>

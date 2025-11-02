@@ -10,15 +10,72 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         this._box.show();
     },
     
+    _contentTypeToLabel: function(contentType)
+    {
+        let label = Ametys.cms.content.ContentTypeDAO.getContentType(contentType[0]).get('label');
+        return label.substring(label.indexOf("] ") + 2);
+    },
+    
     _delayedInitialize: function(icon, iconCls, title, helpmessage)
     {
+        this._content = Ext.create('Ametys.cms.form.widget.SelectReferenceTableContent', {
+            contentType: 'conan-abstract-scenario-element',
+            
+            getLabelTpl: function ()
+            {
+                var labelTpl = [];
+                if (this.displayTypeIcon != false && this.displayTypeIcon != 'false')
+                {
+                    labelTpl.push('<tpl if="values.iconGlyph != \'\'"><span class="x-tagfield-glyph {iconGlyph} {iconDecorator}"></span></tpl>');
+                    labelTpl.push('<tpl if="values.iconGlyph == \'\'"><img width="16" height="16" src="' + Ametys.CONTEXT_PATH + '{smallIcon}"/></tpl>');
+                }
+                
+                if (this.openOnClick == true || this.openOnClick == 'true')
+                {
+                    labelTpl.push('<tpl if="values.clickable == true"><span class="clickable">{[values.title]}</span></tpl>');
+                    labelTpl.push('<tpl if="values.clickable != true">{[values.title]}</tpl>');
+                }
+                else
+                {
+                    labelTpl.push('{[values.title]} ({[Ametys.scenario.ChooseScenarioElement._contentTypeToLabel(values.contentTypes)]})');
+                }
+             
+                return labelTpl;
+            },
+            
+            listConfig: {
+                getInnerTpl: function() {
+                       var labelTpl = [];
+                       if (this.displayTypeIcon != false && this.displayTypeIcon != 'false')
+                       {
+                           labelTpl.push('<tpl if="values.iconGlyph != \'\'"><span class="x-tagfield-glyph {iconGlyph} {iconDecorator}"></span></tpl>');
+                           labelTpl.push('<tpl if="values.iconGlyph == \'\'"><img width="16" height="16" src="' + Ametys.CONTEXT_PATH + '{smallIcon}"/></tpl>');
+                       }
+                       
+                       if (this.openOnClick == true || this.openOnClick == 'true')
+                       {
+                           labelTpl.push('<tpl if="values.clickable == true"><span class="clickable">{[values.title]}</span></tpl>');
+                           labelTpl.push('<tpl if="values.clickable != true">{[values.title]}</tpl>');
+                       }
+                       else
+                       {
+                           labelTpl.push(' {[values.title]} ({[Ametys.scenario.ChooseScenarioElement._contentTypeToLabel(values.contentTypes)]})');
+                       }
+
+                       return labelTpl.join('');
+                },
+                renderTpl: Ametys.cms.form.widget.SelectContent.prototype.listConfig.renderTpl
+            }
+        });
+        
+        
         this._box = Ext.create('Ametys.window.DialogBox', {
             title: title,
             icon: icon,
-            iconCls: icon ? null : (iconCls || 'ametysicon-world-earth-communicating'),
+            iconCls: icon ? null : (iconCls || 'ametysicon-abecedary4'),
             
-            width: 410,
-            height: 500,
+            width: 610,
+            height: 300,
             scrollable: false,
             
             bodyStyle: {
@@ -37,7 +94,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                     cls: 'a-text',
                     html: helpmessage || "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_HINT}}"
                 }, 
-//                this._tree
+                this._content
             ],
             
             closeAction: 'destroy',
@@ -67,13 +124,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         
         if (this._cbFn(id, text, size, viewHref, downloadHref, null) !== false)
         {
-            this._box.hide();
+            this._box.hide(); // hide to avoir call to onclose in this case... null
         }
     },
     
     _close: function()
     {
-        // TODO ?
+        this._cbFn(null);
+        this._content = null;
+        this._box = null;
     },
     
     _onSelectionChange: function(sm, nodes)
