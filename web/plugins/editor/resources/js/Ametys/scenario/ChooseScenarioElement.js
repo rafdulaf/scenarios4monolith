@@ -19,7 +19,10 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
     _delayedInitialize: function(icon, iconCls, title, helpmessage)
     {
         this._content = Ext.create('Ametys.cms.form.widget.SelectReferenceTableContent', {
+            id: 'choose-scenario-element-content',
             contentType: 'conan-abstract-scenario-element',
+            fieldLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_SELECT_CONTENT}}",
+            labelAlign: 'top',
             
             getLabelTpl: function ()
             {
@@ -65,9 +68,37 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                        return labelTpl.join('');
                 },
                 renderTpl: Ametys.cms.form.widget.SelectContent.prototype.listConfig.renderTpl
+            },
+            listeners: {
+                'change': this._onChange,
+                scope: this
             }
         });
         
+        this._insertAs = Ext.create('Ext.form.ComboBox', {
+            id: 'choose-scenario-element-insert-as',
+            fieldLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS}}",
+            queryMode: 'local',
+            displayField: 'text',
+            valueField: 'value',
+            labelAlign: 'top',
+            value: 'image-and-text',
+            editable: false,
+            forceSelection: true,
+            store: Ext.create('Ext.data.Store', {
+                fields: ['text', 'value'],
+                data : [
+                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_AND_TEXT}}", "value":"image-and-text"},
+                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE}}", "value":"image"},
+                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT}}", "value":"text"}
+                ]
+            }),
+            listeners: {
+                'change': this._onChange,
+                scope: this
+            }
+        });
+
         
         this._box = Ext.create('Ametys.window.DialogBox', {
             title: title,
@@ -75,7 +106,6 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             iconCls: icon ? null : (iconCls || 'ametysicon-abecedary4'),
             
             width: 610,
-            height: 300,
             scrollable: false,
             
             bodyStyle: {
@@ -89,12 +119,9 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 pack  : 'start'
             },
                 
-            items: [{
-                    xtype: 'component',
-                    cls: 'a-text',
-                    html: helpmessage || "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_HINT}}"
-                }, 
-                this._content
+            items: [
+                this._content,
+                this._insertAs
             ],
             
             closeAction: 'destroy',
@@ -103,6 +130,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             defaultButton: 'validate',
             
             buttons : [{
+                id: 'choose-scenario-element-ok-btn',
                 reference: 'validate',
                 text: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_OK}}",
                 disabled: true,
@@ -116,6 +144,14 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 close: {fn: this._close, scope: this}//for callback on close
             }
         });
+    },
+    
+    _onChange: function() 
+    {
+        Ext.getCmp('choose-scenario-element-ok-btn').setDisabled(
+            Ext.getCmp('choose-scenario-element-content').getValue() == null
+            || Ext.getCmp('choose-scenario-element-insert-as').getValue() == null
+        );
     },
     
     _ok: function()
