@@ -12,7 +12,8 @@ public class SpellsCompanionSynchronizableCollection extends CompanionSynchroniz
         return Map.of(
             "title", List.of("title"),
             "identifier", List.of("id"),
-            "origins", List.of("origins")
+            "origins", List.of("origins"),
+            "image", List.of("image")
         );
     }
 

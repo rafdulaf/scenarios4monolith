@@ -12,7 +12,8 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
         return Map.of(
             "title", List.of("name"),
             "identifier", List.of("id"),
-            "origins", List.of("origins")
+            "origins", List.of("origins"),
+            "image", List.of("image")
         );
     }
     

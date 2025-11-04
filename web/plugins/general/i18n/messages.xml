@@ -179,6 +179,6 @@
     <message key="SCC_JSON_MAPPINGFIELD_DESC">Json de mapping, par ex {"title": ["description/title"]}</message>
 
     <message key="SCC_JSON_REFERENCE_OPERATOR">Résolution des références</message>
-    <message key="SCC_JSON_HEORES_OPERATOR">Héros</message>
+    <message key="SCC_JSON_REFERENCE_AND_TOKEN_OPERATOR">Résolution des références et images en -token</message>
     
 </catalogue>

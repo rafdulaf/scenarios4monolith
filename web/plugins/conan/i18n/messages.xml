@@ -325,6 +325,12 @@
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME">Nom</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_NAME_DESC">Nom de l'élément</message>
     
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE">Image</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE_DESC">Image représentant l'élément</message>
+    
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2">Image 2</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2_DESC">Image 2 représentant l'élément</message>
+    
     <!-- ********************************************************* -->
     <!-- * CONAN HEROES                                          * -->
     <!-- ********************************************************* -->

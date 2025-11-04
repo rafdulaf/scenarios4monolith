@@ -20,8 +20,19 @@
             </validation>
         </attribute>  
         
+        <attribute name="image" type="string">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE_DESC</description>
+        </attribute>  
+        <attribute name="image2" type="string">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2_DESC</description>
+        </attribute>  
+        
         <view name="main" override="true">
             <item ref="title" order-before="archived" />
+            <item ref="image" order-after="title" />
+            <item ref="image2" order-after="image" />
         </view>      
         
         <view name="default-edition" override="true">
