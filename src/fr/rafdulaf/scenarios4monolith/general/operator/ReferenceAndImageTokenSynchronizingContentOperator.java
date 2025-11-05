@@ -8,15 +8,6 @@ import java.util.Map.Entry;
 import org.slf4j.Logger;
 
 import org.ametys.cms.contenttype.ContentType;
-import org.ametys.cms.repository.Content;
-import org.ametys.cms.repository.ContentTypeExpression;
-import org.ametys.plugins.repository.AmetysObjectIterable;
-import org.ametys.plugins.repository.AmetysObjectIterator;
-import org.ametys.plugins.repository.RepositoryConstants;
-import org.ametys.plugins.repository.query.QueryHelper;
-import org.ametys.plugins.repository.query.expression.AndExpression;
-import org.ametys.plugins.repository.query.expression.Expression.Operator;
-import org.ametys.plugins.repository.query.expression.StringExpression;
 import org.ametys.runtime.i18n.I18nizableText;
 
 public class ReferenceAndImageTokenSynchronizingContentOperator extends ReferenceSynchronizingContentOperator
@@ -50,31 +41,4 @@ public class ReferenceAndImageTokenSynchronizingContentOperator extends Referenc
         
         return remoteValues;
     }
-    
-    private Content _getContentByIdentifier(String identifier, String contentType)
-    {
-        ContentTypeExpression allProjects = new  ContentTypeExpression(Operator.EQ, contentType);
-        StringExpression identifierExpresion = new StringExpression("identifier", Operator.EQ, identifier);
-        AndExpression exp = new AndExpression(allProjects, identifierExpresion);
-        
-        try (AmetysObjectIterable<Content> contents = _ametysObjectResovler.query(QueryHelper.getXPathQuery(null, RepositoryConstants.NAMESPACE_PREFIX + ":content", exp)))
-        {
-            AmetysObjectIterator<Content> iterator = contents.iterator();
-            if (!iterator.hasNext())
-            {
-                return null;
-            }
-            else
-            {
-                return iterator.next();
-            }
-        }
-    }
-
-
-    public void additionalOperation(Content content, Map<String, List<Object>> remoteValues, Logger logger)
-    {
-        // Nothing
-    }
-
 }

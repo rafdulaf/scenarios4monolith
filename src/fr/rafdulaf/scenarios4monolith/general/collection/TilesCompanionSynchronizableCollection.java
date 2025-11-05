@@ -25,7 +25,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
     
     @SuppressWarnings("unchecked")
     @Override
-    protected void _adapt(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData, String application)
     {
         // colors
         Map<String, Map<String, Object>> newData = new LinkedHashMap<>();
@@ -58,7 +58,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
         finalData.clear();
         finalData.putAll(newData);
         
-        super._adapt(finalData);
+        super._adapt(finalData, application);
     }
     
     protected void _undobble(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)

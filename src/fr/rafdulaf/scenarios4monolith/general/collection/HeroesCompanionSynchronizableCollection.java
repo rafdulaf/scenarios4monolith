@@ -19,7 +19,7 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
     
     
     @Override
-    protected void _adapt(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData, String application)
     {
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
@@ -43,6 +43,6 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
             }
         }
         
-        super._adapt(finalData);
+        super._adapt(finalData, application);
     }
 }

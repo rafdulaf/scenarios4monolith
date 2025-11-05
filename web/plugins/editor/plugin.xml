@@ -19,6 +19,7 @@
                     <description i18n="true">EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_DESCIPTION</description>
                     
                     <icon-glyph>ametysicon-abecedary4</icon-glyph>
+                    <base config="true">companion.base.url</base>
                 </class> 
                 <scripts>
                     <file plugin="cms">js/Ametys/plugins/cms/editor/Links.js</file>

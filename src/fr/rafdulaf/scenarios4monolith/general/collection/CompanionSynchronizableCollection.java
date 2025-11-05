@@ -185,14 +185,14 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
             }
         }
         
-        _adapt(data);
+        _adapt(data, StringUtils.substringBeforeLast(folder, "/"));
         
         _undobble(data);
         
         return data;
     }
     
-    protected void _adapt(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData, String application)
     {
         String titleField = this._getMapping(null).get("title").get(0);
         
@@ -236,6 +236,33 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 data.put(titleField, _jsonUtils.convertObjectToJson(mapName));
             }
             
+        }
+        
+        String imageField = this._getMapping(null).containsKey("image") ? this._getMapping(null).get("image").get(0) : null;
+        String image2Field = this._getMapping(null).containsKey("image2") ? this._getMapping(null).get("image2").get(0) : null;
+        if (imageField != null || image2Field != null)
+        {
+            for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
+            {
+                Map<String, Object> data = entry.getValue();
+                
+                if (imageField != null && data.containsKey(imageField))
+                {
+                    String image = data.get(imageField).toString();
+                    if (StringUtils.isNotBlank(image))
+                    {
+                        entry.getValue().put(imageField, application + "/" + image);
+                    }
+                }
+                if (image2Field != null && data.containsKey(image2Field))
+                {
+                    String image2 = data.get(image2Field).toString();
+                    if (StringUtils.isNotBlank(image2))
+                    {
+                        entry.getValue().put(image2Field, application + "/" + image2);
+                    }
+                }
+            }
         }
     }
 

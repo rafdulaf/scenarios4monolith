@@ -6,6 +6,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         this._cbFn = config.callback || Ext.emptyFn;
         this._currentId = config.value || null;
         this._delayedInitialize(config.icon, config.iconCls, config.title, config.helpmessage);
+        this._base = config.base;
         
         this._box.show();
     },
@@ -19,7 +20,6 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
     _delayedInitialize: function(icon, iconCls, title, helpmessage)
     {
         this._content = Ext.create('Ametys.cms.form.widget.SelectReferenceTableContent', {
-            id: 'choose-scenario-element-content',
             contentType: 'conan-abstract-scenario-element',
             fieldLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_SELECT_CONTENT}}",
             labelAlign: 'top',
@@ -70,36 +70,43 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 renderTpl: Ametys.cms.form.widget.SelectContent.prototype.listConfig.renderTpl
             },
             listeners: {
-                'change': this._onChange,
+                'change': this._onContentChange,
                 scope: this
             }
         });
         
-        this._insertAs = Ext.create('Ext.form.ComboBox', {
-            id: 'choose-scenario-element-insert-as',
-            fieldLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS}}",
-            queryMode: 'local',
-            displayField: 'text',
-            valueField: 'value',
-            labelAlign: 'top',
-            value: 'image-and-text',
-            editable: false,
-            forceSelection: true,
-            store: Ext.create('Ext.data.Store', {
-                fields: ['text', 'value'],
-                data : [
-                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_AND_TEXT}}", "value":"image-and-text"},
-                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE}}", "value":"image"},
-                    {"text": "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT}}", "value":"text"}
-                ]
-            }),
+        this._insertAsImage1 = Ext.create('Ext.form.field.Checkbox', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE1}}",
+            disabled: true,
             listeners: {
-                'change': this._onChange,
+                'change': this._onInsertChange,
+                scope: this
+            }
+        });
+        this._insertAsImage1Cmp = Ext.create('Ext.Component', {});
+        
+        this._insertAsImage2 = Ext.create('Ext.form.field.Checkbox', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE2}}",
+            disabled: true,
+            listeners: {
+                'change': this._onInsertChange,
                 scope: this
             }
         });
 
+        this._insertAsImage2Cmp = Ext.create('Ext.Component', {});
+
+        this._insertAsText = Ext.create('Ext.form.field.Checkbox', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT}}",
+            disabled: true,
+            listeners: {
+                'change': this._onInsertChange,
+                scope: this
+            }
+        });
         
+        this._insertAsTextCmp = Ext.create('Ext.Component', {});
+
         this._box = Ext.create('Ametys.window.DialogBox', {
             title: title,
             icon: icon,
@@ -121,7 +128,12 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 
             items: [
                 this._content,
-                this._insertAs
+                this._insertAsImage1,
+                this._insertAsImage1Cmp,
+                this._insertAsImage2,
+                this._insertAsImage2Cmp,
+                this._insertAsText,
+                this._insertAsTextCmp
             ],
             
             closeAction: 'destroy',
@@ -146,11 +158,63 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         });
     },
     
-    _onChange: function() 
+    _onContentChange: function() 
     {
-        Ext.getCmp('choose-scenario-element-ok-btn').setDisabled(
-            Ext.getCmp('choose-scenario-element-content').getValue() == null
-            || Ext.getCmp('choose-scenario-element-insert-as').getValue() == null
+        let okButton = Ext.getCmp('choose-scenario-element-ok-btn');
+        
+        if (this._content.getValue() == null)
+        {
+            this._insertAsImage1.disable();
+            this._insertAsImage1Cmp.setHtml('');
+            this._insertAsImage2.disable();
+            this._insertAsImage2Cmp.setHtml('');
+            this._insertAsText.disable();
+            this._insertAsTextCmp.setHtml('');
+            okButton.disable();
+        } 
+        else
+        {
+            Ametys.data.ServerComm.send({
+                url: '_content.xml',
+                parameters:  {contentId: this._content.getValue(), isEdition: "false", viewName: "main"}, 
+                priority: Ametys.data.ServerComm.PRIORITY_MAJOR, 
+                callback: {
+                    handler: function(response) {
+                        if (Ametys.data.ServerComm.handleBadResponse("{{i18n plugin.cms:PLUGINS_CMS_TOOL_CONTENT_FORMDEFINITION_ERROR}} '" + this._contentId + "'", response, Ext.getClassName(this)))
+                        {
+                            return;
+                        }
+                        
+                        let image1 = Ext.dom.Query.selectValue("> content > metadata > image", response);
+                        let image2 = Ext.dom.Query.selectValue("> content > metadata > image2", response);
+                        let title = Ext.dom.Query.selectValue("> content > metadata > title", response);
+                        
+                        this._insertAsImage1Cmp.setHtml(image1 ? '<img src="' + this._base + "/" + image1 + '"/>' : '');
+                        this._insertAsImage1.setDisabled(image1 == null);
+                        
+                        this._insertAsImage2Cmp.setHtml(image1 ? '<img src="' + this._base + "/" + image2 + '"/>' : '');
+                        this._insertAsImage2.setDisabled(image2 == null);
+
+                        this._insertAsTextCmp.setHtml(title ? title : '');
+                        this._insertAsText.setDisabled(title == null);
+                        
+                        this._onInsertChange();
+                    },
+                    scope: this
+                },
+                cancelCode: "Ametys.scenario.ChooseScenarioElement"
+            });
+        }
+    },
+    
+    _onInsertChange: function()
+    {
+        let okButton = Ext.getCmp('choose-scenario-element-ok-btn');
+        
+        okButton.setDisabled(
+            !this._insertAsImage1.isDisabled() && this._insertAsImage1.getValue() === true
+            || !this._insertAsImage2.isDisabled() && this._insertAsImage2.getValue() === true
+            || !this._insertAsText.isDisabled() && this._insertAsText.getValue() === true
         );
     },
     
@@ -169,21 +233,5 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         this._cbFn(null);
         this._content = null;
         this._box = null;
-    },
-    
-    _onSelectionChange: function(sm, nodes)
-    {
-        var node = nodes[0],
-            okBtn = this._box.getDockedItems('toolbar[dock="bottom"] button')[0];
-        
-        if (node == null || node.isRoot())
-        {
-            okBtn.setDisabled(true);
-        }
-        else
-        {
-            var type = node.get('type');
-            okBtn.setDisabled(type != Ametys.explorer.tree.ExplorerTree.RESOURCE_TYPE);
-        }
     }
 });

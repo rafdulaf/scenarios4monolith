@@ -121,7 +121,7 @@ public class MapsCompanionSynchronizableCollection extends CompanionSynchronizab
             ));
         }
         
-        _adapt(finalData);
+        _adapt(finalData, StringUtils.substringBeforeLast(folder, "/"));
 
         _undobble(finalData);
         

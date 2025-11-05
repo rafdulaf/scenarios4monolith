@@ -9,10 +9,10 @@ Ext.define('Ametys.scenario.Links', {
     insertScenarioElementLink: function(controller)
     {
         var editor = controller.getCurrentField().getEditor();
-        this._insertScenarioElementLink(editor);
+        this._insertScenarioElementLink(editor, controller.base);
     },
     
-    _insertScenarioElementLink: function(editor)
+    _insertScenarioElementLink: function(editor, base)
     {
         var currentId = null;
         var node = editor.dom.getParent(editor.selection.getNode(), 'a');
@@ -21,15 +21,16 @@ Ext.define('Ametys.scenario.Links', {
             currentId = node.getAttribute('data-ametys-href');
         }
 
-        this._doInsertScenarioElementLink(currentId);
+        this._doInsertScenarioElementLink(currentId, base);
     },    
 
-    _doInsertScenarioElementLink: function(currentId)
+    _doInsertScenarioElementLink: function(currentId, base)
     {
         Ametys.scenario.ChooseScenarioElement.open({
             title: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_LABEL}}",
             value: currentId,
-            callback: Ext.bind(this._insertScenarioElementLinkCb, this)
+            callback: Ext.bind(this._insertScenarioElementLinkCb, this),
+            base: base
         });
     },
     

@@ -10,10 +10,9 @@
     <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_DESCRIPTION">Inséréer une référence à un élement de scénario comme un héros, une tuile, un équipement, un sort...</message>
 
     <message key="EDITOR_LINKS_SCENARIO_ELEMENT_SELECT_CONTENT">Séléctionnez un élément de scénario</message>
-    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS">Choisissez la forme du lien</message>
-    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_AND_TEXT">Image et text</message>
-    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE">Image uniquement</message>
-    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT">Texte uniquement</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE1">Image 1</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE2">Image 2</message>
+    <message key="EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT">Texte</message>
     <message key="EDITOR_LINKS_SCENARIO_ELEMENT_OK">Ok</message>
     <message key="EDITOR_LINKS_SCENARIO_ELEMENT_CANCEL">Annuler</message>
     

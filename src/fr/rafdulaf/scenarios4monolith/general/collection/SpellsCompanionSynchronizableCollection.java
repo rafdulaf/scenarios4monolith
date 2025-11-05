@@ -18,9 +18,9 @@ public class SpellsCompanionSynchronizableCollection extends CompanionSynchroniz
     }
 
     @Override
-    protected void _adapt(Map<String, Map<String, Object>> finalData)
+    protected void _adapt(Map<String, Map<String, Object>> finalData, String application)
     {
-        super._adapt(finalData);
+        super._adapt(finalData, application);
         
         String titleField = this._getMapping(null).get("title").get(0);
         
