@@ -32,7 +32,7 @@ public class ReferenceAndImageTokenSynchronizingContentOperator extends Referenc
                     {
                         String path = value.toString();
                         int i = path.lastIndexOf('.');
-                        values.add(path.substring(0, i) + "-token" + path.substring(i));
+                        values.add(path.substring(0, i) + "_token" + path.substring(i));
                     }
                     remoteValue.setValue(values);
                 }

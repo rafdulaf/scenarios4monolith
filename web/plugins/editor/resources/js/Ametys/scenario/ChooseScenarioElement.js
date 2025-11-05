@@ -192,7 +192,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                         this._insertAsImage1Cmp.setHtml(image1 ? '<img src="' + this._base + "/" + image1 + '"/>' : '');
                         this._insertAsImage1.setDisabled(image1 == null);
                         
-                        this._insertAsImage2Cmp.setHtml(image1 ? '<img src="' + this._base + "/" + image2 + '"/>' : '');
+                        this._insertAsImage2Cmp.setHtml(image2 ? '<img src="' + this._base + "/" + image2 + '"/>' : '');
                         this._insertAsImage2.setDisabled(image2 == null);
 
                         this._insertAsTextCmp.setHtml(title ? title : '');
