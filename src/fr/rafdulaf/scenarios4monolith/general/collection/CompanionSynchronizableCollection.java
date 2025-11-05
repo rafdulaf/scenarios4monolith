@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -248,7 +249,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 
                 if (imageField != null && data.containsKey(imageField))
                 {
-                    String image = data.get(imageField).toString();
+                    String image = Objects.toString(data.get(imageField));
                     if (StringUtils.isNotBlank(image))
                     {
                         entry.getValue().put(imageField, application + "/" + image);
@@ -256,7 +257,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
                 }
                 if (image2Field != null && data.containsKey(image2Field))
                 {
-                    String image2 = data.get(image2Field).toString();
+                    String image2 = Objects.toString(data.get(image2Field));
                     if (StringUtils.isNotBlank(image2))
                     {
                         entry.getValue().put(image2Field, application + "/" + image2);
