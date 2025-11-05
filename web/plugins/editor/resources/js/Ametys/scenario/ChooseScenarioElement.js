@@ -212,9 +212,9 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         let okButton = Ext.getCmp('choose-scenario-element-ok-btn');
         
         okButton.setDisabled(
-            !this._insertAsImage1.isDisabled() && this._insertAsImage1.getValue() === true
-            || !this._insertAsImage2.isDisabled() && this._insertAsImage2.getValue() === true
-            || !this._insertAsText.isDisabled() && this._insertAsText.getValue() === true
+            (this._insertAsImage1.isDisabled() || this._insertAsImage1.getValue() === false)
+            && (this._insertAsImage2.isDisabled() || this._insertAsImage2.getValue() === false)
+            && (this._insertAsText.isDisabled() || this._insertAsText.getValue() === false)
         );
     },
     
