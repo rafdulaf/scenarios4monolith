@@ -28,6 +28,9 @@
                     <file>js/Ametys/scenario/Links.js</file>
                     <file>js/Ametys/scenario/ChooseScenarioElement.js</file>
                 </scripts>
+                <css>
+                    <file>css/ChooseScenarioElement.css</file>
+                </css>
             </extension>
             
             <extension id="fr.rafdulaf.scenario.Editor"

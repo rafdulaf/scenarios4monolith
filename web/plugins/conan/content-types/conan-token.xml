@@ -9,45 +9,6 @@
         <icons>
             <glyph>ametysicon-code-html-input-radio-off</glyph>
         </icons>
-        
-        <attribute name="title" type="multilingual-string">
-            <label i18n="true">CONTENT_TYPES_CONAN_TOKEN_NAME</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_TOKEN_NAME_DESC</description>
-            <validation>
-                <mandatory />
-            </validation>
-        </attribute>
-
-        <attribute name="identifier" type="string">
-            <label i18n="true">CONTENT_TYPES_CONAN_TOKEN_ID</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_TOKEN_ID_DESC</description>
-            <validation>
-                <mandatory />
-            </validation>
-        </attribute>
-        
-        <attribute name="scc_identifier" type="string">
-            <label i18n="true">CONTENT_TYPES_CONAN_TOKEN_SCC_ID</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_TOKEN_SCC_ID_DESC</description>
-            <validation>
-                <mandatory />
-            </validation>
-        </attribute>
-        
-        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
-            <label i18n="true">CONTENT_TYPES_CONAN_TOKEN_ORIGINS</label>
-            <description i18n="true">CONTENT_TYPES_CONAN_TOKEN_ORIGINS_DESC</description>
-            <validation>
-                <mandatory />
-            </validation>
-           <widget>edition.select-referencetable-content</widget>
-        </attribute>
-        
-        <view name="main" override="true">
-            <item ref="identifier" order-after="title" />
-            <item ref="scc_identifier" order-after="title" />
-            <item ref="origins" order-after="title" />
-        </view>
     </content-type>
 </extension>
         

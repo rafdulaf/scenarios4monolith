@@ -20,6 +20,32 @@
             </validation>
         </attribute>  
         
+        <attribute name="identifier" type="string">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+        
+        <attribute name="scc_identifier" type="string">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+        </attribute>
+        
+        <attribute name="origins" type="content" multiple="true" contentType="conan-expansion">
+            <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS</label>
+            <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS_DESC</description>
+            <validation>
+                <mandatory />
+            </validation>
+           <widget>edition.select-referencetable-content</widget>
+        </attribute>
+        
+        
         <attribute name="image" type="string">
             <label i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE</label>
             <description i18n="true">CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE_DESC</description>
@@ -33,6 +59,9 @@
             <item ref="title" order-before="archived" />
             <item ref="image" order-after="title" />
             <item ref="image2" order-after="image" />
+            <item ref="identifier" order-after="image2" />
+            <item ref="scc_identifier" order-after="identifier" />
+            <item ref="origins" order-after="scc_identifier" />
         </view>      
         
         <view name="default-edition" override="true">

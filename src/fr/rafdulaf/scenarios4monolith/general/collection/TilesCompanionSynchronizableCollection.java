@@ -19,7 +19,8 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
             "title", List.of("name"),
             "identifier", List.of("id"),
             "origins", List.of("origins"),
-            "image", List.of("image")
+            "image", List.of("image"),
+            "color", List.of("color")
         );
     }
     

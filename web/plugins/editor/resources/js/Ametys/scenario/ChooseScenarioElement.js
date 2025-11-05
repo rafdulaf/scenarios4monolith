@@ -105,7 +105,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             }
         });
         
-        this._insertAsTextCmp = Ext.create('Ext.Component', {});
+        this._insertAsTextCmp = Ext.create('Ext.Component', { cls: 'preview-text'});
 
         this._box = Ext.create('Ametys.window.DialogBox', {
             title: title,
@@ -128,12 +128,13 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 
             items: [
                 this._content,
+                { xtype: 'component', html: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_HINT}}" },
+                this._insertAsText,
+                this._insertAsTextCmp,
                 this._insertAsImage1,
                 this._insertAsImage1Cmp,
                 this._insertAsImage2,
                 this._insertAsImage2Cmp,
-                this._insertAsText,
-                this._insertAsTextCmp
             ],
             
             closeAction: 'destroy',
@@ -189,10 +190,13 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                         let image2 = Ext.dom.Query.selectValue("> content > metadata > image2", response);
                         let title = Ext.dom.Query.selectValue("> content > metadata > title", response);
                         
-                        this._insertAsImage1Cmp.setHtml(image1 ? '<img src="' + this._base + "/" + image1 + '"/>' : '');
+                        let contentType = Ext.dom.Query.selectValue("> content > contentTypes > contentType", response);
+                        let color = Ext.dom.Query.selectValue("> content > metadata > color", response);
+                        
+                        this._insertAsImage1Cmp.setHtml(image1 ? '<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>' : '');
                         this._insertAsImage1.setDisabled(image1 == null);
                         
-                        this._insertAsImage2Cmp.setHtml(image2 ? '<img src="' + this._base + "/" + image2 + '"/>' : '');
+                        this._insertAsImage2Cmp.setHtml(image2 ? '<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>' : '');
                         this._insertAsImage2.setDisabled(image2 == null);
 
                         this._insertAsTextCmp.setHtml(title ? title : '');

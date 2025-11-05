@@ -331,6 +331,16 @@
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2">Image 2</message>
     <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_IMAGE2_DESC">Image 2 représentant l'élément</message>
     
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID">Identifiant</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ID_DESC">Identifiant dans le Compagnon de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID">Identifiant unique</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
+
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS">Origine</message>
+    <message key="CONTENT_TYPES_CONAN_ABSTRACT_SCENARIO_ORIGINS_DESC">Extension d'origine de l'élément'</message>
+    
+    
     <!-- ********************************************************* -->
     <!-- * CONAN HEROES                                          * -->
     <!-- ********************************************************* -->
@@ -344,15 +354,6 @@
     <message key="CONTENT_TYPES_CONAN_HERO_NAME">Nom</message>
     <message key="CONTENT_TYPES_CONAN_HERO_NAME_DESC">Nom du héros</message>
 
-    <message key="CONTENT_TYPES_CONAN_HERO_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_HERO_ID_DESC">Identifiant du le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_HERO_SCC_ID">Identifiant unique</message>
-    <message key="CONTENT_TYPES_CONAN_HERO_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_HERO_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_CONAN_HERO_ORIGINS_DESC">Extension d'origine de la fiche de héros</message>
-    
     <!-- ********************************************************* -->
     <!-- * CONAN TILES                                          * -->
     <!-- ********************************************************* -->
@@ -363,18 +364,9 @@
     <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT">[Conan] Créer une tuile</message>
     <message key="CONTENT_TYPES_CONAN_TILE_CREATE_RIGHT_DESC">Droit de créer une nouvelle tuile pour Conan dans la table de référence</message>
 
-    <message key="CONTENT_TYPES_CONAN_TILE_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_TILE_NAME_DESC">Nom de la tuile</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_COLOR">Couleur</message>
+    <message key="CONTENT_TYPES_CONAN_TILE_COLOR_DESC">Couleur de la tuile</message>
 
-    <message key="CONTENT_TYPES_CONAN_TILE_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_TILE_ID_DESC">Identifiant du Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_TILE_SCC_ID">Identifiant unique</message>
-    <message key="CONTENT_TYPES_CONAN_TILE_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_TILE_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_CONAN_TILE_ORIGINS_DESC">Extension d'origine de la tuile de l'overlord</message>
-    
     <!-- ********************************************************* -->
     <!-- * CONAN EQUIPMENTS                                      * -->
     <!-- ********************************************************* -->
@@ -384,18 +376,6 @@
     <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NEW">Nouvel équipement</message>
     <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT">[Conan] Créer un équipement</message>
     <message key="CONTENT_TYPES_CONAN_EQUIPMENT_CREATE_RIGHT_DESC">Droit de créer une nouvel équipement pour Conan dans la table de référence</message>
-
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_NAME_DESC">Nom de l'équipement</message>
-
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ID_DESC">Identifiant du Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_SCC_ID">Identifiant unique</message>
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_CONAN_EQUIPMENT_ORIGINS_DESC">Extension d'origine de la carte d'équipement</message>
     
     <!-- ********************************************************* -->
     <!-- * CONAN SPELLS                                          * -->
@@ -407,18 +387,6 @@
     <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT">[Conan] Créer un sort</message>
     <message key="CONTENT_TYPES_CONAN_SPELL_CREATE_RIGHT_DESC">Droit de créer un nouveau sort pour Conan dans la table de référence</message>
 
-    <message key="CONTENT_TYPES_CONAN_SPELL_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_SPELL_NAME_DESC">Nom du sort</message>
-
-    <message key="CONTENT_TYPES_CONAN_SPELL_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_SPELL_ID_DESC">Identifiant du Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_SPELL_SCC_ID">Identifiant unique</message>
-    <message key="CONTENT_TYPES_CONAN_SPELL_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_SPELL_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_CONAN_SPELL_ORIGINS_DESC">Extension d'origine de la carte de sort</message>
-    
     <!-- ********************************************************* -->
     <!-- * CONAN TOKENS                                          * -->
     <!-- ********************************************************* -->
@@ -429,16 +397,4 @@
     <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT">[Conan] Créer un jeton/salle</message>
     <message key="CONTENT_TYPES_CONAN_TOKEN_CREATE_RIGHT_DESC">Droit de créer un nouveau jeton ou salle pour Conan dans la table de référence</message>
 
-    <message key="CONTENT_TYPES_CONAN_TOKEN_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_TOKEN_NAME_DESC">Nom du jeton ou de la salle</message>
-
-    <message key="CONTENT_TYPES_CONAN_TOKEN_ID">Identifiant</message>
-    <message key="CONTENT_TYPES_CONAN_TOKEN_ID_DESC">Identifiant du Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_TOKEN_SCC_ID">Identifiant unique</message>
-    <message key="CONTENT_TYPES_CONAN_TOKEN_SCC_ID_DESC">Identifiant de synchronisation avec le Compagnon de Conan</message>
-
-    <message key="CONTENT_TYPES_CONAN_TOKEN_ORIGINS">Origine</message>
-    <message key="CONTENT_TYPES_CONAN_TOKEN_ORIGINS_DESC">Extension d'origine du jeton ou de la salle</message>
-    
 </catalogue>

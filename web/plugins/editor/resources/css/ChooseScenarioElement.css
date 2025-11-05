@@ -1,0 +1,33 @@
+.preview-text,
+.preview-conan-tile,
+.preview-conan-hero,
+.preview-conan-equipment,
+.preview-conan-spell,
+.preview-conan-token {
+    margin-left: 30px;
+}
+
+.preview-text {
+    font-weight: bold;
+}
+.preview-conan-tile, .preview-conan-hero {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #7f7f7f;
+}
+
+.preview-conan-spell {
+    height: 80px;
+    width: 80px;
+}
+
+.preview-conan-equipment {
+    height: 80px;    
+}
+
+.preview-conan-token {
+    height: 80px;    
+}
