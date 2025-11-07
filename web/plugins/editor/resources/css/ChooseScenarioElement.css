@@ -10,14 +10,31 @@
 .preview-text {
     font-weight: bold;
 }
-.preview-conan-tile, .preview-conan-hero {
-    height: 80px;
-    width: 80px;
+.preview-conan-hero {
+    height: 82px;
+    width: 82px;
     border-radius: 50%;
-    border-width: 5px;
+    border-width: 2px;
     border-style: solid;
-    border-color: #7f7f7f;
+    border-color: #ffffff;
+    box-shadow: 0 0 5px #000;
 }
+.preview-conan-tile {
+    height: 94px;
+    width: 94px;
+    border-radius: 50%;
+    border-width: 8px;
+    border-style: solid;
+    box-shadow: 0 0 5px #000;
+}
+
+.preview-conan-tile[data-color='gray'] { border-color: #A99589; }
+.preview-conan-tile[data-color='red'] { border-color: #8F1E39; }
+.preview-conan-tile[data-color='blue'] { border-color: #005E8A; }
+.preview-conan-tile[data-color='green'] { border-color: #649033; }
+.preview-conan-tile[data-color='orange'] { border-color: #DB7D0F; }
+.preview-conan-tile[data-color='purple'] { border-color: #674E79; }
+.preview-conan-tile[data-color='black'] { border-color: #050404; }
 
 .preview-conan-spell {
     height: 80px;
