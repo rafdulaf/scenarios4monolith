@@ -18,6 +18,7 @@ import org.apache.avalon.framework.activity.Initializable;
 import org.apache.avalon.framework.service.ServiceException;
 import org.apache.avalon.framework.service.ServiceManager;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
@@ -269,16 +270,19 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
 
     protected List<Set<String>> _getDobbleElementsByTitle(Map<String, Map<String, Object>> finalData, String titleField, String identifierField)
     {
-        Map<String, Set<String>> titles = new HashMap<>();
+        Map<String, Set<Pair<String, String>>> titles = new HashMap<>();
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
             String id = entry.getValue().get(identifierField).toString();
             String title = (String) entry.getValue().get(titleField);
             
-            Set<String> t = titles.computeIfAbsent(title, tt -> new HashSet<>());
-            t.add(id);
+            Set<Pair<String, String>> t = titles.computeIfAbsent(title, tt -> new HashSet<>());
+            
+            /* Remove id and color index id#i#color#j */
+            String[] splitId = StringUtils.split(entry.getKey(), "#");
+            t.add(Pair.of(id, splitId[0] + "#" + splitId[2]));
         }
-        return titles.values().stream().filter(t -> t.size() > 1).distinct().toList();
+        return titles.values().stream().filter(t -> t.size() > 1).map(v -> v.stream().map(vv -> vv.getLeft()).collect(Collectors.toSet())).distinct().toList();
     }
     
     protected Map<String, Map<String, Object>> _getElementsByIdentifier(String identifier, Map<String, Map<String, Object>> finalData, String identifierField)

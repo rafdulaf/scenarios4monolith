@@ -76,7 +76,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         });
         
         this._insertAsImage1 = Ext.create('Ext.form.field.Checkbox', {
-            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE1}}",
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE1}}CHOISIR TAILLE + COULEUR TOUR TUILE + preview carte",
             disabled: true,
             listeners: {
                 'change': this._onInsertChange,
