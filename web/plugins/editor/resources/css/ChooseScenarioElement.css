@@ -11,21 +11,46 @@
     font-weight: bold;
 }
 .preview-conan-hero {
-    height: 82px;
-    width: 82px;
     border-radius: 50%;
-    border-width: 2px;
     border-style: solid;
     border-color: #ffffff;
     box-shadow: 0 0 5px #000;
 }
+.preview-conan-hero.preview-big {
+    height: 63px;
+    width: 63px;
+    border-width: 1.54px;
+}
+.preview-conan-hero.preview-medium {
+    height: 47px;
+    width: 47px;
+    border-width: 1.15px;
+}
+.preview-conan-hero.preview-small {
+    height: 31px;
+    width: 31px;
+    border-width: 0.76px;
+}
+
 .preview-conan-tile {
-    height: 94px;
-    width: 94px;
     border-radius: 50%;
-    border-width: 8px;
     border-style: solid;
     box-shadow: 0 0 5px #000;
+}
+.preview-conan-tile.preview-big {
+    height: 63px;
+    width: 63px;
+    border-width: 5.36px;
+}
+.preview-conan-tile.preview-medium {
+    height: 47px;
+    width: 47px;
+    border-width: 4px;
+}
+.preview-conan-tile.preview-small {
+    height: 31px;
+    width: 31px;
+    border-width: 2.64px;
 }
 
 .preview-conan-tile[data-color='gray'] { border-color: #A99589; }
@@ -36,15 +61,36 @@
 .preview-conan-tile[data-color='purple'] { border-color: #674E79; }
 .preview-conan-tile[data-color='black'] { border-color: #050404; }
 
-.preview-conan-spell {
-    height: 80px;
-    width: 80px;
+.preview-conan-spell.preview-big {
+    height: 63px;
+    width: 63px;
+}
+.preview-conan-spell.preview-medium {
+    height: 47px;
+    width: 47px;
+}
+.preview-conan-spell.preview-small {
+    height: 31px;
+    width: 31px;
 }
 
-.preview-conan-equipment {
-    height: 80px;    
+.preview-conan-equipment.preview-big {
+    height: 63px;
+}
+.preview-conan-equipment.preview-medium {
+    height: 47px;
+}
+.preview-conan-equipment.preview-small {
+    height: 31px;
 }
 
-.preview-conan-token {
-    height: 80px;    
+
+.preview-conan-token.preview-big {
+    height: 63px;
+}
+.preview-conan-token.preview-medium {
+    height: 47px;
+}
+.preview-conan-token.preview-small {
+    height: 31px;
 }
