@@ -342,6 +342,16 @@
     
     
     <!-- ********************************************************* -->
+    <!-- * CONAN SCENARIO ELEMENT                       * -->
+    <!-- ********************************************************* -->
+
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_LABEL">[Conan] Autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_DESC">TAutres élément que l'ont peut retrouver référence dans un texte de scénario (dés...)</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_NEW">Nouvel autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT">[Conan] Créer un autre élément de scénario</message>
+    <message key="CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT_DESC">Droit de créer un nouvel autre élément de scénario pour Conan dans la table de référence</message>
+
+    <!-- ********************************************************* -->
     <!-- * CONAN HEROES                                          * -->
     <!-- ********************************************************* -->
 
@@ -350,9 +360,6 @@
     <message key="CONTENT_TYPES_CONAN_HERO_NEW">Nouveau héros</message>
     <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT">[Conan] Créer un héros</message>
     <message key="CONTENT_TYPES_CONAN_HERO_CREATE_RIGHT_DESC">Droit de créer un nouveau héros pour Conan dans la table de référence</message>
-
-    <message key="CONTENT_TYPES_CONAN_HERO_NAME">Nom</message>
-    <message key="CONTENT_TYPES_CONAN_HERO_NAME_DESC">Nom du héros</message>
 
     <!-- ********************************************************* -->
     <!-- * CONAN TILES                                          * -->

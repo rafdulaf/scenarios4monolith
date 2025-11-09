@@ -28,6 +28,11 @@
             </extension>
 
             <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
+                       id="conan-scenario-element"
+                       config="content-types/conan-scenario-element.xml">
+            </extension>
+
+            <extension point="org.ametys.cms.contenttype.ContentTypeExtensionPoint"
                        id="conan-hero"
                        config="content-types/conan-hero.xml">
             </extension>
@@ -77,6 +82,11 @@
                 <right id="Right_ContentType_Conan_Board_Create">
                     <label i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT</label>
                     <description i18n="true">CONTENT_TYPES_CONAN_BOARD_CREATE_RIGHT_DESC</description>
+                    <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
+                </right>
+                <right id="Right_ContentType_Conan_Scenario_Element_Create">
+                    <label i18n="true">CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT</label>
+                    <description i18n="true">CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_CREATE_RIGHT_DESC</description>
                     <category i18n="true">plugin.cms:PLUGINS_CMS_RIGHTS_CONTENT_CREATE_CATEGORY</category>
                 </right>
                 <right id="Right_ContentType_Conan_Hero_Create">

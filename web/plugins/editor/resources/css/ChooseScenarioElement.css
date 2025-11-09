@@ -74,23 +74,18 @@
     width: 31px;
 }
 
-.preview-conan-equipment.preview-big {
+.preview-conan-equipment.preview-big,
+.preview-conan-token.preview-big,
+.preview-conan-scenario-element.preview-big {
     height: 63px;
 }
-.preview-conan-equipment.preview-medium {
+.preview-conan-equipment.preview-medium,
+.preview-conan-token.preview-medium,
+.preview-conan-scenario-element.preview-medium {
     height: 47px;
 }
-.preview-conan-equipment.preview-small {
-    height: 31px;
-}
-
-
-.preview-conan-token.preview-big {
-    height: 63px;
-}
-.preview-conan-token.preview-medium {
-    height: 47px;
-}
-.preview-conan-token.preview-small {
+.preview-conan-equipment.preview-small,
+.preview-conan-token.preview-small,
+.preview-conan-scenario-element.preview-small {
     height: 31px;
 }

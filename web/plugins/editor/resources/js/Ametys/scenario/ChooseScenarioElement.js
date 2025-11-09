@@ -76,7 +76,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         });
         
         this._insertAsText = Ext.create('Ext.form.field.Checkbox', {
-            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT}} TODO preview carte",
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_TEXT}}",
             listeners: {
                 'change': this._onInsertChange,
                 scope: this

@@ -1,0 +1,14 @@
+<extension class="org.ametys.cms.contenttype.DefaultContentType">
+    <content-type extends="conan-abstract-scenario-element">
+        <label i18n="true">CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_LABEL</label>
+        <description i18n="true">CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_DESC</description>
+        <default-title i18n="true">CONTENT_TYPES_CONAN_SCENARIO_ELEMENT_NEW</default-title>
+        
+        <right>Right_ContentType_Conan_Scenario_Element_Create</right>
+
+        <icons>
+            <glyph>ametysicon-sign-add</glyph>
+        </icons>
+    </content-type>
+</extension>
+        
