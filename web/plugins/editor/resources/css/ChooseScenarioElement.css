@@ -1,56 +1,89 @@
-.preview-text,
-.preview-conan-tile,
-.preview-conan-hero,
-.preview-conan-equipment,
-.preview-conan-spell,
-.preview-conan-token {
-    margin-left: 30px;
-}
-
 .preview-text {
+    margin-left: 30px;
     font-weight: bold;
 }
-.preview-conan-hero {
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #ffffff;
-    box-shadow: 0 0 5px #000;
-}
-.preview-conan-hero.preview-big {
-    height: 63px;
-    width: 63px;
-    border-width: 1.54px;
-}
-.preview-conan-hero.preview-medium {
-    height: 47px;
-    width: 47px;
-    border-width: 1.15px;
-}
-.preview-conan-hero.preview-small {
-    height: 31px;
-    width: 31px;
-    border-width: 0.76px;
+.preview-image1 {
+    text-align: center;
+    
+    .preview-conan-hero {
+        box-shadow: 0 0 5px #000;
+            
+        border-radius: 50%;
+        border-style: solid;
+        border-color: #ffffff;
+    }
+    .preview-conan-tile {
+        border-radius: 50%;
+        border-style: solid;
+        box-shadow: 0 0 5px #000;
+    }
+    
+
+    &.preview-big {
+        .preview-conan-hero {
+            height: 63px;
+            width: 63px;
+            border-width: 1.54px;
+        }
+        .preview-conan-tile {
+            height: 63px;
+            width: 63px;
+            border-width: 5.36px;
+        }
+    }
+    &.preview-medium {
+        .preview-conan-hero {
+            height: 47px;
+            width: 47px;
+            border-width: 1.15px;
+        }
+        .preview-conan-tile {
+            height: 47px;
+            width: 47px;
+            border-width: 4px;
+        }
+    }
+    &.preview-small {
+        .preview-conan-hero {
+            height: 31px;
+            width: 31px;
+            border-width: 0.76px;
+        }
+        .preview-conan-tile {
+            height: 31px;
+            width: 31px;
+            border-width: 2.64px;
+        }
+    }
 }
 
-.preview-conan-tile {
-    border-radius: 50%;
-    border-style: solid;
-    box-shadow: 0 0 5px #000;
-}
-.preview-conan-tile.preview-big {
-    height: 63px;
-    width: 63px;
-    border-width: 5.36px;
-}
-.preview-conan-tile.preview-medium {
-    height: 47px;
-    width: 47px;
-    border-width: 4px;
-}
-.preview-conan-tile.preview-small {
-    height: 31px;
-    width: 31px;
-    border-width: 2.64px;
+.preview-image2 {
+    text-align: center;
+    
+    &.preview-big {
+        .preview-conan-hero {
+            height: 103px;
+        }
+        .preview-conan-tile {
+            height: 103px;
+        }
+    }
+    &.preview-medium {
+        .preview-conan-hero {
+            height: 83px;
+        }
+        .preview-conan-tile {
+            height: 83px;
+        }
+    }
+    &.preview-small {
+        .preview-conan-hero {
+            height: 63px;
+        }
+        .preview-conan-tile {
+            height: 63px;
+        }
+    }
 }
 
 .preview-conan-tile[data-color='gray'] { border-color: #A99589; }

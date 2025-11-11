@@ -20,6 +20,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
             "identifier", List.of("id"),
             "origins", List.of("origins"),
             "image", List.of("image"),
+            "image2", List.of("image2"),
             "color", List.of("color")
         );
     }
@@ -34,6 +35,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
             Map<String, Object> data = entry.getValue();
+            _adaptImageCardPreview(data);
             
             // First add subname to name
             if (data.containsKey("colors"))
@@ -54,6 +56,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
             {
                 newData.put(entry.getKey(), data);
             }
+            
         }
         
         finalData.clear();
@@ -62,6 +65,15 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
         super._adapt(finalData, application);
     }
     
+    private void _adaptImageCardPreview(Map<String, Object> data)
+    {
+        String color = (String) data.get("color");
+        
+        String img = (String) data.get("image");
+        int i = img.lastIndexOf('.');
+        data.put("image2", img.substring(0, i) + (color == null ? "" : "_" + color) + "_cardpreview_LANG" + img.substring(i));
+    }
+
     protected void _undobble(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)
     {
         _undobbleByColors(finalData, identifierField, titleField);

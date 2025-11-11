@@ -278,9 +278,9 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
             
             Set<Pair<String, String>> t = titles.computeIfAbsent(title, tt -> new HashSet<>());
             
-            /* Remove id and color index id#i#color#j */
+            /* Remove id and color index id#i#color#j (if color exists (on tile only)) */
             String[] splitId = StringUtils.split(entry.getKey(), "#");
-            t.add(Pair.of(id, splitId[0] + "#" + splitId[2]));
+            t.add(Pair.of(id, splitId[0] + "#" + splitId[splitId.length > 2 ? 2 : 1]));
         }
         return titles.values().stream().filter(t -> t.size() > 1).map(v -> v.stream().map(vv -> vv.getLeft()).collect(Collectors.toSet())).distinct().toList();
     }

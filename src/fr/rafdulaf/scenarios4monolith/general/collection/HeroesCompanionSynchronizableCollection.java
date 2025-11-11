@@ -13,7 +13,8 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
             "title", List.of("name"),
             "identifier", List.of("id"),
             "origins", List.of("origins"),
-            "image", List.of("image")
+            "image", List.of("image"),
+            "image2", List.of("image2")
         );
     }
     
@@ -41,8 +42,17 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
                 
                 data.put("name", _jsonUtils.convertObjectToJson(mapName));
             }
+         
+            _adaptImageCardPreview(data);
         }
         
         super._adapt(finalData, application);
+    }
+    
+    private void _adaptImageCardPreview(Map<String, Object> data)
+    {
+        String img = (String) data.get("image");
+        int i = img.lastIndexOf('.');
+        data.put("image2", img.substring(0, i) + "_cardpreview_LANG" + img.substring(i));
     }
 }

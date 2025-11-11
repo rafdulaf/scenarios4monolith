@@ -82,7 +82,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsTextCmp = Ext.create('Ext.Component', { cls: 'preview-text'});
+        this._insertAsTextCmp = Ext.create('Ext.Component', { cls: 'preview-text' });
 
         this._insertAsImageNo = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_NO}}",
@@ -93,7 +93,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImageNoCmp = Ext.create('Ext.Component', { });
+        this._insertAsImageNoCmp = Ext.create('Ext.Component', {});
         
         this._insertAsImage1Big = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_BIG}}",
@@ -104,7 +104,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1BigCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage1BigCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-big'] });
 
         this._insertAsImage1Medium = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_MEDIUM}}",
@@ -115,7 +115,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1MediumCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage1MediumCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-medium'] });
 
         this._insertAsImage1Small = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_SMALL}}",
@@ -126,7 +126,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1SmallCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage1SmallCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-small'] });
 
         this._insertAsImage2Big = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_BIG}}",
@@ -137,7 +137,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2BigCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage2BigCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-big'] });
 
         this._insertAsImage2Medium = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_MEDIUM}}",
@@ -148,7 +148,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2MediumCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage2MediumCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-medium'] });
 
         this._insertAsImage2Small = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_SMALL}}",
@@ -159,7 +159,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2SmallCmp = Ext.create('Ext.Component', {});
+        this._insertAsImage2SmallCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-small'] });
         
         this._hint = Ext.create('Ext.Component', { 
             html: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_HINT}}" 
@@ -195,9 +195,9 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                     width: '100%',
                     items: [
                         { xtype: 'container', flex: 1, items: [ this._insertAsImageNo, this._insertAsImageNoCmp ] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage1Big, this._insertAsImage1BigCmp ] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage1Medium, this._insertAsImage1MediumCmp ] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage1Small, this._insertAsImage1SmallCmp ] }
+                        { xtype: 'container', flex: 2, items: [ this._insertAsImage1Big, this._insertAsImage1BigCmp ] },
+                        { xtype: 'container', flex: 1.6, items: [ this._insertAsImage1Medium, this._insertAsImage1MediumCmp ] },
+                        { xtype: 'container', flex: 1.2, items: [ this._insertAsImage1Small, this._insertAsImage1SmallCmp ] }
                     ],
                 },
                 {
@@ -206,9 +206,9 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                     width: '100%',
                     items: [
                         { xtype: 'component', flex: 1, items: [] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage2Big, this._insertAsImage2BigCmp ] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage2Medium, this._insertAsImage2MediumCmp ] },
-                        { xtype: 'container', flex: 1, items: [ this._insertAsImage2Small, this._insertAsImage2SmallCmp ] }
+                        { xtype: 'container', flex: 2, items: [ this._insertAsImage2Big, this._insertAsImage2BigCmp ] },
+                        { xtype: 'container', flex: 1.6, items: [ this._insertAsImage2Medium, this._insertAsImage2MediumCmp ] },
+                        { xtype: 'container', flex: 1.2, items: [ this._insertAsImage2Small, this._insertAsImage2SmallCmp ] }
                     ],
                 }
             ],
@@ -293,35 +293,39 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         }
         else
         {
+            image1 = image1.replace("LANG", "en");
+            
             this._insertAsImageNo.enable();
             this._insertAsImageNo.show();
             this._insertAsImageNoCmp.setHtml('');
 
             this._insertAsImage1Big.enable();
             this._insertAsImage1Big.show();
-            this._insertAsImage1BigCmp.setHtml('<img class="preview-' + contentType + ' preview-big" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1BigCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
 
             this._insertAsImage1Medium.enable();
             this._insertAsImage1Medium.show();
-            this._insertAsImage1MediumCmp.setHtml('<img class="preview-' + contentType + ' preview-medium" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1MediumCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
 
             this._insertAsImage1Small.enable();
             this._insertAsImage1Small.show();
-            this._insertAsImage1SmallCmp.setHtml('<img class="preview-' + contentType + ' preview-small" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1SmallCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
             
             if (image2)
             {
+                image2 = image2.replace("LANG", "en");
+
                 this._insertAsImage2Big.enable();
                 this._insertAsImage2Big.show();
-                this._insertAsImage2BigCmp.setHtml('<img class="preview-' + contentType + ' preview-big" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2BigCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
 
                 this._insertAsImage2Medium.enable();
                 this._insertAsImage2Medium.show();
-                this._insertAsImage2MediumCmp.setHtml('<img class="preview-' + contentType + ' preview-medium" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2MediumCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
 
                 this._insertAsImage2Small.enable();
                 this._insertAsImage2Small.show();
-                this._insertAsImage2SmallCmp.setHtml('<img class="preview-' + contentType + ' preview-small" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2SmallCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
             }
             else
             {
