@@ -35,7 +35,6 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
         for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
         {
             Map<String, Object> data = entry.getValue();
-            _adaptImageCardPreview(data);
             
             // First add subname to name
             if (data.containsKey("colors"))
@@ -48,6 +47,7 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
                 {
                     Map<String, Object> coloredData = new LinkedHashMap<>(data);
                     coloredData.put("color", color);
+                    _adaptImageCardPreview(coloredData);
                     newData.put(entry.getKey() + "#" + color + "#" + i++, coloredData);
                 }
                 
@@ -69,9 +69,8 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
     {
         String color = (String) data.get("color");
         
-        String img = (String) data.get("image");
-        int i = img.lastIndexOf('.');
-        data.put("image2", img.substring(0, i) + (color == null ? "" : "_" + color) + "_cardpreview_LANG" + img.substring(i));
+        String id = (String) data.get("id");
+        data.put("image2", "data/tiles/img/" + id + ("none".equals(color) ? "" : "_" + color) + "_cardpreview_LANG.webp");
     }
 
     protected void _undobble(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)

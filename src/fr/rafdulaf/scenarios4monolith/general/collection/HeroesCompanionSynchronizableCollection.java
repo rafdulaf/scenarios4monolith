@@ -51,8 +51,7 @@ public class HeroesCompanionSynchronizableCollection extends CompanionSynchroniz
     
     private void _adaptImageCardPreview(Map<String, Object> data)
     {
-        String img = (String) data.get("image");
-        int i = img.lastIndexOf('.');
-        data.put("image2", img.substring(0, i) + "_cardpreview_LANG" + img.substring(i));
+        String id = (String) data.get("id");
+        data.put("image2", "data/heroes/img/" + id + "_cardpreview_LANG.webp");
     }
 }
