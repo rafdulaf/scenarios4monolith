@@ -69,8 +69,17 @@ public class TilesCompanionSynchronizableCollection extends CompanionSynchroniza
     {
         String color = (String) data.get("color");
         
-        String id = (String) data.get("id");
-        data.put("image2", "data/tiles/img/" + id + ("none".equals(color) ? "" : "_" + color) + "_cardpreview_LANG.webp");
+        if ("none".equals(color))
+        {
+            String img = (String) data.get("image");
+            int i = img.lastIndexOf('.');
+            data.put("image2", img.substring(0, i) + "_cardpreview_LANG" + img.substring(i));
+        }
+        else
+        {
+            String id = (String) data.get("id");
+            data.put("image2", "data/tiles/img/" + id + "_" + color + "_cardpreview_LANG.webp");
+        }
     }
 
     protected void _undobble(Map<String, Map<String, Object>> finalData, String identifierField, String titleField)
