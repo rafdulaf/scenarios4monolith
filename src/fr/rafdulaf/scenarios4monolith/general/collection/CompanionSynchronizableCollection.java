@@ -298,7 +298,7 @@ public class CompanionSynchronizableCollection extends AbstractDefaultSynchroniz
         _undobble(finalData, identifierField, titleField);
         
         List<Set<String>> dobbles = _getDobbleElementsByTitle(finalData, titleField, identifierField);
-        if (dobbles.size() > 1)
+        if (dobbles.size() >= 1)
         {
             throw new IllegalStateException("Dobbles at the end... " + dobbles.size() + " dobbles. For example: " + dobbles.get(0));
         }

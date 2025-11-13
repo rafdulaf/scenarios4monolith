@@ -30,6 +30,11 @@
             width: 63px;
             border-width: 5.36px;
         }
+        .preview-conan-equipment,
+        .preview-conan-token,
+        .preview-conan-scenario-element {
+            height: 63px;
+        }
     }
     &.preview-medium {
         .preview-conan-hero {
@@ -41,6 +46,11 @@
             height: 47px;
             width: 47px;
             border-width: 4px;
+        }
+        .preview-conan-equipment,
+        .preview-conan-token,
+        .preview-conan-scenario-element {
+            height: 47px;
         }
     }
     &.preview-small {
@@ -54,6 +64,11 @@
             width: 31px;
             border-width: 2.64px;
         }
+        .preview-conan-equipment,
+        .preview-conan-token,
+        .preview-conan-scenario-element {
+            height: 31px;
+        }
     }
 }
 
@@ -61,27 +76,36 @@
     text-align: center;
     
     &.preview-big {
-        .preview-conan-hero {
+        .preview-conan-hero,
+        .preview-conan-tile,
+        .preview-conan-equipment,
+        .preview-conan-token {
             height: 103px;
         }
-        .preview-conan-tile {
-            height: 103px;
+        .preview-conan-scenario-element {
+            height: 63px;
         }
     }
     &.preview-medium {
-        .preview-conan-hero {
+        .preview-conan-hero,
+        .preview-conan-tile,
+        .preview-conan-equipment,
+        .preview-conan-token {
             height: 83px;
         }
-        .preview-conan-tile {
-            height: 83px;
+        .preview-conan-scenario-element {
+            height: 47px;
         }
     }
     &.preview-small {
-        .preview-conan-hero {
+        .preview-conan-hero,
+        .preview-conan-tile,
+        .preview-conan-equipment,
+        .preview-conan-token {
             height: 63px;
         }
-        .preview-conan-tile {
-            height: 63px;
+        .preview-conan-scenario-element {
+            height: 31px;
         }
     }
 }
@@ -107,18 +131,3 @@
     width: 31px;
 }
 
-.preview-conan-equipment.preview-big,
-.preview-conan-token.preview-big,
-.preview-conan-scenario-element.preview-big {
-    height: 63px;
-}
-.preview-conan-equipment.preview-medium,
-.preview-conan-token.preview-medium,
-.preview-conan-scenario-element.preview-medium {
-    height: 47px;
-}
-.preview-conan-equipment.preview-small,
-.preview-conan-token.preview-small,
-.preview-conan-scenario-element.preview-small {
-    height: 31px;
-}
