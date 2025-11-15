@@ -13,13 +13,21 @@ public class SpellsCompanionSynchronizableCollection extends CompanionSynchroniz
             "title", List.of("title"),
             "identifier", List.of("id"),
             "origins", List.of("origins"),
-            "image", List.of("image")
+            "image", List.of("image"),
+            "image2", List.of("image2")
         );
     }
 
     @Override
     protected void _adapt(Map<String, Map<String, Object>> finalData, String application)
     {
+        for (Entry<String, Map<String, Object>> entry : finalData.entrySet())
+        {
+            Map<String, Object> data = entry.getValue();
+            
+            _adaptImageCardPreview(data);
+        }
+        
         super._adapt(finalData, application);
         
         String titleField = this._getMapping(null).get("title").get(0);
@@ -44,5 +52,11 @@ public class SpellsCompanionSynchronizableCollection extends CompanionSynchroniz
                 data.put(titleField, _jsonUtils.convertObjectToJson(mapName));
             }
         }
+    }
+    
+    private void _adaptImageCardPreview(Map<String, Object> data)
+    {
+        String id = (String) data.get("id");
+        data.put("image2", "data/spells/img/" + id + "_cardpreview_LANG.webp");
     }
 }
