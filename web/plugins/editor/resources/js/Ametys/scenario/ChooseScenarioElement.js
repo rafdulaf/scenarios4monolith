@@ -240,6 +240,8 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
     {
         if (!title)
         {
+            this._title = '';
+            
             this._insertAsText.disable();
             this._insertAsText.hide();
             this._insertAsTextCmp.setHtml('');
@@ -252,6 +254,8 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 title = title.substring(0, t);
             }
             
+            this._title = title;
+
             this._insertAsText.enable();
             this._insertAsText.show();
             this._insertAsTextCmp.setHtml('<strong>' + title + '</strong>');
@@ -293,7 +297,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         }
         else
         {
-            image1 = image1.replace("LANG", "en");
+            image1 = image1.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage());
             
             this._insertAsImageNo.enable();
             this._insertAsImageNo.show();
@@ -313,7 +317,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             
             if (image2)
             {
-                image2 = image2.replace("LANG", "en");
+                image2 = image2.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage());
 
                 this._insertAsImage2Big.enable();
                 this._insertAsImage2Big.show();
@@ -374,15 +378,17 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                             return;
                         }
                         
-                        let image1 = Ext.dom.Query.selectValue("> content > metadata > image", response);
-                        let image2 = Ext.dom.Query.selectValue("> content > metadata > image2", response);
+                        this._contentId = this._image1 = Ext.dom.Query.selectValue("> content > metadata > identifier", response);
+                        
+                        this._image1 = Ext.dom.Query.selectValue("> content > metadata > image", response);
+                        this._image2 = Ext.dom.Query.selectValue("> content > metadata > image2", response);
                         
                         let title = Ext.dom.Query.selectValue("> content > metadata > title", response);
                         this._adaptText(title);
                         
-                        let contentType = Ext.dom.Query.selectValue("> content > contentTypes > contentType", response);
-                        let color = Ext.dom.Query.selectValue("> content > metadata > color", response);
-                        this._adaptImage(image1, image2, contentType, color);
+                        this._contentType = Ext.dom.Query.selectValue("> content > contentTypes > contentType", response);
+                        this._color = Ext.dom.Query.selectValue("> content > metadata > color", response);
+                        this._adaptImage(this._image1, this._image2, this._contentType, this._color);
 
                         this._onInsertChange();
                     },
@@ -405,12 +411,27 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
     
     _ok: function()
     {
-        // TODO
-        
-        if (this._cbFn(id, text, size, viewHref, downloadHref, null) !== false)
+        let contentId = this._content.getValue();
+        let text = !this._insertAsText.isDisabled() && this._insertAsText.getValue() === true ? this._title : null;
+        let image = null;
+        let imageSize = null;
+        let imageNum = null;
+        if (!this._insertAsImageNo.isDisabled() && this._insertAsImageNo.getValue() === false)
         {
-            this._box.hide(); // hide to avoir call to onclose in this case... null
+            if (this._insertAsImage1Big.getValue() === true) { image = this._image1; imageNum = 1; imageSize = 'big'; }
+            else if (this._insertAsImage1Medium.getValue() === true) { image = this._image1; imageNum = 1; imageSize = 'medium'; }
+            else if (this._insertAsImage1Small.getValue() === true) { image = this._image1; imageNum = 1; imageSize = 'small'; }
+            else if (this._insertAsImage2Big.getValue() === true) { image = this._image2; imageNum = 2; imageSize = 'big'; }
+            else if (this._insertAsImage2Medium.getValue() === true) { image = this._image2; imageNum = 2; imageSize = 'medium'; }
+            else if (this._insertAsImage2Small.getValue() === true) { image = this._image2; imageNum = 2; imageSize = 'small'; }
+            else { throw new Error("No image size selected"); }
         }
+        
+        if (this._cbFn(contentId, id, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
+        {
+            this._cbFn = function() {};
+            this._box.close();
+        }        
     },
     
     _close: function()

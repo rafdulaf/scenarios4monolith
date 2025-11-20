@@ -34,32 +34,34 @@ Ext.define('Ametys.scenario.Links', {
         });
     },
     
-    _insertScenarioElementLinkCb: function(id, filename, filesize, viewHref, downloadHref, actionResult, type)
+    _insertScenarioElementLinkCb: function(contentId, id, text, imageUrl, imageNum, imageSize, contentType, color)
     {
-        type = type || 'scenario-element';
-        
-        if (id)
+        // FIXME "tinyMCE.activeEditor" a better method is to use the field.getEditor()
+        tinyMCE.activeEditor.execCommand('mceBeginUndoLevel');
+
+        var node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
+        if (node == null && tinyMCE.activeEditor.selection.isCollapsed())
         {
-            // FIXME "tinyMCE.activeEditor" a better method is to use the field.getEditor()
-            tinyMCE.activeEditor.execCommand('mceBeginUndoLevel');
+            tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + (imageUrl ? "<img src=\"" + imageUrl.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage()) + "\"/>" : "") + (text || '') + "{$caret}</a>");
 
-            var node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
-            if (node == null && tinyMCE.activeEditor.selection.isCollapsed())
-            {
-                var text = "{{i18n PLUGINS_WORKSPACES_EDITOR_LINK_DOWNLOAD}} «" + filename + "» (" + Ext.util.Format.fileSize(filesize) + ")"; 
-                tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + text + "{$caret}</a>");
-
-                node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
-                tinyMCE.activeEditor.selection.select(node);
-            }
-
-            tinyMCE.activeEditor.execCommand('mceInsertLink', false, { "data-ametys-href": id, href: downloadHref, "class": "download", "data-ametys-type": type, "_mce_ribbon_select" : "1" });
-            tinyMCE.activeEditor.selection.collapse();
-
-            tinyMCE.activeEditor.execCommand('mceEndUndoLevel');
+            node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
+            tinyMCE.activeEditor.selection.select(node);
         }
 
-        // Delayed to wait for the dialog box to hide.
+        tinyMCE.activeEditor.execCommand('mceInsertLink', false, { 
+            "data-ametys-href": contentId, 
+            "href": "#" + id, 
+            "class": "download", 
+            "data-ametys-type": "scenario-element", 
+            "data-ametys-subtype": contentType, 
+            "data-ametys-color": color, 
+            "_mce_ribbon_select" : "1" 
+        });
+        tinyMCE.activeEditor.selection.collapse();
+
+        tinyMCE.activeEditor.execCommand('mceEndUndoLevel');
+
+                // Delayed to wait for the dialog box to hide.
         window.setTimeout(function() {tinyMCE.activeEditor.focus();}, 100);
     }
 });
