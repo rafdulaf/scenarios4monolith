@@ -17,6 +17,7 @@
 <styles>
 	<link>
 		<import>
-			<inline-editor>/plugins/editor/resources/css/ChooseScenarioElement.css</inline-editor>
+			<inline-editor>css/ScenarioElement.css</inline-editor>
 		</import>
+    </link>
 </styles>

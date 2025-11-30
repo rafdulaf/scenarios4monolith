@@ -29,7 +29,7 @@
                     <file>js/Ametys/scenario/ChooseScenarioElement.js</file>
                 </scripts>
                 <css>
-                    <file>css/ChooseScenarioElement.css</file>
+                    <file>../../../param_resources/edition-styles/css/ScenarioElement.css</file>
                 </css>
             </extension>
             

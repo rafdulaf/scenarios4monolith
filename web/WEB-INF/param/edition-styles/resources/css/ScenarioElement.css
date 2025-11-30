@@ -1,0 +1,169 @@
+.preview-text {
+    margin-left: 30px;
+    font-weight: bold;
+}
+.preview-image1,
+.preview-image2 {
+    text-align: center;
+    
+    img, img.simple {
+        margin: 0;
+        vertical-align: middle;
+        border-style: none;
+    }
+}    
+.preview-image1 {
+    img[data-contenttype='conan-hero'],
+    img.preview-conan-hero {
+        box-shadow: 0 0 5px #000;
+            
+        border-radius: 50%;
+        border-style: solid;
+        border-color: #ffffff;
+    }
+    img[data-contenttype='conan-tile'],
+    img.preview-conan-tile {
+        border-radius: 50%;
+        border-style: solid;
+        box-shadow: 0 0 5px #000;
+    }
+    
+
+    &.preview-big {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero {
+            height: 47px;
+            width: 47px;
+            border-width: 1.15px;
+        }
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile {
+            height: 47px;
+            width: 47px;
+            border-width: 4px;
+        }
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell,
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 47px;
+        }
+    }
+    &.preview-medium {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero {
+            height: 31px;
+            width: 31px;
+            border-width: 0.76px;
+        }
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile {
+            height: 31px;
+            width: 31px;
+            border-width: 2.64px;
+        }
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell,
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 31px;
+        }
+    }
+    &.preview-small {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero {
+            height: 21px;
+            width: 21px;
+            border-width: 0.51px;
+        }
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile {
+            height: 21px;
+            width: 21px;
+            border-width: 1.79px;
+        }
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell,
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 21px;
+        }
+    }
+}
+
+.preview-image2 {
+    &.preview-big {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero,
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile,
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell {
+            height: 103px;
+        }
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 47px;
+        }
+    }
+    &.preview-medium {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero,
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile,
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell {
+            height: 83px;
+        }
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 31px;
+        }
+    }
+    &.preview-small {
+        img[data-contenttype='conan-hero'],
+        img.preview-conan-hero,
+        img[data-contenttype='conan-tile'],
+        img.preview-conan-tile,
+        img[data-contenttype='conan-equipment'],
+        img.preview-conan-equipment,
+        img[data-contenttype='conan-spell'],
+        img.preview-conan-spell {
+            height: 63px;
+        }
+        img[data-contenttype='conan-token'],
+        img.preview-conan-token,
+        img[data-contenttype='conan-scenario-element'],
+        img.preview-conan-scenario-element {
+            height: 21px;
+        }
+    }
+}
+
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='gray'] { border-color: #A99589; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='red'] { border-color: #8F1E39; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='blue'] { border-color: #005E8A; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='green'] { border-color: #649033; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='orange'] { border-color: #DB7D0F; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='purple'] { border-color: #674E79; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='black'] { border-color: #050404; } }
