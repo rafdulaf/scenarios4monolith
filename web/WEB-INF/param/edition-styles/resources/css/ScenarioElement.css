@@ -19,13 +19,15 @@
             
         border-radius: 50%;
         border-style: solid;
-        border-color: #ffffff;
+        border-color: #ffffff !important;
+        box-sizing: border-box;
     }
     img[data-contenttype='conan-tile'],
     img.preview-conan-tile {
         border-radius: 50%;
         border-style: solid;
         box-shadow: 0 0 5px #000;
+        box-sizing: border-box;
     }
     
 
@@ -160,10 +162,10 @@
     }
 }
 
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='gray'] { border-color: #A99589; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='red'] { border-color: #8F1E39; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='blue'] { border-color: #005E8A; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='green'] { border-color: #649033; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='orange'] { border-color: #DB7D0F; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='purple'] { border-color: #674E79; } }
-.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='black'] { border-color: #050404; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='gray'] { border-color: #A99589 !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='red'] { border-color: #8F1E39 !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='blue'] { border-color: #005E8A !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='green'] { border-color: #649033 !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='orange'] { border-color: #DB7D0F !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='purple'] { border-color: #674E79 !important; } }
+.preview-conan-tile,[data-contenttype='conan-tile'] { &[data-color='black'] { border-color: #050404 !important; } }

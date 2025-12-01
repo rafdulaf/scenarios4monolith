@@ -47,7 +47,7 @@ Ext.define('Ametys.scenario.Links', {
         
         tinyMCE.activeEditor.selection.collapse();
         
-        tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + (imageUrl ? "<img data-contenttype=\"" + contentType+ "\" data-color=\"" + color + "\" src=\"" + imageUrl.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage()) + "\"/>" : "") + (imageUrl && text ? " " : "") + (text || '').toLowerCase() + "{$caret}</a>");
+        tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + (imageUrl ? "<img marker=\"marker\" data-contenttype=\"" + contentType+ "\" data-color=\"" + color + "\" src=\"" + imageUrl.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage()) + "\"/>" : "") + (imageUrl && text ? " " : "") + (text || '') + "{$caret}</a>");
 
         node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
         tinyMCE.activeEditor.selection.select(node);

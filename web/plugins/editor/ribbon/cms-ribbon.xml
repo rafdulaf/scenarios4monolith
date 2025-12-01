@@ -6,6 +6,12 @@
         <control>org.ametys.cms.edition.toc.Insert</control>
         <control>org.ametys.cms.edition.symbol.Insert</control>
         <control>org.ametys.cms.edition.htmlexpert.Insert</control>
+        <control>org.ametys.cms.edition.link.StyleGallery</control>
+        <control>org.ametys.cms.edition.link.Edit</control>
+        <control>org.ametys.cms.edition.link.Remove</control>
+        <control>org.ametys.cms.edition.link.View</control>
+        <control>org.ametys.cms.edition.link.Title</control>
+        <control>org.ametys.cms.edition.link.OpenInNewWindow</control>
     </exclude>          
     <tabs>
         <tab label="plugin.cms:RIBBON_TABS_TAB_CONTENT_EDIT_LABEL" override="true">
