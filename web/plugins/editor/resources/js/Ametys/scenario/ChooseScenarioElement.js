@@ -104,7 +104,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1BigCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-big'] });
+        this._insertAsImage1BigCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "1");
+                    t.getEl().dom.setAttribute("data-imagesize", "big");
+                },
+                scope: this
+            }
+        });
 
         this._insertAsImage1Medium = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_MEDIUM}}",
@@ -115,7 +123,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1MediumCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-medium'] });
+        this._insertAsImage1MediumCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "1");
+                    t.getEl().dom.setAttribute("data-imagesize", "medium");
+                },
+                scope: this
+            }
+        });
 
         this._insertAsImage1Small = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_1_SMALL}}",
@@ -126,8 +142,16 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage1SmallCmp = Ext.create('Ext.Component', { cls: ['preview-image1', 'preview-small'] });
-
+        this._insertAsImage1SmallCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "1");
+                    t.getEl().dom.setAttribute("data-imagesize", "small");
+                },
+                scope: this
+            }
+        });
+        
         this._insertAsImage2Big = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_BIG}}",
             name: 'image',
@@ -137,7 +161,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2BigCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-big'] });
+        this._insertAsImage2BigCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "2");
+                    t.getEl().dom.setAttribute("data-imagesize", "big");
+                },
+                scope: this
+            }
+        });
 
         this._insertAsImage2Medium = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_MEDIUM}}",
@@ -148,8 +180,16 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2MediumCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-medium'] });
-
+        this._insertAsImage2MediumCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "2");
+                    t.getEl().dom.setAttribute("data-imagesize", "medium");
+                },
+                scope: this
+            }
+        });
+        
         this._insertAsImage2Small = Ext.create('Ext.form.field.Radio', {
             boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_AS_IMAGE_2_SMALL}}",
             name: 'image',
@@ -159,7 +199,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 scope: this
             }
         });
-        this._insertAsImage2SmallCmp = Ext.create('Ext.Component', { cls: ['preview-image2', 'preview-small'] });
+        this._insertAsImage2SmallCmp = Ext.create('Ext.Component', { 
+            listeners: {
+                "render": function(t) {
+                    t.getEl().dom.setAttribute("data-image", "2");
+                    t.getEl().dom.setAttribute("data-imagesize", "small");
+                },
+                scope: this
+            }
+        });
         
         this._hint = Ext.create('Ext.Component', { 
             html: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_HINT}}" 
@@ -305,15 +353,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
 
             this._insertAsImage1Big.enable();
             this._insertAsImage1Big.show();
-            this._insertAsImage1BigCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1BigCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
 
             this._insertAsImage1Medium.enable();
             this._insertAsImage1Medium.show();
-            this._insertAsImage1MediumCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1MediumCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
 
             this._insertAsImage1Small.enable();
             this._insertAsImage1Small.show();
-            this._insertAsImage1SmallCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
+            this._insertAsImage1SmallCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image1 + '"/>');
             
             if (image2)
             {
@@ -321,15 +369,15 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
 
                 this._insertAsImage2Big.enable();
                 this._insertAsImage2Big.show();
-                this._insertAsImage2BigCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2BigCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
 
                 this._insertAsImage2Medium.enable();
                 this._insertAsImage2Medium.show();
-                this._insertAsImage2MediumCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2MediumCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
 
                 this._insertAsImage2Small.enable();
                 this._insertAsImage2Small.show();
-                this._insertAsImage2SmallCmp.setHtml('<img class="preview-' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
+                this._insertAsImage2SmallCmp.setHtml('<img data-contenttype="' + contentType + '" ' + (color ? 'data-color="' + color + '"' : '') + '  src="' + this._base + "/" + image2 + '"/>');
             }
             else
             {
@@ -427,7 +475,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             else { throw new Error("No image size selected"); }
         }
         
-        if (this._cbFn(contentId, id, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
+        if (this._cbFn(contentId, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
         {
             this._cbFn = function() {};
             this._box.close();

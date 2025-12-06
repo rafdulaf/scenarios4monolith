@@ -34,7 +34,7 @@ Ext.define('Ametys.scenario.Links', {
         });
     },
     
-    _insertScenarioElementLinkCb: function(contentId, id, text, imageUrl, imageNum, imageSize, contentType, color)
+    _insertScenarioElementLinkCb: function(contentId, text, imageUrl, imageNum, imageSize, contentType, color)
     {
         // FIXME "tinyMCE.activeEditor" a better method is to use the field.getEditor()
         tinyMCE.activeEditor.execCommand('mceBeginUndoLevel');
@@ -53,10 +53,13 @@ Ext.define('Ametys.scenario.Links', {
         tinyMCE.activeEditor.selection.select(node);
 
         tinyMCE.activeEditor.execCommand('mceInsertLink', false, { 
-            "data-ametys-href": "scenario-element://" + id + "#" + contentType + "#" + color, 
+            "data-ametys-href": "scenario-element://" + contentType + "#" + contentId + "#" + color,
+            "data-imagesize": imageUrl ? imageSize : "",
+            "data-image": imageUrl ? imageNum : "", 
+            "data-contenttype": contentType,
+            "class": "invisible",
             "href": "#", 
             "contentEditable": "false",
-            "class": imageUrl ? "preview-" + contentType + " preview-image" + imageNum + " preview-" + imageSize : "",  
             "_mce_ribbon_select" : "1" 
         });
 

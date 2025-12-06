@@ -27,7 +27,7 @@ public class SynchronizableContentsCollectionDAO extends org.ametys.plugins.cont
     }
     
     @Override
-    @Callable
+    @Callable (rights = "Runtime_Rights_Admin_Access", context = "/admin")
     public Map<String, Object> getEditionConfiguration() throws Exception
     {
         Map<String, Object> result = super.getEditionConfiguration();
