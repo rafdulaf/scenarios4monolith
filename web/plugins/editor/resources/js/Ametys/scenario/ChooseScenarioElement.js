@@ -421,12 +421,12 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 priority: Ametys.data.ServerComm.PRIORITY_MAJOR, 
                 callback: {
                     handler: function(response) {
-                        if (Ametys.data.ServerComm.handleBadResponse("{{i18n plugin.cms:PLUGINS_CMS_TOOL_CONTENT_FORMDEFINITION_ERROR}} '" + this._contentId + "'", response, Ext.getClassName(this)))
+                        if (Ametys.data.ServerComm.handleBadResponse("{{i18n plugin.cms:PLUGINS_CMS_TOOL_CONTENT_FORMDEFINITION_ERROR}} '" + this._content.getValue() + "'", response, Ext.getClassName(this)))
                         {
                             return;
                         }
                         
-                        this._contentId = this._image1 = Ext.dom.Query.selectValue("> content > metadata > identifier", response);
+                        this._contentId =Ext.dom.Query.selectValue("> content > metadata > identifier", response);
                         
                         this._image1 = Ext.dom.Query.selectValue("> content > metadata > image", response);
                         this._image2 = Ext.dom.Query.selectValue("> content > metadata > image2", response);
@@ -459,7 +459,6 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
     
     _ok: function()
     {
-        let contentId = this._content.getValue();
         let text = !this._insertAsText.isDisabled() && this._insertAsText.getValue() === true ? this._title : null;
         let image = null;
         let imageSize = null;
@@ -475,7 +474,7 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             else { throw new Error("No image size selected"); }
         }
         
-        if (this._cbFn(contentId, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
+        if (this._cbFn(this._contentId, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
         {
             this._cbFn = function() {};
             this._box.close();

@@ -47,15 +47,17 @@ Ext.define('Ametys.scenario.Links', {
         
         tinyMCE.activeEditor.selection.collapse();
         
-        tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + (imageUrl ? "<img marker=\"marker\" data-contenttype=\"" + contentType+ "\" data-color=\"" + color + "\" src=\"" + imageUrl.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage()) + "\"/>" : "") + (imageUrl && text ? " " : "") + (text || '') + "{$caret}</a>");
+        tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<a href='#'>" + (imageUrl ? "<img marker=\"marker\" data-contenttype=\"" + contentType+ "\" data-color=\"" + color + "\" src=\"" + imageUrl.replace("LANG", Ametys.cms.language.LanguageDAO.getCurrentLanguage()) + "\"/>" : "") + (imageUrl && text ? "&#160;" : "") + (text || '') + "{$caret}</a>");
 
         node = tinyMCE.activeEditor.dom.getParent(tinyMCE.activeEditor.selection.getNode(), 'a');
         tinyMCE.activeEditor.selection.select(node);
 
-        tinyMCE.activeEditor.execCommand('mceInsertLink', false, { 
-            "data-ametys-href": "scenario-element://" + contentType + "#" + contentId + "#" + color,
+        tinyMCE.activeEditor.execCommand('mceInsertLink', false, {
+            "data-ametys-type": "scenario-element", 
+            "data-ametys-href": contentType + "#" + contentId + "#" + color,
             "data-imagesize": imageUrl ? imageSize : "",
-            "data-image": imageUrl ? imageNum : "", 
+            "data-image": imageUrl ? imageNum : "",
+            "data-text": !!text,  
             "data-contenttype": contentType,
             "class": "invisible",
             "href": "#", 

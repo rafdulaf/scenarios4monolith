@@ -53,6 +53,22 @@
                     </tag>
                 </tags>
             </extension>
+            
+            <extension id="fr.rafdulaf.scenario.Editor"
+                       point="org.ametys.cms.transformation.docbook.DocbookEnhancementExtensionPoint">
+                <htmleditor2docbook>
+                    <xslt>stylesheets/io/htmleditor2docbook.xsl</xslt>
+                </htmleditor2docbook>
+                <docbook2htmleditor>
+                    <xslt>stylesheets/io/docbook2htmleditor.xsl</xslt>
+                </docbook2htmleditor>
+<!--                 <docbook2html> -->
+<!--                     <xslt>view://stylesheets/io/docbook2html.xsl</xslt> -->
+<!--                 </docbook2html> -->
+<!--                 <docbook2outgoingreferences> -->
+<!--                     <xslt>view://stylesheets/io/docbook2outgoingreferences.xsl</xslt> -->
+<!--                 </docbook2outgoingreferences> -->
+            </extension>            
         </extensions>
     </feature>
         
