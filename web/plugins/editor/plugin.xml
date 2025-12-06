@@ -39,7 +39,20 @@
                 <workspace match="cms|web">
                     <file>ribbon/cms-ribbon.xml</file>
                 </workspace>
-           </extension>            
+           </extension>  
+           
+           <extension id="editor-links"
+                point="org.ametys.core.ui.widgets.richtext.RichTextConfigurationExtensionPoint"
+                class="org.ametys.core.ui.widgets.richtext.StaticRichTextConfiguration">
+                
+                <tags category="content">
+                    <tag name="a" empty="REMOVE_EMPTY_CONTENT">
+                        <attributes>
+                            <attribute name="contenteditable"/>
+                        </attributes>
+                    </tag>
+                </tags>
+            </extension>
         </extensions>
     </feature>
         

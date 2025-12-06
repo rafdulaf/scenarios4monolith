@@ -59,7 +59,7 @@ Ext.define('Ametys.scenario.Links', {
             "data-contenttype": contentType,
             "class": "invisible",
             "href": "#", 
-            "contentEditable": "false",
+            "contenteditable": "false",
             "_mce_ribbon_select" : "1" 
         });
 
