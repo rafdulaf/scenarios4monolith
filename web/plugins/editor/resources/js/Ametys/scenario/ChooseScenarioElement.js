@@ -212,6 +212,24 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
         this._hint = Ext.create('Ext.Component', { 
             html: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_INSERT_HINT}}" 
         });
+        
+        this._floatLeft = Ext.create('Ext.form.field.Radio', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_FLOAT_LEFT}}", 
+            iconCls: "ametysicon-design26", 
+            name: 'float'
+        });
+        this._floatNo = Ext.create('Ext.form.field.Radio', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_FLOAT_NO}}", 
+            iconCls: "ametysicon-black391", 
+            name: 'float',
+            value: true        
+        });
+        this._floatRight = Ext.create('Ext.form.field.Radio', {
+            boxLabel: "{{i18n EDITOR_LINKS_SCENARIO_ELEMENT_FLOAT_RIGHT}}", 
+            iconCls: "ametysicon-floatright", 
+            name: 'float'
+        });
+        this._floatButtons = Ext.create('Ext.container.Container', );
 
         this._box = Ext.create('Ametys.window.DialogBox', {
             title: title,
@@ -258,7 +276,10 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                         { xtype: 'container', flex: 1.6, items: [ this._insertAsImage2Medium, this._insertAsImage2MediumCmp ] },
                         { xtype: 'container', flex: 1.2, items: [ this._insertAsImage2Small, this._insertAsImage2SmallCmp ] }
                     ],
-                }
+                },
+                this._floatLeft,
+                this._floatNo,
+                this._floatRight
             ],
             
             closeAction: 'destroy',
@@ -342,6 +363,10 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             this._insertAsImage2Small.disable();
             this._insertAsImage2Small.hide();
             this._insertAsImage2SmallCmp.setHtml('');
+            
+            this._floatLeft.hide();
+            this._floatNo.hide();
+            this._floatRight.hide();
         }
         else
         {
@@ -398,6 +423,11 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
                 this._insertAsImage2Small.hide();
                 this._insertAsImage2SmallCmp.setHtml('');
             }
+            
+
+            this._floatLeft.show();
+            this._floatNo.show();
+            this._floatRight.show();
         }
     },
         
@@ -474,7 +504,9 @@ Ext.define('Ametys.scenario.ChooseScenarioElement', {
             else { throw new Error("No image size selected"); }
         }
         
-        if (this._cbFn(this._contentId, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color) !== false)
+        let float = this._floatLeft.getValue() == true ? "left" : this._floatRight.getValue() == true ? "right" : "none";
+        
+        if (this._cbFn(this._contentId, text, image != null ? this._base + "/" + image : null, imageNum, imageSize, this._contentType, this._color, float) !== false)
         {
             this._cbFn = function() {};
             this._box.close();

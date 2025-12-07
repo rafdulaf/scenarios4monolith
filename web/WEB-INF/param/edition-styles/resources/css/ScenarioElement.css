@@ -2,6 +2,16 @@
     margin-left: 30px;
     font-weight: bold;
 }
+
+a[data-ametys-type='scenario-element'].float-left {
+    margin-right: 10px;
+    float: left;
+}
+a[data-ametys-type='scenario-element'].float-right {
+    margin-left: 10px;
+    float: right;
+}
+
 [data-image='1'],
 [data-image='2'] {
     text-align: center;

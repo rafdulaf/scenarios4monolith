@@ -21,6 +21,7 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:resolver="org.ametys.cms.transformation.xslt.ResolveURIComponent"
                 xmlns:stringutils="org.apache.commons.lang3.StringUtils"
+                xmlns:helper="fr.rafdulaf.scenarios4monolith.editor.XSLTHelper"
                 exclude-result-prefixes="docbook xlink resolver html">
 	
 	<xsl:param name="contextPath"/>
@@ -28,9 +29,12 @@
     <xsl:param name="workspaceURI"/>
 	
     <xsl:template match="docbook:link[@xlink:type='scenario-element']">
-        <a href="#" data-ametys-href="{@xlink:href}" data-ametys-type="{@xlink:type}" data-text="{@xlink:text}" data-image="{@xlink:image}" data-imagesize="{@xlink:imagesize}" data-contenttype="{@xlink:contenttype}">
-            <xsl:if test="@xlink:image != ''"><img marker="marker" data-contenttype="{@xlink:contenttype}" data-color="{stringutils:substringAfterLast(@xlink:href, '#')}" src="TODO"/></xsl:if>
-            <xsl:if test="@xlink:text = 'true'">&#160;TextTODO</xsl:if>
+        <xsl:variable name="info" select="helper:getScenarioElementInfo(@xlink:href)"/>
+        <xsl:variable name="imageNumber" select="@xlink:image"/>
+    
+        <a class="{@xrefstyle}" contenteditable="false" href="#" data-ametys-href="{@xlink:href}" data-ametys-type="{@xlink:type}" data-text="{@xlink:text}" data-image="{@xlink:image}" data-imagesize="{@xlink:imagesize}" data-contenttype="{@xlink:contenttype}">
+            <xsl:if test="@xlink:image != ''"><img marker="marker" data-contenttype="{@xlink:contenttype}" data-color="{stringutils:substringAfterLast(@xlink:href, '#')}" src="{$info/*[local-name()=concat('image', $imageNumber)]}"/></xsl:if>
+            <xsl:if test="@xlink:text = 'true'">&#160;<xsl:value-of select="$info/title"/></xsl:if>
         </a>
     </xsl:template>
     

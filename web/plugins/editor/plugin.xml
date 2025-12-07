@@ -6,6 +6,9 @@
         runtimeVersion="4.8">
     
     <feature name="editor">
+        <components>
+            <component class="fr.rafdulaf.scenarios4monolith.editor.XSLTHelper"/>
+        </components>
         <extensions>
             <extension  id="fr.rafdulaf.scenario.link.menu.InsertScenarioElement"
                         point="org.ametys.core.ui.RibbonControlsManager"

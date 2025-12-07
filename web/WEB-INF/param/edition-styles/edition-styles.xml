@@ -19,5 +19,26 @@
 		<import>
 			<inline-editor>css/ScenarioElement.css</inline-editor>
 		</import>
+        <style>
+            <button>
+                <label>left</label>
+                <description>float left</description>
+            </button>
+            <inline-editor>float-left</inline-editor>
+        </style>
+        <style>
+            <button>
+                <label>no</label>
+                <description>float no</description>
+            </button>
+            <inline-editor>float-no</inline-editor>
+        </style>
+        <style>
+            <button>
+                <label>right</label>
+                <description>float right</description>
+            </button>
+            <inline-editor>float-right</inline-editor>
+        </style>
     </link>
 </styles>

@@ -13,6 +13,6 @@
 	<xsl:output method="xml" indent="yes"/>
 	
     <xsl:template match="a[@data-ametys-type='scenario-element']">
-        <link xlink:type="{@data-ametys-type}" xlink:href="{@data-ametys-href}" xlink:text="{@data-text}" xlink:imagesize="{@data-imagesize}" xlink:image="{@data-image}" xlink:contenttype="{@data-contenttype}"/>
+        <link xrefstyle="{@class}" xlink:type="{@data-ametys-type}" xlink:href="{@data-ametys-href}" xlink:text="{@data-text}" xlink:imagesize="{@data-imagesize}" xlink:image="{@data-image}" xlink:contenttype="{@data-contenttype}"/>
     </xsl:template>
 </xsl:stylesheet>

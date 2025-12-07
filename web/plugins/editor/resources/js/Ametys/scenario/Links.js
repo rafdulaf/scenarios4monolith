@@ -34,7 +34,7 @@ Ext.define('Ametys.scenario.Links', {
         });
     },
     
-    _insertScenarioElementLinkCb: function(contentId, text, imageUrl, imageNum, imageSize, contentType, color)
+    _insertScenarioElementLinkCb: function(contentId, text, imageUrl, imageNum, imageSize, contentType, color, float)
     {
         // FIXME "tinyMCE.activeEditor" a better method is to use the field.getEditor()
         tinyMCE.activeEditor.execCommand('mceBeginUndoLevel');
@@ -59,7 +59,7 @@ Ext.define('Ametys.scenario.Links', {
             "data-image": imageUrl ? imageNum : "",
             "data-text": !!text,  
             "data-contenttype": contentType,
-            "class": "invisible",
+            "class": "invisible float-" + float,
             "href": "#", 
             "contenteditable": "false",
             "_mce_ribbon_select" : "1" 
